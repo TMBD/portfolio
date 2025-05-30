@@ -1,4 +1,4 @@
-# 🚀 Dev Personal Theme
+# 🚀 Jucelito Silva - Frontend Developer Theme
 
 <div align="center">
 
