@@ -228,7 +228,6 @@ This project is under the MIT license. See the [LICENSE](LICENSE) file for more 
 
 <div align="center">
 
-**Desenvolvido com ❤️ por [Renato Khael](https://renatokhael.com)**
 
 **Developed with ❤️ by [Renato Khael](https://renatokhael.com)**
 
