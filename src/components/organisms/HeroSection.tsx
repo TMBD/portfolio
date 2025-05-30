@@ -34,7 +34,7 @@ export default function HeroSection() {
             <div className="border-l-4 border-gradient-to-b from-orange-500 to-cyan-500 pl-8 relative">
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 to-cyan-500"></div>
               <h2 className="text-white text-2xl font-display font-light tracking-wide">
-                I'm{" "}
+                Eu sou{" "}
                 <span className="font-bold bg-gradient-to-r from-orange-500 to-cyan-500 bg-clip-text text-transparent">
                   Jucelito Silva
                 </span>
@@ -44,10 +44,11 @@ export default function HeroSection() {
             <div className="space-y-4 gap-4">
               <h3 className="text-white text-6xl font-display font-bold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-                  Frontend
+                  Desenvolvedor
+                  <br />
                 </span>
                 <span className="bg-gradient-to-r from-orange-500 via-cyan-500 to-purple-500 bg-clip-text text-transparent text-glow">
-                  Developer
+                  Front-End
                 </span>
               </h3>
             </div>
@@ -75,12 +76,12 @@ export default function HeroSection() {
           <div className="flex gap-6">
             <Button variant="primary">
               <span className="font-display font-semibold text-lg">
-                Got a project?
+                Quer um projeto?
               </span>
             </Button>
             <Button variant="secondary">
               <span className="font-display font-semibold text-lg">
-                My resume
+                Baixe meu currículo
               </span>
             </Button>
           </div>
