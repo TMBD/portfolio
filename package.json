@@ -1,5 +1,6 @@
 {
   "name": "dev-personal-theme",
+  "description": "A minimal and modern personal theme built with Astro and Tailwind CSS. Perfect for personal portfolios, blogs, and simple websites.",
   "author": {
     "name": "Renato Khael",
     "email": "renatokhael@gmail.com",

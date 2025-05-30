@@ -13,8 +13,8 @@ export default function Footer() {
               <span className="text-orange-500 font-mono text-lg">/&gt;</span>
             </div>
             <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-md">
-              Passionate software developer creating modern web applications and
-              digital experiences.
+              Desenvolvedor frontend apaixonado criando aplicações web modernas
+              e experiências digitais.
             </p>
             <div className="flex gap-6">
               <a
@@ -59,7 +59,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-white text-xl font-display font-semibold mb-6">
-              Quick Links
+              Links Rápidos
             </h3>
             <ul className="space-y-4">
               <li>
@@ -67,7 +67,7 @@ export default function Footer() {
                   href="/"
                   className="text-gray-400 text-lg hover:text-orange-400 transition-colors duration-300"
                 >
-                  Home
+                  Início
                 </a>
               </li>
               <li>
@@ -75,7 +75,7 @@ export default function Footer() {
                   href="/about"
                   className="text-gray-400 text-lg hover:text-orange-400 transition-colors duration-300"
                 >
-                  About
+                  Sobre
                 </a>
               </li>
               <li>
@@ -91,7 +91,7 @@ export default function Footer() {
                   href="#portfolio"
                   className="text-gray-400 text-lg hover:text-orange-400 transition-colors duration-300"
                 >
-                  Portfolio
+                  Portfólio
                 </a>
               </li>
             </ul>
@@ -100,11 +100,11 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-white text-xl font-display font-semibold mb-6">
-              Contact
+              Contato
             </h3>
             <ul className="space-y-4">
               <li className="text-gray-400 text-lg">jucelito@example.com</li>
-              <li className="text-gray-400 text-lg">+55 (11) 986565114</li>
+              <li className="text-gray-400 text-lg">+55 (11) 99999-9999</li>
               <li className="text-gray-400 text-lg">São Paulo, SP</li>
             </ul>
           </div>
@@ -112,9 +112,8 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-16 pt-8 text-center">
           <p className="text-gray-400 text-lg">
-            &copy; 2025 - Design by{" "}
-            <a href="https://renatokhael.com">Renato Khael</a>. All rights
-            reserved.
+            &copy; 2025 - Design por{" "}
+            <a href="https://renatokhael.com">Renato Khael</a>. Use a Vontade!
           </p>
         </div>
       </div>

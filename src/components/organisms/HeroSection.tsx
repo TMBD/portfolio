@@ -34,7 +34,7 @@ export default function HeroSection() {
             <div className="border-l-4 border-gradient-to-b from-orange-500 to-cyan-500 pl-8 relative">
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500 to-cyan-500"></div>
               <h2 className="text-white text-2xl font-display font-light tracking-wide">
-                I'm{" "}
+                Eu sou{" "}
                 <span className="font-bold bg-gradient-to-r from-orange-500 to-cyan-500 bg-clip-text text-transparent">
                   Jucelito Silva
                 </span>
@@ -44,10 +44,10 @@ export default function HeroSection() {
             <div className="space-y-4 gap-4">
               <h3 className="text-white text-6xl font-display font-bold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-                  Frontend
+                  Desenvolvedor
                 </span>
                 <span className="bg-gradient-to-r from-orange-500 via-cyan-500 to-purple-500 bg-clip-text text-transparent text-glow">
-                  Developer
+                  Frontend
                 </span>
               </h3>
             </div>
@@ -56,18 +56,18 @@ export default function HeroSection() {
             <div className="font-mono text-lg text-gray-500 mt-8 space-y-2">
               <div>
                 <span className="text-purple-400">const</span>{" "}
-                <span className="text-cyan-400">passion</span> ={" "}
-                <span className="text-emerald-400">"coding"</span>;
+                <span className="text-cyan-400">paixao</span> ={" "}
+                <span className="text-emerald-400">"programar"</span>;
               </div>
               <div>
                 <span className="text-purple-400">const</span>{" "}
-                <span className="text-cyan-400">experience</span> ={" "}
+                <span className="text-cyan-400">experiencia</span> ={" "}
                 <span className="text-orange-400">10</span>;
               </div>
               <div>
                 <span className="text-purple-400">const</span>{" "}
-                <span className="text-cyan-400">creativity</span> ={" "}
-                <span className="text-emerald-400">"unlimited"</span>;
+                <span className="text-cyan-400">criatividade</span> ={" "}
+                <span className="text-emerald-400">"ilimitada"</span>;
               </div>
             </div>
           </div>
@@ -75,12 +75,12 @@ export default function HeroSection() {
           <div className="flex gap-6">
             <Button variant="primary">
               <span className="font-display font-semibold text-lg">
-                Got a project?
+                Tem um projeto?
               </span>
             </Button>
             <Button variant="secondary">
               <span className="font-display font-semibold text-lg">
-                My resume
+                Meu currículo
               </span>
             </Button>
           </div>
@@ -88,7 +88,7 @@ export default function HeroSection() {
           {/* Skills with modern styling */}
           <div className="pt-12">
             <div className="font-mono text-lg text-gray-400 mb-6">
-              <span className="text-emerald-400">$</span> cat skills.json
+              <span className="text-emerald-400">$</span> cat habilidades.json
             </div>
             <div className="flex flex-wrap gap-6">
               {skills.map((skill, index) => (
@@ -118,11 +118,11 @@ export default function HeroSection() {
             <div className="w-96 h-96 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full absolute -z-10 top-4 left-4 blur-sm opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             {/* Profile Image */}
-            <div className="overflow-hidden flex items-center justify-center relative z-10 border-2 border-slate-700 group-hover:border-orange-500/50 transition-all duration-500">
+            <div className="w-96 h-96 rounded-full overflow-hidden bg-slate-800 flex items-center justify-center relative z-10 border-2 border-slate-700 group-hover:border-orange-500/50 transition-all duration-500">
               <img
-                src="/dev.png"
+                src="/blog-placeholder-about.jpg"
                 alt="Jucelito Silva"
-                className="w-full max-h-[600px] object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
             </div>
 

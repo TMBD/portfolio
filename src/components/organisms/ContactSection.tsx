@@ -6,19 +6,19 @@ export default function ContactSection() {
     <section className="bg-slate-900 py-24 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-white text-6xl font-display font-bold mb-8">
-          Let's work together
+          Vamos trabalhar juntos
         </h2>
         <p className="text-gray-400 text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-          Have a project in mind? I'd love to hear about it. Let's discuss how
-          we can bring your ideas to life.
+          Tem um projeto em mente? Adoraria ouvir sobre ele. Vamos discutir como
+          podemos dar vida às suas ideias.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Button variant="primary">
-            <span className="text-lg">Start a project</span>
+            <span className="text-lg">Iniciar um projeto</span>
           </Button>
           <Button variant="secondary">
-            <span className="text-lg">Send me an email</span>
+            <span className="text-lg">Enviar um email</span>
           </Button>
         </div>
 
@@ -32,10 +32,10 @@ export default function ContactSection() {
             </a>
             <span className="hidden sm:block text-slate-600">|</span>
             <a
-              href="tel:+1234567890"
+              href="tel:+5511999999999"
               className="text-lg hover:text-orange-400 transition-colors duration-300"
             >
-              +55 (11) 986565114
+              +55 (11) 99999-9999
             </a>
             <span className="hidden sm:block text-slate-600">|</span>
             <a

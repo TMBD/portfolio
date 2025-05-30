@@ -18,7 +18,7 @@ interface BlogPageProps {
 
 export default function BlogPage({ posts }: BlogPageProps) {
   const formatDate = (date: Date) => {
-    return new Intl.DateTimeFormat("en-US", {
+    return new Intl.DateTimeFormat("pt-BR", {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -34,8 +34,8 @@ export default function BlogPage({ posts }: BlogPageProps) {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-white text-6xl font-bold mb-6">Blog</h1>
           <p className="text-gray-400 text-xl leading-relaxed">
-            Thoughts, tutorials, and insights about web development, technology
-            trends, and my journey as a developer.
+            Pensamentos, tutoriais e insights sobre desenvolvimento web,
+            tendências tecnológicas e minha jornada como desenvolvedor.
           </p>
         </div>
       </section>
@@ -88,7 +88,7 @@ export default function BlogPage({ posts }: BlogPageProps) {
 
           {posts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-gray-400 text-lg">No blog posts found.</p>
+              <p className="text-gray-400 text-lg">Nenhum post encontrado.</p>
             </div>
           )}
         </div>

@@ -38,11 +38,14 @@ export default function ServicesSection() {
             <div className="pl-20 space-y-6">
               <ServiceCard
                 icon={<WebsiteIcon />}
-                title="Website Development"
+                title="Desenvolvimento Web"
                 isActive={true}
               />
-              <ServiceCard icon={<AppIcon />} title="App Development" />
-              <ServiceCard icon={<HostingIcon />} title="Website Hosting" />
+              <ServiceCard icon={<AppIcon />} title="Aplicações React" />
+              <ServiceCard
+                icon={<HostingIcon />}
+                title="Consultoria Frontend"
+              />
             </div>
           </div>
         </div>
@@ -50,14 +53,14 @@ export default function ServicesSection() {
         {/* Right Content - About Me */}
         <div className="space-y-10">
           <h2 className="text-white text-6xl font-display font-bold">
-            About me
+            Sobre mim
           </h2>
 
           <p className="text-gray-400 text-xl leading-relaxed">
-            I started my software journey from photography. Through that, I
-            learned to love the process of creating from scratch. Since then,
-            this has led me to software development as it fulfills my love for
-            learning and building things.
+            Comecei minha jornada no desenvolvimento através da fotografia. Por
+            meio dela, aprendi a amar o processo de criar do zero. Desde então,
+            isso me levou ao desenvolvimento de software, pois satisfaz meu amor
+            por aprender e construir coisas.
           </p>
 
           {/* Statistics */}
@@ -66,24 +69,24 @@ export default function ServicesSection() {
               <div className="text-5xl font-display font-bold text-white mb-3">
                 120 <span className="text-orange-500">+</span>
               </div>
-              <div className="text-gray-400 text-lg">Completed</div>
-              <div className="text-gray-400 text-lg">Projects</div>
+              <div className="text-gray-400 text-lg">Projetos</div>
+              <div className="text-gray-400 text-lg">Concluídos</div>
             </div>
 
             <div className="text-center">
               <div className="text-5xl font-display font-bold text-white mb-3">
                 95 <span className="text-orange-500">%</span>
               </div>
-              <div className="text-gray-400 text-lg">Client</div>
-              <div className="text-gray-400 text-lg">satisfaction</div>
+              <div className="text-gray-400 text-lg">Satisfação</div>
+              <div className="text-gray-400 text-lg">dos Clientes</div>
             </div>
 
             <div className="text-center">
               <div className="text-5xl font-display font-bold text-white mb-3">
                 10 <span className="text-orange-500">+</span>
               </div>
-              <div className="text-gray-400 text-lg">Years of</div>
-              <div className="text-gray-400 text-lg">experience</div>
+              <div className="text-gray-400 text-lg">Anos de</div>
+              <div className="text-gray-400 text-lg">Experiência</div>
             </div>
           </div>
         </div>

@@ -4,36 +4,36 @@ import ProjectCard from "../atoms/ProjectCard";
 export default function PortfolioSection() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "E-commerce Moderno",
       description:
-        "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management and secure payment processing.",
+        "Uma plataforma de e-commerce moderna construída com React e Node.js, com gerenciamento de inventário em tempo real e processamento seguro de pagamentos.",
       image: "/blog-placeholder-1.jpg",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com/example",
     },
     {
-      title: "Task Management App",
+      title: "Dashboard Analytics",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+        "Um dashboard de analytics colaborativo com atualizações em tempo real, funcionalidade de arrastar e soltar e recursos de colaboração em equipe.",
       image: "/blog-placeholder-2.jpg",
       technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com/example",
     },
     {
-      title: "Weather Dashboard",
+      title: "App de Clima Responsivo",
       description:
-        "A responsive weather dashboard that provides detailed forecasts, interactive maps, and location-based weather alerts.",
+        "Um dashboard de clima responsivo que fornece previsões detalhadas, mapas interativos e alertas meteorológicos baseados em localização.",
       image: "/blog-placeholder-3.jpg",
       technologies: ["JavaScript", "API Integration", "Chart.js"],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com/example",
     },
     {
-      title: "Portfolio Website",
+      title: "Portfólio Pessoal",
       description:
-        "A modern portfolio website showcasing creative design and smooth animations, built with performance optimization in mind.",
+        "Um site de portfólio moderno apresentando design criativo e animações suaves, construído com otimização de performance em mente.",
       image: "/blog-placeholder-4.jpg",
       technologies: ["Astro", "React", "Tailwind CSS"],
       liveUrl: "https://example.com",
@@ -46,11 +46,11 @@ export default function PortfolioSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-white text-6xl font-display font-bold mb-6">
-            My Portfolio
+            Meu Portfólio
           </h2>
           <p className="text-gray-400 text-xl max-w-3xl mx-auto">
-            Here are some of my recent projects that showcase my skills and
-            passion for creating amazing digital experiences.
+            Aqui estão alguns dos meus projetos recentes que demonstram minhas
+            habilidades e paixão por criar experiências digitais incríveis.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function PortfolioSection() {
             href="/blog"
             className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-md font-medium transition-colors duration-300"
           >
-            View All Projects
+            Ver Todos os Projetos
           </a>
         </div>
       </div>

@@ -25,12 +25,12 @@ export default function Header({ currentPath = "/" }: HeaderProps) {
         <nav className="flex items-center gap-10">
           <NavigationLink href="/" isActive={currentPath === "/"}>
             <span className="font-mono text-lg text-cyan-400">[</span>
-            <span className="font-sans text-lg">Home</span>
+            <span className="font-sans text-lg">Início</span>
             <span className="font-mono text-lg text-cyan-400">]</span>
           </NavigationLink>
           <NavigationLink href="/about" isActive={currentPath === "/about"}>
             <span className="font-mono text-lg text-purple-400">[</span>
-            <span className="font-sans text-lg">About</span>
+            <span className="font-sans text-lg">Sobre</span>
             <span className="font-mono text-lg text-purple-400">]</span>
           </NavigationLink>
           <NavigationLink href="/blog" isActive={currentPath === "/blog"}>

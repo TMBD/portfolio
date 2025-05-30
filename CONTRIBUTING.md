@@ -1,4 +1,4 @@
-# 🤝 Contribuindo para o Dev Personal Theme
+# 🤝 Contribuindo para o Jucelito Silva - Frontend Developer Theme
 
 Obrigado por considerar contribuir para este projeto! Aqui estão algumas diretrizes para ajudar você a começar.
 
@@ -13,8 +13,8 @@ Obrigado por considerar contribuir para este projeto! Aqui estão algumas diretr
 ### 2. Configuração do Ambiente
 
 ```bash
-git clone https://github.com/seu-usuario/dev-personal-theme.git
-cd dev-personal-theme
+git clone https://github.com/renatokhael/astro-theme-jucelito-silva.git
+cd astro-theme-jucelito-silva
 npm install
 npm run dev
 ```

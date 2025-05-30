@@ -10,9 +10,9 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
-		<BaseHead title="Blog - Jucelito Silva" description="Read my latest thoughts and tutorials about web development and technology." />
+		<BaseHead title="Blog - Jucelito Silva" description="Leia meus últimos pensamentos e tutoriais sobre desenvolvimento web e tecnologia." />
 	</head>
 	<body>
 		<BlogPage posts={posts} client:load />
