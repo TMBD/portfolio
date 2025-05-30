@@ -38,8 +38,8 @@ Um tema moderno e elegante para desenvolvedores criarem seus portfólios pessoai
 #### 1. Clone o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/dev-personal-theme.git
-cd dev-personal-theme
+git clone https://github.com/renatokhael/astro-theme-jucelito-silva.git
+cd astro-theme-jucelito-silva
 ```
 
 #### 2. Instale as Dependências
@@ -146,8 +146,8 @@ A modern and elegant theme for developers to create their personal portfolios. B
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/dev-personal-theme.git
-cd dev-personal-theme
+git clone https://github.com/renatokhael/astro-theme-jucelito-silva.git
+cd astro-theme-jucelito-silva
 ```
 
 #### 2. Install Dependencies
