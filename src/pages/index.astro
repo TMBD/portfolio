@@ -1,0 +1,15 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import HomePage from '../components/templates/HomePage';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<HomePage client:load />
+	</body>
+</html>

@@ -1,0 +1,73 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/organisms/Header';
+import Footer from '../components/organisms/Footer';
+import FormattedDate from '../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body class="bg-slate-900 min-h-screen">
+		<Header currentPath="/blog" client:load />
+		
+		<main class="bg-slate-900">
+			<article>
+				<!-- Hero Image -->
+				{heroImage && (
+					<div class="w-full h-96 overflow-hidden">
+						<img 
+							src={heroImage} 
+							alt={title}
+							class="w-full h-full object-cover"
+						/>
+					</div>
+				)}
+				
+				<!-- Content -->
+				<div class="max-w-4xl mx-auto px-6 py-12">
+					<!-- Header -->
+					<header class="text-center mb-12">
+						<div class="text-orange-500 text-sm font-medium mb-4">
+							<FormattedDate date={pubDate} />
+							{updatedDate && (
+								<div class="text-gray-400 text-xs mt-1">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)}
+						</div>
+						<h1 class="text-white text-5xl font-bold mb-6">{title}</h1>
+						<div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+					</header>
+					
+					<!-- Article Content -->
+					<div class="prose-content max-w-none text-gray-300 leading-relaxed">
+						<slot />
+					</div>
+					
+					<!-- Back to Blog -->
+					<div class="text-center mt-16 pt-8 border-t border-slate-700">
+						<a 
+							href="/blog"
+							class="inline-flex items-center gap-2 text-orange-500 hover:text-orange-400 transition-colors font-medium"
+						>
+							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+							</svg>
+							Back to Blog
+						</a>
+					</div>
+				</div>
+			</article>
+		</main>
+		
+		<Footer client:load />
+	</body>
+</html>
