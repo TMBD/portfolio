@@ -106,11 +106,11 @@ All content lives **once** in typed data files and is rendered by reusable compo
 > In practice we process each area once (remove + translate + rebrand + data-ify + logos) to avoid rework.
 
 ### Phase 0 — Safety & baseline
-- [ ] Commit pristine clone; create a `customize` branch.
+- [x] Commit pristine clone; create a `customize` branch.
 
 ### Phase 1 — Upgrade & harden
-- [ ] `@astrojs/upgrade` to latest Astro + integrations; bump remaining deps.
-- [ ] Resolve `npm audit`; verify `dev` + `build`.
+- [x] Upgraded to latest Astro (7.0.9) + integrations; bumped all deps to latest stable.
+- [x] Resolved `npm audit` (16 → 0 vulnerabilities); `dev` + `build` verified.
 
 ### Phase 2 — Foundations (i18n, theme, layout primitives)
 - [ ] Configure Astro i18n (EN default, FR, auto-detect + fallback).
@@ -148,3 +148,4 @@ All content lives **once** in typed data files and is rendered by reusable compo
 
 ## 10. Progress log
 - 2026-07-14 — Security review clean; deps installed; dev server verified; plan aligned to Thierno's requirements.
+- 2026-07-15 — Phase 0 ✅ (baseline commit + `customize` branch). Phase 1 ✅ — Astro 5.8.1 → 7.0.9, all deps latest stable, 16 → 0 vulnerabilities, build + dev verified. Only `package.json` / `package-lock.json` changed.
