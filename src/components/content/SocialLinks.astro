@@ -1,0 +1,40 @@
+---
+/**
+ * SocialLinks — the profile's social/contact links as icon buttons.
+ * Brand logos come from Simple Icons; "email" uses a generic envelope.
+ */
+import { Icon } from "astro-icon/components";
+import { profile } from "../../data/profile";
+
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<div class:list={["flex items-center gap-3", className]}>
+  {
+    profile.socials.map((social) => {
+      const external = social.href.startsWith("http");
+      return (
+        <a
+          href={social.href}
+          aria-label={social.label}
+          title={social.label}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+          class="text-muted transition-colors hover:text-accent"
+        >
+          {social.icon === "email" ? (
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l9 7 9-7" />
+            </svg>
+          ) : (
+            <Icon name={`simple-icons:${social.icon}`} class="h-5 w-5" aria-hidden="true" />
+          )}
+        </a>
+      );
+    })
+  }
+</div>

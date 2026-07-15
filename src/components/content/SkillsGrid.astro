@@ -1,0 +1,12 @@
+---
+/**
+ * SkillsGrid — all skill categories as a responsive grid of cards.
+ * Used on the Technical Skills page and the About aggregation.
+ */
+import { skillCategories } from "../../data/skills";
+import SkillCategoryCard from "./SkillCategoryCard.astro";
+---
+
+<div class="grid gap-6 sm:grid-cols-2">
+  {skillCategories.map((category) => <SkillCategoryCard category={category} />)}
+</div>

@@ -1,37 +1,63 @@
 ---
-// French home page (served at /fr/). Mirrors the English home; text is resolved
-// per-locale via the i18n helpers, which detect "fr" from the URL.
+// French home page (served at /fr/). Same components as the English home; all
+// text resolves to French via the i18n helpers (locale detected from the URL).
 import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/ui/Section.astro";
 import SectionHeading from "../../components/ui/SectionHeading.astro";
 import SeeMoreLink from "../../components/ui/SeeMoreLink.astro";
-import { siteName, siteRole } from "../../config/site";
-import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
+import SkillBadge from "../../components/content/SkillBadge.astro";
+import EducationList from "../../components/content/EducationList.astro";
+import ExperienceList from "../../components/content/ExperienceList.astro";
+import ProjectGrid from "../../components/content/ProjectGrid.astro";
+import { siteName } from "../../config/site";
+import { profile } from "../../data/profile";
+import { mainSkills } from "../../data/skills";
+import { getLangFromUrl, useTranslations, localizePath, pick } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const role = pick(profile.role, lang);
+const intro = pick(profile.intro, lang);
 ---
 
-<Layout
-  title={`${siteName} — ${siteRole}`}
-  description="Portfolio personnel de Thierno DIALLO, ingénieur logiciel."
->
-  <!-- Hero placeholder (la page d'accueil complète arrive en Phase 4). -->
-  <Section class="text-center">
-    <p class="mb-3 font-mono text-sm uppercase tracking-widest text-accent">{siteRole}</p>
+<Layout title={`${siteName} — ${role}`} description="Portfolio personnel de Thierno DIALLO, ingénieur logiciel.">
+  <Section>
+    <p class="mb-3 font-mono text-sm uppercase tracking-widest text-accent">{role}</p>
     <h1 class="font-display text-4xl font-bold tracking-tight text-heading sm:text-6xl">{siteName}</h1>
-    <p class="mx-auto mt-6 max-w-2xl text-lg text-muted">{t("home.placeholder")}</p>
+    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{intro}</p>
+
+    <div class="mt-10">
+      <h2 class="font-display text-lg font-bold text-heading">{t("home.mainSkills")}</h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {mainSkills.map((skill) => <li><SkillBadge skill={skill} /></li>)}
+      </ul>
+      <div class="mt-5">
+        <SeeMoreLink href={localizePath("/skills", lang)} label={t("action.seeAll")} />
+      </div>
+    </div>
   </Section>
 
-  <!-- Démo de la bande alternée + primitives -->
   <Section tone="alt">
-    <SectionHeading
-      eyebrow="Fondations"
-      title="Aperçu du design system"
-      subtitle="Thème, i18n et primitives de mise en page sont en place."
-    />
-    <div class="mt-6">
-      <SeeMoreLink href={localizePath("/skills", lang)} label={t("action.seeAll")} />
+    <SectionHeading title={t("nav.education")} />
+    <div class="mt-10"><EducationList /></div>
+  </Section>
+
+  <Section>
+    <div class="grid gap-12 lg:grid-cols-2">
+      <div>
+        <SectionHeading title={t("home.topExperiences")} />
+        <div class="mt-8"><ExperienceList featuredOnly limit={3} /></div>
+        <div class="mt-8">
+          <SeeMoreLink href={localizePath("/experience", lang)} label={t("action.seeAll")} />
+        </div>
+      </div>
+      <div>
+        <SectionHeading title={t("home.topProjects")} />
+        <div class="mt-8"><ProjectGrid featuredOnly limit={3} columns={1} /></div>
+        <div class="mt-8">
+          <SeeMoreLink href={localizePath("/projects", lang)} label={t("action.seeAll")} />
+        </div>
+      </div>
     </div>
   </Section>
 </Layout>

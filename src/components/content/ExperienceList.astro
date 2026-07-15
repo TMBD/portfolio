@@ -1,0 +1,21 @@
+---
+/**
+ * ExperienceList — renders experiences from the data. Pass `featuredOnly` and/or
+ * `limit` for the home "Top Experiences" preview; omit both for the full page.
+ */
+import { experiences } from "../../data/experiences";
+import ExperienceItem from "./ExperienceItem.astro";
+
+interface Props {
+  limit?: number;
+  featuredOnly?: boolean;
+}
+const { limit, featuredOnly = false } = Astro.props;
+
+let items = featuredOnly ? experiences.filter((e) => e.featured) : experiences;
+if (typeof limit === "number") items = items.slice(0, limit);
+---
+
+<div class="flex flex-col gap-10">
+  {items.map((experience) => <ExperienceItem experience={experience} />)}
+</div>

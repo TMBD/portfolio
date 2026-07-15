@@ -26,6 +26,11 @@ export function useTranslations(lang: Lang) {
   };
 }
 
+/** Resolve a `Localized` value (e.g. `{ en, fr }`) for the active locale. */
+export function pick<T>(value: Record<Lang, T>, lang: Lang): T {
+  return value[lang] ?? value[defaultLang];
+}
+
 /** Prefix a locale-agnostic path with its locale (no prefix for the default). */
 export function localizePath(path: string, lang: Lang): string {
   const clean = path === "" ? "/" : path.startsWith("/") ? path : `/${path}`;

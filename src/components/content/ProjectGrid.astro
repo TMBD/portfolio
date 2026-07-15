@@ -1,0 +1,23 @@
+---
+/**
+ * ProjectGrid — renders projects from the data. Pass `featuredOnly` / `limit`
+ * for the home "Top Projects" preview; `columns={1}` for narrow (half-width)
+ * layouts like the home side-by-side.
+ */
+import { projects } from "../../data/projects";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Props {
+  limit?: number;
+  featuredOnly?: boolean;
+  columns?: 1 | 2;
+}
+const { limit, featuredOnly = false, columns = 2 } = Astro.props;
+
+let items = featuredOnly ? projects.filter((p) => p.featured) : projects;
+if (typeof limit === "number") items = items.slice(0, limit);
+---
+
+<div class:list={["grid gap-6", columns === 2 ? "sm:grid-cols-2" : "grid-cols-1"]}>
+  {items.map((project) => <ProjectCard project={project} />)}
+</div>

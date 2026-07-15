@@ -1,0 +1,44 @@
+---
+/**
+ * CertificationList — renders certifications, or a friendly empty state while
+ * there are none (ready for entries to be added later, no code changes needed).
+ */
+import { Icon } from "astro-icon/components";
+import { certifications } from "../../data/certifications";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+{
+  certifications.length === 0 ? (
+    <div class="rounded-xl border border-dashed border-border bg-surface/50 p-8 text-center">
+      <p class="text-muted">{t("cert.empty")}</p>
+    </div>
+  ) : (
+    <div class="grid gap-6 sm:grid-cols-2">
+      {certifications.map((cert) => (
+        <article class="flex items-start gap-4 rounded-xl border border-border bg-surface p-5">
+          {cert.icon && (
+            <Icon name={`simple-icons:${cert.icon}`} class="mt-1 h-6 w-6 text-muted" aria-hidden="true" />
+          )}
+          <div>
+            <h3 class="font-display font-bold text-heading">{cert.name}</h3>
+            <p class="text-sm text-muted">{cert.issuer} · {cert.date}</p>
+            {cert.credentialUrl && (
+              <a
+                href={cert.credentialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-1 inline-block text-sm text-accent hover:text-accent-hover"
+              >
+                {t("action.seeAll")}
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  )
+}

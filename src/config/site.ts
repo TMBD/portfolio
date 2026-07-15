@@ -5,15 +5,13 @@
  */
 
 import type { UIKey } from "../i18n/ui";
+import { profile } from "../data/profile";
 
-/** Brand name shown in the header/footer and used in page titles. */
-export const siteName = "Thierno DIALLO";
-
-/** Short role/title. (Localized role text will move into profile data later.) */
-export const siteRole = "Software Engineer";
+/** Brand name shown in the header/footer and page titles (from the profile). */
+export const siteName = profile.name;
 
 /** Path to the downloadable CV in /public (placeholder until the real file). */
-export const cvUrl = "/cv.pdf";
+export const cvUrl = profile.cvUrl;
 
 /** A primary navigation entry. */
 export interface NavItem {

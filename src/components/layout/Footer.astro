@@ -4,12 +4,15 @@
  * download, and a copyright line. Theme-aware and localized. Social links get
  * real URLs when the profile data lands in a later phase.
  */
-import { navItems, siteName, siteRole } from "../../config/site";
-import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
+import { navItems, siteName } from "../../config/site";
+import { profile } from "../../data/profile";
+import { getLangFromUrl, useTranslations, localizePath, pick } from "../../i18n/utils";
 import CvButton from "../ui/CvButton.astro";
+import SocialLinks from "../content/SocialLinks.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const role = pick(profile.role, lang);
 const year = new Date().getFullYear();
 const links = navItems.map((i) => ({ label: t(i.labelKey), href: localizePath(i.path, lang) }));
 ---
@@ -23,7 +26,7 @@ const links = navItems.map((i) => ({ label: t(i.labelKey), href: localizePath(i.
         {siteName}
         <span class="font-mono text-accent">/&gt;</span>
       </p>
-      <p class="mt-2 text-sm text-muted">{siteRole}</p>
+      <p class="mt-2 text-sm text-muted">{role}</p>
       <div class="mt-4"><CvButton variant="full" /></div>
     </div>
 
@@ -44,7 +47,8 @@ const links = navItems.map((i) => ({ label: t(i.labelKey), href: localizePath(i.
 
     <!-- Meta -->
     <div class="md:text-right">
-      <p class="text-sm text-muted">{t("footer.builtWith")}</p>
+      <SocialLinks class="md:justify-end" />
+      <p class="mt-4 text-sm text-muted">{t("footer.builtWith")}</p>
     </div>
   </div>
 

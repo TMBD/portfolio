@@ -1,0 +1,24 @@
+---
+/**
+ * ExperienceItem — one work experience in the timeline style:
+ * title + organisation (subtitle) + description, with the period on the right.
+ */
+import type { Experience } from "../../data/types";
+import { getLangFromUrl, pick } from "../../i18n/utils";
+
+interface Props {
+  experience: Experience;
+}
+const { experience } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<article class="relative border-l-2 border-accent/50 pl-6">
+  <span class="absolute -left-[7px] top-2 h-3 w-3 rounded-full bg-accent"></span>
+  <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+    <h3 class="font-display text-xl font-bold text-heading">{pick(experience.role, lang)}</h3>
+    <span class="shrink-0 font-mono text-sm text-accent">{pick(experience.period, lang)}</span>
+  </div>
+  <p class="text-lg text-muted">{experience.organization}</p>
+  <p class="mt-2 leading-relaxed text-muted">{pick(experience.description, lang)}</p>
+</article>

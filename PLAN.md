@@ -119,8 +119,8 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - [x] Build layout primitives: `Section`, `SectionHeading`, `SeeMoreLink`, updated `Header` (new nav + utility cluster), `Footer`, shared `Layout`.
 
 ### Phase 3 — Data model & reusable components
-- [ ] Create `src/data/*` files + `src/i18n/*` dictionaries.
-- [ ] Build reusable content components that render from the data.
+- [x] Create `src/data/*` files (bilingual `{ en, fr }`) + `pick()` i18n helper.
+- [x] Build reusable content components (Experience, Project, Skills + logos, Education, Certification, Social) that render from the data.
 
 ### Phase 4 — Pages
 - [ ] Home (Hero → Education → Top Experiences ∥ Top Projects).
@@ -150,3 +150,4 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - 2026-07-14 — Security review clean; deps installed; dev server verified; plan aligned to Thierno's requirements.
 - 2026-07-15 — Phase 0 ✅ (baseline commit + `customize` branch). Phase 1 ✅ — Astro 5.8.1 → 7.0.9, all deps latest stable, 16 → 0 vulnerabilities, build + dev verified. Only `package.json` / `package-lock.json` changed.
 - 2026-07-15 — Phase 2 ✅ — Astro i18n (EN + FR, auto-detect), light/dark theme system (tokens + no-flash toggle), and layout primitives (`Section`, `SectionHeading`, `SeeMoreLink`, `Header`, `Footer`, `Layout`, `LanguageSwitcher`, `ThemeToggle`, `CvButton`). New `/` + `/fr/` home shells + themed `404`. Verified in both languages and themes. Old `about`/`blog` keep the legacy look until their phases.
+- 2026-07-16 — Phase 3 ✅ — Bilingual data model (`src/data/*`: profile, 5 experiences, 7 projects, 15 skills, 3 diplomas, empty certifications) + reusable components (skills with Simple-Icons logos via astro-icon, project cards with conditional repo/live links, experience/education timelines, certification empty-state, social links). Home (EN/FR) now assembles hero intro + Main Skills + Education + Top Experiences ∥ Top Projects. Build + browser verified. Note: this advanced the home; Phase 4 = dedicated pages + hero photo + About aggregation.

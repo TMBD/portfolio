@@ -1,0 +1,11 @@
+---
+/**
+ * EducationList — all education entries (few, so always shown in full).
+ */
+import { education } from "../../data/education";
+import EducationItem from "./EducationItem.astro";
+---
+
+<div class="flex flex-col gap-10">
+  {education.map((item) => <EducationItem item={item} />)}
+</div>

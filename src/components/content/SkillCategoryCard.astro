@@ -1,0 +1,24 @@
+---
+/**
+ * SkillCategoryCard — one card per skill category (e.g. "Backend"), listing its
+ * skills as badges. The category title is localized.
+ */
+import type { SkillCategory } from "../../data/types";
+import { getLangFromUrl, pick } from "../../i18n/utils";
+import SkillBadge from "./SkillBadge.astro";
+
+interface Props {
+  category: SkillCategory;
+}
+const { category } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
+<div class="rounded-xl border border-border bg-surface p-6 transition-colors">
+  <h3 class="font-display text-lg font-bold text-heading">{pick(category.title, lang)}</h3>
+  <ul class="mt-4 flex flex-wrap gap-2">
+    {category.skills.map((skill) => (
+      <li><SkillBadge skill={skill} /></li>
+    ))}
+  </ul>
+</div>
