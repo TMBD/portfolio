@@ -1,10 +1,58 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode: a `.dark` class on <html> switches the theme
+   (applied before paint by the no-flash script in Layout.astro). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light theme (default). Semantic tokens consumed by the @theme block below. */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --text: #334155;
+  --heading: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --accent: #ea580c;        /* deeper orange keeps good contrast on light bg */
+  --accent-hover: #c2410c;
+  --on-accent: #ffffff;
+  color-scheme: light;
+}
+
+/* Dark theme. */
+.dark {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-alt: #0d1526;
+  --text: #cbd5e1;
+  --heading: #f8fafc;
+  --muted: #94a3b8;
+  --border: #334155;
+  --accent: #f97316;        /* vivid orange pops on dark bg */
+  --accent-hover: #fb923c;
+  --on-accent: #ffffff;
+  color-scheme: dark;
+}
+
 @theme {
-  /* Typography */
-  --font-family-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-family-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
-  --font-family-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+  /* Typography (generates font-sans / font-display / font-mono). */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+
+  /* Semantic, theme-aware color tokens. These map to Tailwind color utilities
+     (bg-bg, text-heading, border-border, bg-accent, …) and resolve to the
+     CSS variables defined in :root / .dark above. */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-text: var(--text);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
 
   /* Colors - Enhanced for modern geek aesthetic */
   --color-orange-400: #fb923c;
@@ -166,16 +214,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: var(--surface-alt);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f97316;
+  background: var(--accent);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ea580c;
+  background: var(--accent-hover);
 }
 
 /* Selection styling */

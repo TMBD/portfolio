@@ -1,15 +1,37 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import HomePage from '../components/templates/HomePage';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+// English home page (served at /). The full hero + sections arrive in Phase 4;
+// this shows the new foundations (theme, i18n, layout primitives).
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/ui/Section.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import SeeMoreLink from "../components/ui/SeeMoreLink.astro";
+import { siteName, siteRole } from "../config/site";
+import { getLangFromUrl, useTranslations, localizePath } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<!doctype html>
-<html lang="pt-BR">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<HomePage client:load />
-	</body>
-</html>
+<Layout
+  title={`${siteName} — ${siteRole}`}
+  description="Personal portfolio of Thierno DIALLO, Software Engineer."
+>
+  <!-- Hero placeholder (the full hero is built in Phase 4). -->
+  <Section class="text-center">
+    <p class="mb-3 font-mono text-sm uppercase tracking-widest text-accent">{siteRole}</p>
+    <h1 class="font-display text-4xl font-bold tracking-tight text-heading sm:text-6xl">{siteName}</h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg text-muted">{t("home.placeholder")}</p>
+  </Section>
+
+  <!-- Demo of the alternating band + primitives. -->
+  <Section tone="alt">
+    <SectionHeading
+      eyebrow="Foundations"
+      title="Design system preview"
+      subtitle="Theme, i18n, and layout primitives are wired up."
+    />
+    <div class="mt-6">
+      <SeeMoreLink href={localizePath("/skills", lang)} label={t("action.seeAll")} />
+    </div>
+  </Section>
+</Layout>

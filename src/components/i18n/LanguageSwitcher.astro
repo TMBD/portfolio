@@ -1,0 +1,49 @@
+---
+/**
+ * LanguageSwitcher — links to the equivalent page in each locale and records
+ * the user's explicit choice so the auto-detect redirect (in the Layout) won't
+ * override it on later visits.
+ */
+import { languages, type Lang } from "../../i18n/ui";
+import { getLangFromUrl, getAlternatePath } from "../../i18n/utils";
+
+const current = getLangFromUrl(Astro.url);
+const entries = (Object.keys(languages) as Lang[]).map((lang) => ({
+  lang,
+  label: lang.toUpperCase(),
+  href: getAlternatePath(Astro.url.pathname, lang),
+  active: lang === current,
+}));
+---
+
+<div
+  class="inline-flex items-center rounded-lg border border-border p-0.5 text-sm"
+  role="group"
+  aria-label="Language"
+>
+  {
+    entries.map(({ lang, label, href, active }) => (
+      <a
+        href={href}
+        data-lang={lang}
+        aria-current={active ? "true" : undefined}
+        class:list={[
+          "js-lang rounded-md px-2 py-1 font-medium transition-colors",
+          active ? "bg-accent text-on-accent" : "text-muted hover:text-accent",
+        ]}
+      >
+        {label}
+      </a>
+    ))
+  }
+</div>
+
+<script>
+  // Persist the explicit language choice (stops auto-detect from overriding it).
+  document.querySelectorAll(".js-lang").forEach((el) => {
+    el.addEventListener("click", () => {
+      const lang = (el as HTMLElement).dataset.lang;
+      if (lang) localStorage.setItem("lang", lang);
+    });
+  });
+</script>

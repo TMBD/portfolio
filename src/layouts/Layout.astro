@@ -1,0 +1,104 @@
+---
+/**
+ * Layout — the shared page shell used by every page:
+ *  - <head> metadata (title, description, canonical, Open Graph, fonts)
+ *  - a no-flash script that applies the saved/system theme before paint
+ *  - a first-visit language auto-detect redirect (French browsers → /fr)
+ *  - the Header, a <slot> for page content, and the Footer.
+ */
+import "../styles/global.css";
+import { getLangFromUrl } from "../i18n/utils";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  /** OG image path in /public. */
+  image?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const { title, description = "", image = "/cover.png" } = Astro.props;
+const canonicalURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : Astro.url;
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, canonicalURL)} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400..700&family=Inter:opsz,wght@14..32,100..900&family=Space+Grotesk:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- No-flash theme: set the class BEFORE first paint to avoid a flash. -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme =
+            stored ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          document.documentElement.classList.toggle("dark", theme === "dark");
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- First-visit language auto-detect: redirect French browsers to /fr,
+         unless the visitor has already chosen a language. -->
+    <script is:inline>
+      (function () {
+        try {
+          if (localStorage.getItem("lang")) return;
+          var path = location.pathname;
+          var isFr = path === "/fr" || path.indexOf("/fr/") === 0;
+          var prefersFr =
+            (navigator.language || "").toLowerCase().indexOf("fr") === 0;
+          if (prefersFr && !isFr) {
+            location.replace("/fr" + (path === "/" ? "" : path));
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+
+  <body class="min-h-screen bg-bg font-sans text-text antialiased transition-colors">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:text-on-accent"
+    >
+      Skip to content
+    </a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

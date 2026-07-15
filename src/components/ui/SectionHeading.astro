@@ -1,0 +1,37 @@
+---
+/**
+ * SectionHeading — a consistent heading block for page sections, with an
+ * optional eyebrow (small accent label) and subtitle.
+ */
+interface Props {
+  title: string;
+  eyebrow?: string;
+  subtitle?: string;
+  align?: "left" | "center";
+  class?: string;
+}
+
+const {
+  title,
+  eyebrow,
+  subtitle,
+  align = "left",
+  class: className = "",
+} = Astro.props;
+
+const alignment = align === "center" ? "mx-auto text-center" : "text-left";
+---
+
+<div class:list={["max-w-2xl", alignment, className]}>
+  {
+    eyebrow && (
+      <p class="mb-2 font-mono text-sm font-medium uppercase tracking-widest text-accent">
+        {eyebrow}
+      </p>
+    )
+  }
+  <h2 class="font-display text-3xl font-bold tracking-tight text-heading sm:text-4xl">
+    {title}
+  </h2>
+  {subtitle && <p class="mt-4 text-lg text-muted">{subtitle}</p>}
+</div>

@@ -113,10 +113,10 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - [x] Resolved `npm audit` (16 → 0 vulnerabilities); `dev` + `build` verified.
 
 ### Phase 2 — Foundations (i18n, theme, layout primitives)
-- [ ] Configure Astro i18n (EN default, FR, auto-detect + fallback).
-- [ ] Add light/dark theme system + toggle (no-flash, persisted).
-- [ ] Set up orange design tokens per theme.
-- [ ] Build layout primitives: `Section`, `SectionHeading`, `SeeMoreLink`, updated `Header` (new nav + utility cluster), `Footer`.
+- [x] Configure Astro i18n (EN default, FR, auto-detect + fallback).
+- [x] Add light/dark theme system + toggle (no-flash, persisted).
+- [x] Set up orange design tokens per theme.
+- [x] Build layout primitives: `Section`, `SectionHeading`, `SeeMoreLink`, updated `Header` (new nav + utility cluster), `Footer`, shared `Layout`.
 
 ### Phase 3 — Data model & reusable components
 - [ ] Create `src/data/*` files + `src/i18n/*` dictionaries.
@@ -149,3 +149,4 @@ All content lives **once** in typed data files and is rendered by reusable compo
 ## 10. Progress log
 - 2026-07-14 — Security review clean; deps installed; dev server verified; plan aligned to Thierno's requirements.
 - 2026-07-15 — Phase 0 ✅ (baseline commit + `customize` branch). Phase 1 ✅ — Astro 5.8.1 → 7.0.9, all deps latest stable, 16 → 0 vulnerabilities, build + dev verified. Only `package.json` / `package-lock.json` changed.
+- 2026-07-15 — Phase 2 ✅ — Astro i18n (EN + FR, auto-detect), light/dark theme system (tokens + no-flash toggle), and layout primitives (`Section`, `SectionHeading`, `SeeMoreLink`, `Header`, `Footer`, `Layout`, `LanguageSwitcher`, `ThemeToggle`, `CvButton`). New `/` + `/fr/` home shells + themed `404`. Verified in both languages and themes. Old `about`/`blog` keep the legacy look until their phases.

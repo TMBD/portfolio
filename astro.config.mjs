@@ -10,6 +10,16 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
+
+  // Bilingual routing: English is the default (unprefixed), French under /fr.
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+
   integrations: [mdx(), sitemap(), react()],
 
   vite: {

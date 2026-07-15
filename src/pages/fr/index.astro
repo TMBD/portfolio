@@ -1,0 +1,37 @@
+---
+// French home page (served at /fr/). Mirrors the English home; text is resolved
+// per-locale via the i18n helpers, which detect "fr" from the URL.
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/ui/Section.astro";
+import SectionHeading from "../../components/ui/SectionHeading.astro";
+import SeeMoreLink from "../../components/ui/SeeMoreLink.astro";
+import { siteName, siteRole } from "../../config/site";
+import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout
+  title={`${siteName} — ${siteRole}`}
+  description="Portfolio personnel de Thierno DIALLO, ingénieur logiciel."
+>
+  <!-- Hero placeholder (la page d'accueil complète arrive en Phase 4). -->
+  <Section class="text-center">
+    <p class="mb-3 font-mono text-sm uppercase tracking-widest text-accent">{siteRole}</p>
+    <h1 class="font-display text-4xl font-bold tracking-tight text-heading sm:text-6xl">{siteName}</h1>
+    <p class="mx-auto mt-6 max-w-2xl text-lg text-muted">{t("home.placeholder")}</p>
+  </Section>
+
+  <!-- Démo de la bande alternée + primitives -->
+  <Section tone="alt">
+    <SectionHeading
+      eyebrow="Fondations"
+      title="Aperçu du design system"
+      subtitle="Thème, i18n et primitives de mise en page sont en place."
+    />
+    <div class="mt-6">
+      <SeeMoreLink href={localizePath("/skills", lang)} label={t("action.seeAll")} />
+    </div>
+  </Section>
+</Layout>

@@ -1,0 +1,54 @@
+---
+/**
+ * Footer — brand, quick navigation (same single source as the header), a CV
+ * download, and a copyright line. Theme-aware and localized. Social links get
+ * real URLs when the profile data lands in a later phase.
+ */
+import { navItems, siteName, siteRole } from "../../config/site";
+import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
+import CvButton from "../ui/CvButton.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+const links = navItems.map((i) => ({ label: t(i.labelKey), href: localizePath(i.path, lang) }));
+---
+
+<footer class="border-t border-border bg-surface-alt px-6 py-12 transition-colors">
+  <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+    <!-- Brand -->
+    <div>
+      <p class="font-display text-lg font-bold text-heading">
+        <span class="font-mono text-accent">&lt;</span>
+        {siteName}
+        <span class="font-mono text-accent">/&gt;</span>
+      </p>
+      <p class="mt-2 text-sm text-muted">{siteRole}</p>
+      <div class="mt-4"><CvButton variant="full" /></div>
+    </div>
+
+    <!-- Quick navigation -->
+    <nav aria-label="Footer">
+      <ul class="grid grid-cols-2 gap-2 text-sm">
+        {
+          links.map((l) => (
+            <li>
+              <a href={l.href} class="text-muted transition-colors hover:text-accent">
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <!-- Meta -->
+    <div class="md:text-right">
+      <p class="text-sm text-muted">{t("footer.builtWith")}</p>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-8 max-w-6xl border-t border-border pt-6 text-sm text-muted">
+    <p>© {year} {siteName}. {t("footer.rights")}</p>
+  </div>
+</footer>

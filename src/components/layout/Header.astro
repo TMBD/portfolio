@@ -1,0 +1,112 @@
+---
+/**
+ * Header — sticky site header: brand (→ home), primary navigation, and a
+ * utility cluster (language · theme · CV). Theme-aware and localized. The
+ * mobile menu is toggled with a small inline script — no framework needed.
+ */
+import { navItems, siteName } from "../../config/site";
+import {
+  getLangFromUrl,
+  useTranslations,
+  localizePath,
+  isActivePath,
+} from "../../i18n/utils";
+import ThemeToggle from "../theme/ThemeToggle.astro";
+import LanguageSwitcher from "../i18n/LanguageSwitcher.astro";
+import CvButton from "../ui/CvButton.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentPath = Astro.url.pathname;
+const homeHref = localizePath("/", lang);
+
+const links = navItems.map((item) => {
+  const href = localizePath(item.path, lang);
+  return { label: t(item.labelKey), href, active: isActivePath(currentPath, href) };
+});
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md transition-colors">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+    <!-- Brand → home -->
+    <a href={homeHref} class="flex items-center gap-1 font-display text-lg font-bold text-heading">
+      <span class="font-mono text-accent">&lt;</span>
+      <span>{siteName}</span>
+      <span class="font-mono text-accent">/&gt;</span>
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Primary">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            aria-current={l.active ? "page" : undefined}
+            class:list={[
+              "text-sm font-medium transition-colors",
+              l.active ? "text-accent" : "text-muted hover:text-heading",
+            ]}
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- Utility cluster + mobile toggle -->
+    <div class="flex items-center gap-2">
+      <div class="hidden items-center gap-2 sm:flex">
+        <LanguageSwitcher />
+        <ThemeToggle />
+        <CvButton />
+      </div>
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text lg:hidden"
+        aria-label={t("nav.menu")}
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden border-t border-border px-6 py-4 lg:hidden">
+    <nav class="flex flex-col gap-3" aria-label="Mobile">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            aria-current={l.active ? "page" : undefined}
+            class:list={[
+              "py-1 text-base font-medium transition-colors",
+              l.active ? "text-accent" : "text-text hover:text-accent",
+            ]}
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="mt-4 flex items-center gap-2 border-t border-border pt-4">
+      <LanguageSwitcher />
+      <ThemeToggle />
+      <CvButton />
+    </div>
+  </div>
+</header>
+
+<script>
+  // Toggle the mobile menu (MPA navigation re-runs this on each page load).
+  const btn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    const isOpen = menu?.classList.toggle("hidden") === false;
+    btn.setAttribute("aria-expanded", String(isOpen));
+  });
+</script>

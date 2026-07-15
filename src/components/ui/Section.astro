@@ -1,0 +1,24 @@
+---
+/**
+ * Section — a full-width band with consistent vertical rhythm and a
+ * theme-aware background. Use `tone="alt"` for the alternating band colour so
+ * stacked sections on a page read as distinct strips (matches the design).
+ */
+interface Props {
+  /** Background tone: base page colour or the alternate band. */
+  tone?: "base" | "alt";
+  /** Optional id for in-page anchoring. */
+  id?: string;
+  /** Extra classes applied to the inner container. */
+  class?: string;
+}
+
+const { tone = "base", id, class: className = "" } = Astro.props;
+const bg = tone === "alt" ? "bg-surface-alt" : "bg-bg";
+---
+
+<section id={id} class:list={[bg, "px-6 py-20 transition-colors duration-300"]}>
+  <div class:list={["mx-auto max-w-6xl", className]}>
+    <slot />
+  </div>
+</section>

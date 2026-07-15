@@ -1,0 +1,23 @@
+---
+// Themed 404 page — shown for routes that don't exist yet (e.g. the dedicated
+// pages arriving in Phase 4). Keeps the site's look while we build.
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/ui/Section.astro";
+import { getLangFromUrl, useTranslations, localizePath } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="404">
+  <Section class="text-center">
+    <p class="font-mono text-7xl font-bold text-accent">404</p>
+    <h1 class="mt-4 font-display text-3xl font-bold text-heading">{t("notfound.title")}</h1>
+    <p class="mt-4 text-muted">{t("notfound.text")}</p>
+    <div class="mt-8">
+      <a href={localizePath("/", lang)} class="font-medium text-accent transition-colors hover:text-accent-hover">
+        ← {t("action.backHome")}
+      </a>
+    </div>
+  </Section>
+</Layout>
