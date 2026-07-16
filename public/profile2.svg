@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Thierno DIALLO">
+  <!-- Placeholder profile avatar (initials). Replace with a real photo:
+       drop your image in /public and update `photo` in src/data/profile.ts. -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="40" fill="url(#grad)" />
+  <text
+    x="200"
+    y="200"
+    text-anchor="middle"
+    dominant-baseline="central"
+    font-family="'Space Grotesk', system-ui, sans-serif"
+    font-size="180"
+    font-weight="700"
+    fill="#ffffff"
+  >TD</text>
+</svg>
