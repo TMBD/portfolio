@@ -4,6 +4,7 @@
  * utility cluster (language · theme · CV). Theme-aware and localized. The
  * mobile menu is toggled with a small inline script — no framework needed.
  */
+import type { Lang } from "../../i18n/ui";
 import { navItems, siteName } from "../../config/site";
 import {
   getLangFromUrl,
@@ -14,6 +15,12 @@ import {
 import ThemeToggle from "../theme/ThemeToggle.astro";
 import LanguageSwitcher from "../i18n/LanguageSwitcher.astro";
 import CvButton from "../ui/CvButton.astro";
+
+interface Props {
+  /** Optional per-locale override URLs passed down to the language switcher. */
+  localeAlternates?: Partial<Record<Lang, string>>;
+}
+const { localeAlternates } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -56,7 +63,7 @@ const links = navItems.map((item) => {
     <!-- Utility cluster + mobile toggle -->
     <div class="flex items-center gap-2">
       <div class="hidden items-center gap-2 sm:flex">
-        <LanguageSwitcher />
+        <LanguageSwitcher alternates={localeAlternates} />
         <ThemeToggle />
         <CvButton />
       </div>
@@ -94,7 +101,7 @@ const links = navItems.map((item) => {
       }
     </nav>
     <div class="mt-4 flex items-center gap-2 border-t border-border pt-4">
-      <LanguageSwitcher />
+      <LanguageSwitcher alternates={localeAlternates} />
       <ThemeToggle />
       <CvButton />
     </div>

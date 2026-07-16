@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Enable class-based dark mode: a `.dark` class on <html> switches the theme
    (applied before paint by the no-flash script in Layout.astro). */

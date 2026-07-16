@@ -1,73 +1,91 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/organisms/Header';
-import Footer from '../components/organisms/Footer';
-import FormattedDate from '../components/FormattedDate.astro';
+/**
+ * BlogPost — layout for a single article. Wraps the Markdown content in the
+ * shared site Layout with theme-aware typography and a localized back link.
+ */
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "./Layout.astro";
+import Section from "../components/ui/Section.astro";
+import { siteName } from "../config/site";
+import { languages, type Lang } from "../i18n/ui";
+import { getLangFromUrl, useTranslations, localizePath } from "../i18n/utils";
 
-type Props = CollectionEntry<'blog'>['data'];
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags } = post.data;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const fmt = (d: Date) =>
+  d.toLocaleDateString(lang === "fr" ? "fr-FR" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+// Per-locale URLs for the language switcher: link to the post's translation if
+// one exists (same translationKey), otherwise fall back to that language's blog
+// index — so switching language never lands on a missing post (404).
+const allPosts = await getCollection("blog");
+const localeAlternates: Partial<Record<Lang, string>> = {};
+for (const l of Object.keys(languages) as Lang[]) {
+  if (l === post.data.lang) {
+    localeAlternates[l] = localizePath(`/blog/${post.id}`, l);
+    continue;
+  }
+  const translation = post.data.translationKey
+    ? allPosts.find((p) => p.data.lang === l && p.data.translationKey === post.data.translationKey)
+    : undefined;
+  localeAlternates[l] = translation
+    ? localizePath(`/blog/${translation.id}`, l)
+    : localizePath("/blog", l);
+}
 ---
 
-<html lang="pt-BR">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+<Layout title={`${title} — ${siteName}`} description={description} image={heroImage} localeAlternates={localeAlternates}>
+  <Section>
+    <div class="mx-auto max-w-3xl">
+      <a
+        href={localizePath("/blog", lang)}
+        class="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+      >
+        <span aria-hidden="true">←</span>
+        {t("blog.backToBlog")}
+      </a>
 
-	<body class="bg-slate-900 min-h-screen">
-		<Header currentPath="/blog" client:load />
-		
-		<main class="bg-slate-900">
-			<article>
-				<!-- Hero Image -->
-				{heroImage && (
-					<div class="w-full h-96 overflow-hidden">
-						<img 
-							src={heroImage} 
-							alt={title}
-							class="w-full h-full object-cover"
-						/>
-					</div>
-				)}
-				
-				<!-- Content -->
-				<div class="max-w-4xl mx-auto px-6 py-12">
-					<!-- Header -->
-					<header class="text-center mb-12">
-						<div class="text-orange-500 text-sm font-medium mb-4">
-							<FormattedDate date={pubDate} />
-							{updatedDate && (
-								<div class="text-gray-400 text-xs mt-1">
-									Última atualização em <FormattedDate date={updatedDate} />
-								</div>
-							)}
-						</div>
-						<h1 class="text-white text-5xl font-bold mb-6">{title}</h1>
-						<div class="w-24 h-1 bg-orange-500 mx-auto"></div>
-					</header>
-					
-					<!-- Article Content -->
-					<div class="prose-content max-w-none text-gray-300 leading-relaxed">
-						<slot />
-					</div>
-					
-					<!-- Back to Blog -->
-					<div class="text-center mt-16 pt-8 border-t border-slate-700">
-						<a 
-							href="/blog"
-							class="inline-flex items-center gap-2 text-orange-500 hover:text-orange-400 transition-colors font-medium"
-						>
-							<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-							</svg>
-							Voltar ao Blog
-						</a>
-					</div>
-				</div>
-			</article>
-		</main>
-		
-		<Footer client:load />
-	</body>
-</html>
+      <article class="mt-8">
+        {
+          heroImage && (
+            <img
+              src={heroImage}
+              alt={title}
+              class="mb-8 aspect-video w-full rounded-xl border border-border object-cover"
+            />
+          )
+        }
+        <header>
+          <time datetime={pubDate.toISOString()} class="font-mono text-sm text-accent">{fmt(pubDate)}</time>
+          <h1 class="mt-3 font-display text-4xl font-bold tracking-tight text-heading">{title}</h1>
+          {updatedDate && <p class="mt-2 text-sm text-muted">{t("blog.updatedOn")} {fmt(updatedDate)}</p>}
+          {
+            tags.length > 0 && (
+              <ul class="mt-4 flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <li class="rounded-full border border-border px-3 py-1 font-mono text-xs text-muted">{tag}</li>
+                ))}
+              </ul>
+            )
+          }
+        </header>
+
+        <div
+          class="prose prose-lg mt-10 max-w-none dark:prose-invert prose-headings:font-display prose-headings:text-heading prose-a:text-accent hover:prose-a:text-accent-hover prose-strong:text-heading prose-code:text-accent"
+        >
+          <slot />
+        </div>
+      </article>
+    </div>
+  </Section>
+</Layout>

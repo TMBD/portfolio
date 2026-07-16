@@ -7,11 +7,17 @@
 import { languages, type Lang } from "../../i18n/ui";
 import { getLangFromUrl, getAlternatePath } from "../../i18n/utils";
 
+interface Props {
+  /** Optional per-locale override URLs (e.g. blog posts with different slugs). */
+  alternates?: Partial<Record<Lang, string>>;
+}
+const { alternates } = Astro.props;
+
 const current = getLangFromUrl(Astro.url);
 const entries = (Object.keys(languages) as Lang[]).map((lang) => ({
   lang,
   label: lang.toUpperCase(),
-  href: getAlternatePath(Astro.url.pathname, lang),
+  href: alternates?.[lang] ?? getAlternatePath(Astro.url.pathname, lang),
   active: lang === current,
 }));
 ---

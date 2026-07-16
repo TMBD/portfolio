@@ -127,10 +127,10 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - [x] `/experience`, `/projects`, `/skills`, `/education` (+ Certifications), `/about` aggregation — EN + FR via shared page components.
 
 ### Phase 5 — Dummy content
-- [ ] Fill data files with realistic dummy data (~5 exp, 7 projects, 15 skills, 3 diplomas); placeholder CV + photo.
+- [x] Realistic dummy data (5 exp, 7 projects, 15 skills, 3 diplomas — done in Phase 3); placeholder photo (`/profile.svg`) + CV (`/cv.pdf`).
 
 ### Phase 6 — Blog
-- [ ] Remove demo posts; adjust schema (language, tags); add 1–2 sample posts; fix RSS metadata.
+- [x] Migrated blog to new Layout/i18n/theme; removed demo posts; `lang`/`tags` schema; 4 bilingual sample posts; EN/FR lists + RSS.
 
 ### Phase 7 — Motion, SEO & polish
 - [ ] Scroll-reveal + micro-interactions; responsive + a11y pass (contrast in both themes).
@@ -152,3 +152,5 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - 2026-07-15 — Phase 2 ✅ — Astro i18n (EN + FR, auto-detect), light/dark theme system (tokens + no-flash toggle), and layout primitives (`Section`, `SectionHeading`, `SeeMoreLink`, `Header`, `Footer`, `Layout`, `LanguageSwitcher`, `ThemeToggle`, `CvButton`). New `/` + `/fr/` home shells + themed `404`. Verified in both languages and themes. Old `about`/`blog` keep the legacy look until their phases.
 - 2026-07-16 — Phase 3 ✅ — Bilingual data model (`src/data/*`: profile, 5 experiences, 7 projects, 15 skills, 3 diplomas, empty certifications) + reusable components (skills with Simple-Icons logos via astro-icon, project cards with conditional repo/live links, experience/education timelines, certification empty-state, social links). Home (EN/FR) now assembles hero intro + Main Skills + Education + Top Experiences ∥ Top Projects. Build + browser verified. Note: this advanced the home; Phase 4 = dedicated pages + hero photo + About aggregation.
 - 2026-07-16 — Phase 4 ✅ — Dedicated pages (EN + FR) via shared components in `src/components/pages/` + thin routes: `/experience`, `/projects`, `/skills`, `/education` (+ Certifications), `/about` (aggregation: About me → Education → Experience → Projects → Skills). Added hero profile photo (placeholder `/profile.svg`). Home/About/index converted to thin routes. Build: 19 pages, 0 errors; verified in browser. Legacy `blog` stays React until Phase 6; unused old `templates/` + `organisms/` React files to be removed in Phase 7.
+- 2026-07-16 — Phase 5 ✅ — dummy data already in place (Phase 3); added placeholder CV (`public/cv.pdf`) + photo (`public/profile.svg`). Phase 6 ✅ — blog migrated off React to the shared Layout (theme-aware, i18n): new `BlogPost` layout with Tailwind Typography prose, `BlogCard` + `BlogListPage`, bilingual routes (`/blog` + `/fr/blog`, per-post `lang`), `lang`/`tags` schema, 4 sample posts (2 EN + 2 FR), EN/FR RSS feeds. Build: 19 pages, 0 errors; verified in browser.
+- 2026-07-16 — Fix — blog language toggle no longer 404s: the `LanguageSwitcher` accepts per-locale alternate URLs (threaded Layout → Header → LanguageSwitcher); a blog post links to its translation (shared `translationKey`, now in the schema) or falls back to that language's blog index. Verified in browser.

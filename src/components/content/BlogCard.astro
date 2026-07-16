@@ -1,0 +1,46 @@
+---
+/**
+ * BlogCard — a post preview: date, title, description, tags, and a read-more link.
+ */
+import type { CollectionEntry } from "astro:content";
+import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+const { post } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const href = localizePath(`/blog/${post.id}`, lang);
+const dateStr = post.data.pubDate.toLocaleDateString(lang === "fr" ? "fr-FR" : "en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<article class="group flex h-full flex-col rounded-xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-lg">
+  <time datetime={post.data.pubDate.toISOString()} class="font-mono text-xs text-muted">{dateStr}</time>
+  <h3 class="mt-2 font-display text-xl font-bold text-heading">
+    <a href={href} class="transition-colors group-hover:text-accent">{post.data.title}</a>
+  </h3>
+  <p class="mt-2 flex-1 leading-relaxed text-muted">{post.data.description}</p>
+
+  {
+    post.data.tags.length > 0 && (
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {post.data.tags.map((tag) => (
+          <li class="rounded-full border border-border px-3 py-1 font-mono text-xs text-muted">{tag}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  <a
+    href={href}
+    class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
+  >
+    {t("blog.readMore")}
+    <span aria-hidden="true">→</span>
+  </a>
+</article>

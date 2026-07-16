@@ -1,20 +1,5 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import BlogPage from '../../components/templates/BlogPage';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+import BlogListPage from "../../components/pages/BlogListPage.astro";
 ---
 
-<!doctype html>
-<html lang="pt-BR">
-	<head>
-		<BaseHead title="Blog - Jucelito Silva" description="Leia meus últimos pensamentos e tutoriais sobre desenvolvimento web e tecnologia." />
-	</head>
-	<body>
-		<BlogPage posts={posts} client:load />
-	</body>
-</html>
+<BlogListPage />
