@@ -1,0 +1,28 @@
+---
+/**
+ * Education page body (shared by EN `/education` and FR `/fr/education`).
+ * Full education list plus the Certifications section (empty state for now).
+ */
+import Layout from "../../layouts/Layout.astro";
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import EducationList from "../content/EducationList.astro";
+import CertificationList from "../content/CertificationList.astro";
+import { siteName } from "../../config/site";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t("nav.education")} — ${siteName}`} description={t("page.education.subtitle")}>
+  <Section>
+    <SectionHeading title={t("nav.education")} subtitle={t("page.education.subtitle")} />
+    <div class="mt-12"><EducationList /></div>
+  </Section>
+
+  <Section tone="alt">
+    <SectionHeading title={t("cert.title")} />
+    <div class="mt-8"><CertificationList /></div>
+  </Section>
+</Layout>

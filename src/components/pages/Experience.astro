@@ -1,0 +1,22 @@
+---
+/**
+ * Experience page body (shared by EN `/experience` and FR `/fr/experience`).
+ * Full list of experiences (no limit).
+ */
+import Layout from "../../layouts/Layout.astro";
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import ExperienceList from "../content/ExperienceList.astro";
+import { siteName } from "../../config/site";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t("nav.experience")} — ${siteName}`} description={t("page.experience.subtitle")}>
+  <Section>
+    <SectionHeading title={t("nav.experience")} subtitle={t("page.experience.subtitle")} />
+    <div class="mt-12"><ExperienceList /></div>
+  </Section>
+</Layout>

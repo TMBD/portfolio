@@ -1,0 +1,22 @@
+---
+/**
+ * Technical Skills page body (shared by EN `/skills` and FR `/fr/skills`).
+ * All skill categories with logos.
+ */
+import Layout from "../../layouts/Layout.astro";
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import SkillsGrid from "../content/SkillsGrid.astro";
+import { siteName } from "../../config/site";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t("nav.skills")} — ${siteName}`} description={t("page.skills.subtitle")}>
+  <Section>
+    <SectionHeading title={t("nav.skills")} subtitle={t("page.skills.subtitle")} />
+    <div class="mt-12"><SkillsGrid /></div>
+  </Section>
+</Layout>

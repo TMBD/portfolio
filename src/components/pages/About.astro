@@ -1,0 +1,64 @@
+---
+/**
+ * About page body (shared by EN `/about` and FR `/fr/about`).
+ * Aggregation: About me → Education → Experience → Projects → Technical Skills,
+ * with alternating section backgrounds.
+ */
+import Layout from "../../layouts/Layout.astro";
+import Section from "../ui/Section.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import EducationList from "../content/EducationList.astro";
+import ExperienceList from "../content/ExperienceList.astro";
+import ProjectGrid from "../content/ProjectGrid.astro";
+import SkillsGrid from "../content/SkillsGrid.astro";
+import SocialLinks from "../content/SocialLinks.astro";
+import { siteName } from "../../config/site";
+import { profile } from "../../data/profile";
+import { getLangFromUrl, useTranslations, pick } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const about = pick(profile.about, lang);
+const role = pick(profile.role, lang);
+const location = pick(profile.location, lang);
+---
+
+<Layout title={`${t("about.title")} — ${siteName}`} description={t("about.subtitle")}>
+  <!-- About me -->
+  <Section>
+    <SectionHeading title={t("about.title")} subtitle={t("about.subtitle")} />
+    <div class="mt-8 max-w-3xl">
+      <p class="text-lg leading-relaxed text-muted">{about}</p>
+      <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-muted">
+        <span>{role}</span>
+        <span aria-hidden="true">·</span>
+        <span>{location}</span>
+      </div>
+      <div class="mt-5"><SocialLinks /></div>
+    </div>
+  </Section>
+
+  <!-- Education -->
+  <Section tone="alt">
+    <SectionHeading title={t("nav.education")} />
+    <div class="mt-10"><EducationList /></div>
+  </Section>
+
+  <!-- Experience -->
+  <Section>
+    <SectionHeading title={t("nav.experience")} />
+    <div class="mt-10"><ExperienceList /></div>
+  </Section>
+
+  <!-- Projects -->
+  <Section tone="alt">
+    <SectionHeading title={t("nav.projects")} />
+    <div class="mt-10"><ProjectGrid /></div>
+  </Section>
+
+  <!-- Technical Skills -->
+  <Section>
+    <SectionHeading title={t("nav.skills")} />
+    <div class="mt-10"><SkillsGrid /></div>
+  </Section>
+</Layout>

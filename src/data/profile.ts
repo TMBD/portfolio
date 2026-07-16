@@ -10,6 +10,7 @@ export const profile: Profile = {
   location: { en: "Paris, France", fr: "Paris, France" },
   email: "contact@thiernodiallo.dev",
   cvUrl: "/cv.pdf",
+  photo: "/profile.svg",
 
   intro: {
     en: "I'm a software engineer who enjoys turning complex problems into simple, reliable, and elegant software. I care deeply about clean architecture, thoughtful user experience, and code that's a pleasure to maintain. Over the years I've worked across the stack — from crafting responsive interfaces to designing resilient back-end services and automating delivery. Curious by nature, I'm always learning and happiest when building things that make a real difference.",

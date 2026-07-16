@@ -25,6 +25,8 @@ export interface Profile {
   location: Localized;
   email: string;
   cvUrl: string;
+  /** Path to the profile photo in /public. */
+  photo: string;
   /** Short 4–6 line intro for the hero. */
   intro: Localized;
   /** Longer "about me" for the About page. */

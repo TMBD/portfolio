@@ -123,8 +123,8 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - [x] Build reusable content components (Experience, Project, Skills + logos, Education, Certification, Social) that render from the data.
 
 ### Phase 4 — Pages
-- [ ] Home (Hero → Education → Top Experiences ∥ Top Projects).
-- [ ] `/experience`, `/projects`, `/skills`, `/education` (+ Certifications), `/about` aggregation.
+- [x] Home (Hero + photo → Education → Top Experiences ∥ Top Projects).
+- [x] `/experience`, `/projects`, `/skills`, `/education` (+ Certifications), `/about` aggregation — EN + FR via shared page components.
 
 ### Phase 5 — Dummy content
 - [ ] Fill data files with realistic dummy data (~5 exp, 7 projects, 15 skills, 3 diplomas); placeholder CV + photo.
@@ -151,3 +151,4 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - 2026-07-15 — Phase 0 ✅ (baseline commit + `customize` branch). Phase 1 ✅ — Astro 5.8.1 → 7.0.9, all deps latest stable, 16 → 0 vulnerabilities, build + dev verified. Only `package.json` / `package-lock.json` changed.
 - 2026-07-15 — Phase 2 ✅ — Astro i18n (EN + FR, auto-detect), light/dark theme system (tokens + no-flash toggle), and layout primitives (`Section`, `SectionHeading`, `SeeMoreLink`, `Header`, `Footer`, `Layout`, `LanguageSwitcher`, `ThemeToggle`, `CvButton`). New `/` + `/fr/` home shells + themed `404`. Verified in both languages and themes. Old `about`/`blog` keep the legacy look until their phases.
 - 2026-07-16 — Phase 3 ✅ — Bilingual data model (`src/data/*`: profile, 5 experiences, 7 projects, 15 skills, 3 diplomas, empty certifications) + reusable components (skills with Simple-Icons logos via astro-icon, project cards with conditional repo/live links, experience/education timelines, certification empty-state, social links). Home (EN/FR) now assembles hero intro + Main Skills + Education + Top Experiences ∥ Top Projects. Build + browser verified. Note: this advanced the home; Phase 4 = dedicated pages + hero photo + About aggregation.
+- 2026-07-16 — Phase 4 ✅ — Dedicated pages (EN + FR) via shared components in `src/components/pages/` + thin routes: `/experience`, `/projects`, `/skills`, `/education` (+ Certifications), `/about` (aggregation: About me → Education → Experience → Projects → Skills). Added hero profile photo (placeholder `/profile.svg`). Home/About/index converted to thin routes. Build: 19 pages, 0 errors; verified in browser. Legacy `blog` stays React until Phase 6; unused old `templates/` + `organisms/` React files to be removed in Phase 7.

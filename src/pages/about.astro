@@ -1,14 +1,5 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import AboutPage from '../components/templates/AboutPage';
+import About from "../components/pages/About.astro";
 ---
 
-<!doctype html>
-<html lang="pt-BR">
-	<head>
-		<BaseHead title="Sobre - Jucelito Silva" description="Conheça mais sobre Jucelito Silva, um desenvolvedor frontend apaixonado com mais de 10 anos de experiência criando experiências digitais incríveis." />
-	</head>
-	<body>
-		<AboutPage client:load />
-	</body>
-</html>
+<About />
