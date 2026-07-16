@@ -14,7 +14,7 @@ const { category } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<div class="rounded-xl border border-border bg-surface p-6 transition-colors">
+<div data-reveal class="rounded-xl border border-border bg-surface p-6 transition-colors">
   <h3 class="font-display text-lg font-bold text-heading">{pick(category.title, lang)}</h3>
   <ul class="mt-4 flex flex-wrap gap-2">
     {category.skills.map((skill) => (

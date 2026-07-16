@@ -20,7 +20,7 @@ const posts = (await getCollection("blog"))
 
 <Layout title={`${t("nav.blog")} — ${siteName}`} description={t("blog.subtitle")}>
   <Section>
-    <SectionHeading title={t("nav.blog")} subtitle={t("blog.subtitle")} />
+    <SectionHeading as="h1" title={t("nav.blog")} subtitle={t("blog.subtitle")} />
     <div class="mt-12">
       {
         posts.length === 0 ? (

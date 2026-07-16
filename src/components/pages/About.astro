@@ -26,7 +26,7 @@ const location = pick(profile.location, lang);
 <Layout title={`${t("about.title")} — ${siteName}`} description={t("about.subtitle")}>
   <!-- About me -->
   <Section>
-    <SectionHeading title={t("about.title")} subtitle={t("about.subtitle")} />
+    <SectionHeading as="h1" title={t("about.title")} subtitle={t("about.subtitle")} />
     <div class="mt-8 max-w-3xl">
       <p class="text-lg leading-relaxed text-muted">{about}</p>
       <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-muted">

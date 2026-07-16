@@ -35,6 +35,28 @@
   color-scheme: dark;
 }
 
+/* Visible keyboard focus for all interactive elements (accessibility). */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Scroll-reveal: elements marked [data-reveal] fade/slide in when scrolled into
+   view. Gated on `.js` so no-JS users always see content, and disabled for
+   visitors who prefer reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @theme {
   /* Typography (generates font-sans / font-display / font-mono). */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;

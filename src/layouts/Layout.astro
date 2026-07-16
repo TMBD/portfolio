@@ -7,8 +7,9 @@
  *  - the Header, a <slot> for page content, and the Footer.
  */
 import "../styles/global.css";
-import type { Lang } from "../i18n/ui";
-import { getLangFromUrl } from "../i18n/utils";
+import { languages, type Lang } from "../i18n/ui";
+import { getLangFromUrl, getAlternatePath } from "../i18n/utils";
+import { siteName } from "../config/site";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 
@@ -22,10 +23,17 @@ interface Props {
 }
 
 const lang = getLangFromUrl(Astro.url);
-const { title, description = "", image = "/cover.png", localeAlternates } = Astro.props;
+const { title, description = "", image = "/og.svg", localeAlternates } = Astro.props;
 const canonicalURL = Astro.site
   ? new URL(Astro.url.pathname, Astro.site)
   : Astro.url;
+
+// Localized alternates for hreflang tags (per-page override wins, else map URL).
+const hreflangs = (Object.keys(languages) as Lang[]).map((l) => ({
+  lang: l,
+  href: localeAlternates?.[l] ?? getAlternatePath(Astro.url.pathname, l),
+}));
+const rssHref = lang === "fr" ? "/fr/rss.xml" : "/rss.xml";
 ---
 
 <!doctype html>
@@ -38,16 +46,30 @@ const canonicalURL = Astro.site
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- RSS auto-discovery -->
+    <link rel="alternate" type="application/rss+xml" title={`${siteName} — Blog`} href={rssHref} />
+
+    <!-- hreflang alternates for bilingual SEO -->
+    {hreflangs.map((h) => <link rel="alternate" hreflang={h.lang} href={h.href} />)}
+
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
 
-    <!-- Open Graph / Twitter -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={lang === "fr" ? "fr_FR" : "en_US"} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, canonicalURL)} />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, canonicalURL)} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,6 +82,8 @@ const canonicalURL = Astro.site
     <!-- No-flash theme: set the class BEFORE first paint to avoid a flash. -->
     <script is:inline>
       (function () {
+        // Mark JS available (gates the scroll-reveal so no-JS users see content).
+        document.documentElement.classList.add("js");
         try {
           var stored = localStorage.getItem("theme");
           var theme =
@@ -103,5 +127,26 @@ const canonicalURL = Astro.site
       <slot />
     </main>
     <Footer />
+
+    <script>
+      // Scroll-reveal: reveal [data-reveal] elements as they enter the viewport.
+      const els = document.querySelectorAll("[data-reveal]");
+      if (els.length && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries, obs) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+              }
+            }
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.08 },
+        );
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add("is-visible"));
+      }
+    </script>
   </body>
 </html>

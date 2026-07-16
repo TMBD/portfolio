@@ -133,8 +133,8 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - [x] Migrated blog to new Layout/i18n/theme; removed demo posts; `lang`/`tags` schema; 4 bilingual sample posts; EN/FR lists + RSS.
 
 ### Phase 7 — Motion, SEO & polish
-- [ ] Scroll-reveal + micro-interactions; responsive + a11y pass (contrast in both themes).
-- [ ] Per-page meta/OG, sitemap, favicon; remove unused assets.
+- [x] Scroll-reveal + micro-interactions; a11y (focus-visible, one h1 per page, reduced-motion safe); responsive verified.
+- [x] Per-page OG/Twitter + hreflang + RSS discovery; branded favicon + OG image; removed all legacy files/assets.
 
 ### Phase 8 — Deploy
 - [ ] Push fork; connect Cloudflare/Netlify/Vercel (free); custom domain + DNS; set `site`.
@@ -154,3 +154,4 @@ All content lives **once** in typed data files and is rendered by reusable compo
 - 2026-07-16 — Phase 4 ✅ — Dedicated pages (EN + FR) via shared components in `src/components/pages/` + thin routes: `/experience`, `/projects`, `/skills`, `/education` (+ Certifications), `/about` (aggregation: About me → Education → Experience → Projects → Skills). Added hero profile photo (placeholder `/profile.svg`). Home/About/index converted to thin routes. Build: 19 pages, 0 errors; verified in browser. Legacy `blog` stays React until Phase 6; unused old `templates/` + `organisms/` React files to be removed in Phase 7.
 - 2026-07-16 — Phase 5 ✅ — dummy data already in place (Phase 3); added placeholder CV (`public/cv.pdf`) + photo (`public/profile.svg`). Phase 6 ✅ — blog migrated off React to the shared Layout (theme-aware, i18n): new `BlogPost` layout with Tailwind Typography prose, `BlogCard` + `BlogListPage`, bilingual routes (`/blog` + `/fr/blog`, per-post `lang`), `lang`/`tags` schema, 4 sample posts (2 EN + 2 FR), EN/FR RSS feeds. Build: 19 pages, 0 errors; verified in browser.
 - 2026-07-16 — Fix — blog language toggle no longer 404s: the `LanguageSwitcher` accepts per-locale alternate URLs (threaded Layout → Header → LanguageSwitcher); a blog post links to its translation (shared `translationKey`, now in the schema) or falls back to that language's blog index. Verified in browser.
+- 2026-07-16 — Phase 7 ✅ — Polish: scroll-reveal (IntersectionObserver, `.js`-gated, reduced-motion-safe; hero excluded so it stays instant) + focus-visible rings + one h1 per page. SEO: OG/Twitter tags, `og:site_name`/`locale`/`url`, hreflang alternates, RSS auto-discovery. Branded `favicon.svg` + `og.svg`. Removed all unused legacy React files (`templates/`, `organisms/`, `molecules/`, `atoms/`, `BaseHead`, `FormattedDate`, `consts.ts`) + template images. Build: 19 pages, 0 errors; verified in browser.

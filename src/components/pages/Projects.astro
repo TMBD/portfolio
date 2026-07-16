@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 
 <Layout title={`${t("nav.projects")} — ${siteName}`} description={t("page.projects.subtitle")}>
   <Section>
-    <SectionHeading title={t("nav.projects")} subtitle={t("page.projects.subtitle")} />
+    <SectionHeading as="h1" title={t("nav.projects")} subtitle={t("page.projects.subtitle")} />
     <div class="mt-12"><ProjectGrid /></div>
   </Section>
 </Layout>

@@ -8,6 +8,8 @@ interface Props {
   eyebrow?: string;
   subtitle?: string;
   align?: "left" | "center";
+  /** Heading level — use "h1" for the main heading of a dedicated page. */
+  as?: "h1" | "h2";
   class?: string;
 }
 
@@ -16,13 +18,14 @@ const {
   eyebrow,
   subtitle,
   align = "left",
+  as: Heading = "h2",
   class: className = "",
 } = Astro.props;
 
 const alignment = align === "center" ? "mx-auto text-center" : "text-left";
 ---
 
-<div class:list={["max-w-2xl", alignment, className]}>
+<div data-reveal class:list={["max-w-2xl", alignment, className]}>
   {
     eyebrow && (
       <p class="mb-2 font-mono text-sm font-medium uppercase tracking-widest text-accent">
@@ -30,8 +33,8 @@ const alignment = align === "center" ? "mx-auto text-center" : "text-left";
       </p>
     )
   }
-  <h2 class="font-display text-3xl font-bold tracking-tight text-heading sm:text-4xl">
+  <Heading class="font-display text-3xl font-bold tracking-tight text-heading sm:text-4xl">
     {title}
-  </h2>
+  </Heading>
   {subtitle && <p class="mt-4 text-lg text-muted">{subtitle}</p>}
 </div>
