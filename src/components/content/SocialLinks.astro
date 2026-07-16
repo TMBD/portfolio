@@ -1,7 +1,8 @@
 ---
 /**
  * SocialLinks — the profile's social/contact links as icon buttons.
- * Brand logos come from Simple Icons; "email" uses a generic envelope.
+ * LinkedIn shows its full-colour logo; GitHub adapts to the theme (its brand is
+ * monochrome — dark on light, white on dark); email uses the site accent.
  */
 import { Icon } from "astro-icon/components";
 import { profile } from "../../data/profile";
@@ -23,15 +24,17 @@ const { class: className = "" } = Astro.props;
           title={social.label}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
-          class="text-muted transition-colors hover:text-accent"
+          class="inline-flex rounded-md p-1 transition-transform hover:scale-110"
         >
-          {social.icon === "email" ? (
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          {social.icon === "linkedin" ? (
+            <Icon name="logos:linkedin-icon" class="h-5 w-5" aria-hidden="true" />
+          ) : social.icon === "email" ? (
+            <svg class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1z" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l9 7 9-7" />
             </svg>
           ) : (
-            <Icon name={`simple-icons:${social.icon}`} class="h-5 w-5" aria-hidden="true" />
+            <Icon name={`simple-icons:${social.icon}`} class="h-5 w-5 text-[#181717] dark:text-white" aria-hidden="true" />
           )}
         </a>
       );

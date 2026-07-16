@@ -1,13 +1,14 @@
 {
-  "name": "dev-personal-theme",
-  "description": "A minimal and modern personal theme built with Astro and Tailwind CSS. Perfect for personal portfolios, blogs, and simple websites.",
+  "name": "thierno-portfolio",
+  "description": "Personal portfolio and blog of Thierno DIALLO, Software Engineer — built with Astro, Tailwind CSS, and TypeScript.",
   "author": {
-    "name": "Renato Khael",
-    "email": "renatokhael@gmail.com",
-    "url": "https://renatokhael.com"
+    "name": "Thierno DIALLO",
+    "email": "thierno.dev@gmail.com",
+    "url": "https://thierno.dev"
   },
+  "homepage": "https://thierno.dev",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -19,6 +20,7 @@
     "@astrojs/react": "^6.0.1",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
+    "@iconify-json/logos": "^1.2.11",
     "@iconify-json/simple-icons": "^1.2.90",
     "@tailwindcss/vite": "^4.3.2",
     "@types/react": "^19.2.17",

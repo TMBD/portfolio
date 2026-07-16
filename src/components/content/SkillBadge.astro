@@ -13,6 +13,6 @@ const { skill } = Astro.props;
 ---
 
 <span class="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text transition-colors hover:border-accent">
-  <Icon name={`simple-icons:${skill.icon}`} class="h-4 w-4 text-muted" aria-hidden="true" />
+  <Icon name={skill.icon} class="h-4 w-4" aria-hidden="true" />
   {skill.name}
 </span>

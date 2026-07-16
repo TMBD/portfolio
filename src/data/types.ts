@@ -63,7 +63,7 @@ export interface Project {
 /** A single technical skill with its Simple Icons logo slug. */
 export interface Skill {
   name: string;
-  /** Simple Icons slug (rendered via astro-icon), e.g. "typescript". */
+  /** Iconify icon name (rendered via astro-icon), e.g. "logos:mongodb-icon". */
   icon: string;
   /** When true, appears in the hero "Main Technical Skills" preview. */
   main?: boolean;
