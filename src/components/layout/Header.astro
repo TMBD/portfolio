@@ -82,8 +82,13 @@ const links = navItems.map((item) => {
     </div>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden border-t border-border px-6 py-4 lg:hidden">
+  <!-- Mobile menu: absolutely positioned so it overlays the page (never
+       reflows content, even at scroll-top) and animates in/out via
+       opacity/translate/visibility utilities. -->
+  <div
+    id="mobile-menu"
+    class="invisible pointer-events-none absolute inset-x-0 top-full -translate-y-2 border-t border-border bg-bg/95 px-6 py-4 opacity-0 backdrop-blur-lg lg:hidden motion-safe:transition-all motion-safe:duration-300 motion-safe:ease-out"
+  >
     <nav class="flex flex-col gap-3" aria-label="Mobile">
       {
         links.map((l) => (
@@ -109,11 +114,35 @@ const links = navItems.map((item) => {
 </header>
 
 <script>
-  // Toggle the mobile menu (MPA navigation re-runs this on each page load).
+  // Mobile menu (MPA navigation re-runs this on each page load). The menu
+  // overlays the page and animates through opacity/translate/visibility
+  // utilities, so opening it toggles those closed-state classes rather than
+  // `display`.
   const btn = document.getElementById("menu-toggle");
   const menu = document.getElementById("mobile-menu");
-  btn?.addEventListener("click", () => {
-    const isOpen = menu?.classList.toggle("hidden") === false;
-    btn.setAttribute("aria-expanded", String(isOpen));
+  const closedClasses = ["invisible", "pointer-events-none", "opacity-0", "-translate-y-2"];
+
+  const setMenu = (open: boolean) => {
+    if (!btn || !menu) return;
+    closedClasses.forEach((cls) => menu.classList.toggle(cls, !open));
+    btn.setAttribute("aria-expanded", String(open));
+  };
+
+  // Hamburger toggles the menu; stop the event so the outside-click handler
+  // below doesn't immediately re-close it in the same tick.
+  btn?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setMenu(btn.getAttribute("aria-expanded") !== "true");
+  });
+
+  // Dismiss the menu when clicking outside it, or when pressing Escape.
+  document.addEventListener("click", (event) => {
+    if (btn?.getAttribute("aria-expanded") !== "true") return;
+    const target = event.target as Node;
+    if (!menu?.contains(target) && !btn?.contains(target)) setMenu(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenu(false);
   });
 </script>
