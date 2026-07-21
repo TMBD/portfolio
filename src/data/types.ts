@@ -49,7 +49,7 @@ export interface Experience {
 /** A project. Repo/live buttons render only when their URL is present. */
 export interface Project {
   id: string;
-  name: string;
+  name: Localized;
   description: Localized;
   /** Libraries / technologies used to build it. */
   technologies: string[];

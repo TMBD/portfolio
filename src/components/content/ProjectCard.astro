@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 ---
 
 <article data-reveal class="group flex h-full flex-col rounded-xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-lg">
-  <h3 class="font-display text-xl font-bold text-heading">{project.name}</h3>
+  <h3 class="font-display text-xl font-bold text-heading">{pick(project.name, lang)}</h3>
   <p class="mt-2 flex-1 leading-relaxed text-muted">{pick(project.description, lang)}</p>
 
   <ul class="mt-4 flex flex-wrap gap-2">
