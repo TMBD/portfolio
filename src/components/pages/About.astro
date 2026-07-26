@@ -12,6 +12,7 @@ import ExperienceList from "../content/ExperienceList.astro";
 import ProjectGrid from "../content/ProjectGrid.astro";
 import SkillsGrid from "../content/SkillsGrid.astro";
 import SocialLinks from "../content/SocialLinks.astro";
+import Markdown from "../ui/Markdown.astro";
 import { siteName } from "../../config/site";
 import { profile } from "../../data/profile";
 import { getLangFromUrl, useTranslations, pick } from "../../i18n/utils";
@@ -28,7 +29,7 @@ const location = pick(profile.location, lang);
   <Section>
     <SectionHeading as="h1" title={t("about.title")} subtitle={t("about.subtitle")} />
     <div class="mt-8 max-w-3xl">
-      <p class="text-lg leading-relaxed text-muted">{about}</p>
+      <Markdown text={about} class="text-lg" />
       <div class="mt-6 flex flex-wrap items-center gap-3 text-sm text-muted">
         <span>{role}</span>
         <span aria-hidden="true">·</span>
