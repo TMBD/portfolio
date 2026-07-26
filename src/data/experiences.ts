@@ -4,6 +4,19 @@ import { md } from "./md";
 /**
  * Work experience — newest first. `featured` entries appear in the home
  * "Top Experiences" preview.
+ *
+ * Markdown quick reference for every `md` description:
+ * - Paragraphs: separate them with a blank line; a single wrapped newline is a space.
+ * - Bold: `**text**`; italic: `*text*`; bold italic: `***text***`.
+ * - Inline code: `\`code\`` (escape both backticks because `md` is a template).
+ * - Link: `[label](https://example.com)`; bare URL: `<https://example.com>`.
+ * - Bullets: `- item`; numbered list: `1. item`.
+ *
+ * To render Markdown punctuation literally, Markdown needs a leading backslash.
+ * Because `md` uses a cooked TypeScript template, write that backslash twice:
+ * `\\*literal asterisks\\*`, `\\[not a link\\]`, or `\\# not a heading`.
+ * A visible backtick needs three backslashes immediately before it in this
+ * source; a visible backslash needs four.
  */
 export const experiences: Experience[] = [
   {
