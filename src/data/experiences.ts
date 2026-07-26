@@ -8,6 +8,7 @@ import { md } from "./md";
 export const experiences: Experience[] = [
   {
     id: "ai-agent-governance-developer-enablement",
+    featured: true,
     role: {
       en: "AI Agent Governance and Developer Enablement",
       fr: "Gouvernance des agents IA et accompagnement des développeurs",
@@ -217,7 +218,6 @@ export const experiences: Experience[] = [
   },
   {
     id: "oauth-2-token-exchange",
-    featured: true,
     role: {
       en: "OAuth 2.0 Token Exchange",
       fr: "Échange de jetons OAuth 2.0",
