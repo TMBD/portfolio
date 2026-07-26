@@ -173,6 +173,45 @@
   background-size: 20px 20px;
 }
 
+/* ── Markdown / prose content ──────────────────────────────────────────────
+   Descriptions authored in Markdown render inside `.prose` (typography plugin).
+   Mapping the prose color variables to the site's theme tokens makes the same
+   markup correct in both light and dark mode, so no `prose-invert` is needed. */
+.prose-portfolio {
+  --tw-prose-body: var(--muted);
+  --tw-prose-headings: var(--heading);
+  --tw-prose-lead: var(--muted);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--heading);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--accent);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--text);
+  --tw-prose-quote-borders: var(--accent);
+  --tw-prose-captions: var(--muted);
+  --tw-prose-code: var(--accent);
+  --tw-prose-pre-code: var(--text);
+  --tw-prose-pre-bg: var(--surface-alt);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+/* Drop the default backtick pseudo-elements around inline code and give it a
+   subtle, theme-aware chip style. */
+.prose-portfolio :where(code):not(:where([class~="not-prose"] *))::before,
+.prose-portfolio :where(code):not(:where([class~="not-prose"] *))::after {
+  content: none;
+}
+.prose-portfolio :where(code):not(:where([class~="not-prose"] *)) {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.85em;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  padding: 0.1em 0.4em;
+}
+
 /* Custom animations */
 @keyframes spin-slow {
   from {

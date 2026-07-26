@@ -5,6 +5,7 @@
  */
 import type { Experience } from "../../data/types";
 import { getLangFromUrl, pick } from "../../i18n/utils";
+import Markdown from "../ui/Markdown.astro";
 
 interface Props {
   experience: Experience;
@@ -20,5 +21,5 @@ const lang = getLangFromUrl(Astro.url);
     <span class="shrink-0 font-mono text-sm text-accent">{pick(experience.period, lang)}</span>
   </div>
   <p class="text-lg text-muted">{experience.organization}</p>
-  <p class="mt-2 leading-relaxed text-muted">{pick(experience.description, lang)}</p>
+  <Markdown text={pick(experience.description, lang)} class="mt-2" />
 </article>

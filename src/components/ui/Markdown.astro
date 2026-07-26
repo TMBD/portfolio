@@ -1,0 +1,32 @@
+---
+/**
+ * Markdown — renders a trusted, first-party Markdown string as themed HTML.
+ *
+ * Descriptions in `src/data/*` are authored in Markdown (often via the `md`
+ * tagged-template for clean multi-line source). This component converts them to
+ * HTML at build time and styles them with the typography plugin — justified and
+ * mapped to the site's theme tokens so the same markup looks right in both light
+ * and dark mode. The content is authored by us (never user input), so rendering
+ * it with `set:html` is safe here.
+ */
+import { marked } from "marked";
+
+interface Props {
+  /** Markdown source to render. */
+  text: string;
+  /** Extra classes for the wrapper (e.g. spacing). */
+  class?: string;
+}
+
+const { text, class: className } = Astro.props;
+
+const html = marked.parse(text, { async: false }) as string;
+---
+
+<div
+  class:list={[
+    "prose prose-portfolio max-w-none text-justify hyphens-auto",
+    className,
+  ]}
+  set:html={html}
+/>
