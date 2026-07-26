@@ -6,10 +6,12 @@
  * tagged-template for clean multi-line source). This component converts them to
  * HTML at build time and styles them with the typography plugin — justified and
  * mapped to the site's theme tokens so the same markup looks right in both light
- * and dark mode. The content is authored by us (never user input), so rendering
- * it with `set:html` is safe here.
+ * and dark mode. External HTTP(S) links open safely in a new tab while internal
+ * links keep normal navigation. The content is authored by us (never user input),
+ * so rendering it with `set:html` is safe here.
  */
-import { marked } from "marked";
+import { Marked, Renderer, type Tokens } from "marked";
+import { isExternalHttpHref } from "../../plugins/externalLinks.mjs";
 
 interface Props {
   /** Markdown source to render. */
@@ -20,7 +22,22 @@ interface Props {
 
 const { text, class: className } = Astro.props;
 
-const html = marked.parse(text, { async: false }) as string;
+const siteOrigin = Astro.site?.origin ?? Astro.url.origin;
+
+class ExternalLinkRenderer extends Renderer {
+  override link(token: Tokens.Link): string {
+    const html = super.link(token);
+    return isExternalHttpHref(token.href, siteOrigin)
+      ? html.replace(
+          "<a ",
+          '<a target="_blank" rel="noopener noreferrer" ',
+        )
+      : html;
+  }
+}
+
+const markdown = new Marked({ renderer: new ExternalLinkRenderer() });
+const html = markdown.parse(text, { async: false });
 ---
 
 <div
