@@ -198,11 +198,11 @@
 
 /* Drop the default backtick pseudo-elements around inline code and give it a
    subtle, theme-aware chip style. */
-.prose-portfolio :where(code):not(:where([class~="not-prose"] *))::before,
-.prose-portfolio :where(code):not(:where([class~="not-prose"] *))::after {
+.prose-portfolio :where(:not(pre) > code):not(:where([class~="not-prose"] *))::before,
+.prose-portfolio :where(:not(pre) > code):not(:where([class~="not-prose"] *))::after {
   content: none;
 }
-.prose-portfolio :where(code):not(:where([class~="not-prose"] *)) {
+.prose-portfolio :where(:not(pre) > code):not(:where([class~="not-prose"] *)) {
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 0.85em;
