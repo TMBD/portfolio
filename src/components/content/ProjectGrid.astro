@@ -1,8 +1,8 @@
 ---
 /**
  * ProjectGrid — renders projects from the data. Pass `featuredOnly` / `limit`
- * for the home "Top Projects" preview; `columns={1}` for narrow (half-width)
- * layouts like the home side-by-side.
+ * for the home Projects preview. Projects stack by default; pass `columns={2}`
+ * only when a compact two-column layout is appropriate.
  */
 import { projects } from "../../data/projects";
 import ProjectCard from "./ProjectCard.astro";
@@ -12,7 +12,7 @@ interface Props {
   featuredOnly?: boolean;
   columns?: 1 | 2;
 }
-const { limit, featuredOnly = false, columns = 2 } = Astro.props;
+const { limit, featuredOnly = false, columns = 1 } = Astro.props;
 
 let items = featuredOnly ? projects.filter((p) => p.featured) : projects;
 if (typeof limit === "number") items = items.slice(0, limit);
