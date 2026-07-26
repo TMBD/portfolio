@@ -20,11 +20,11 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        Since January 2026, as a Software Engineer with Senior Developer
-        seniority at CGM, I have led the creation of a shared framework for
-        adopting **AI coding agents** across the team. As usage grew, we
-        identified inconsistent quality, duplicated effort, unreliable outputs,
-        and the absence of common standards.
+        As **AI coding agents** became part of our daily work at CGM, their rapid
+        adoption exposed inconsistent quality, duplicated effort, unreliable
+        outputs, and the absence of common standards. In my role as a Software
+        Engineer with Senior Developer seniority, I responded by leading the
+        creation of a shared framework for the team.
 
         I authored a governance model covering ownership, contribution and review
         lifecycles, independent testing, preview rollouts, composability,
@@ -46,11 +46,11 @@ export const experiences: Experience[] = [
         evolve the framework based on practical feedback.
       `,
       fr: md`
-        Depuis janvier 2026, dans mon rôle de Software Engineer senior chez CGM,
-        je pilote la création d’un cadre commun pour l’adoption des **agents IA de
-        développement** au sein de l’équipe. À mesure que leur usage s’est
-        développé, nous avons constaté une qualité inégale, des efforts dupliqués,
-        des résultats peu fiables et l’absence de standards communs.
+        L’arrivée des **agents IA de développement** dans notre quotidien chez CGM
+        a rapidement fait apparaître une qualité inégale, des efforts dupliqués,
+        des résultats peu fiables et l’absence de standards communs. Dans mon rôle
+        de Software Engineer senior, j’ai répondu à ces enjeux en pilotant la
+        création d’un cadre partagé pour l’équipe.
 
         J’ai défini un modèle de gouvernance couvrant les responsabilités, les
         cycles de contribution et de revue, les tests indépendants, les phases de
@@ -90,14 +90,15 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From March to July 2026, as a Software Engineer with Senior Developer
-        seniority at CGM, I designed and implemented the end-to-end integration of
-        an enterprise identity provider into a multi-tenant healthcare SaaS
-        platform used in France and Italy.
+        Company-wide **Single Sign-On** was the next step for a multi-tenant
+        healthcare SaaS platform used in France and Italy. As a Software Engineer
+        with Senior Developer seniority at CGM, I designed and implemented the
+        enterprise identity-provider integration end to end.
 
-        The goal was to provide company-wide **Single Sign-On** while keeping
-        roles, permissions, and organizational access under the platform’s control
-        and preserving the existing username-and-password login.
+        The key architectural boundary was to delegate authentication while
+        keeping roles, permissions, and organizational access under the
+        platform’s control, without removing the existing username-and-password
+        login.
 
         I owned the architecture, stakeholder coordination, Java/Quarkus
         implementation, security model, and technical documentation. The
@@ -115,15 +116,17 @@ export const experiences: Experience[] = [
         internal authorization boundaries.
       `,
       fr: md`
-        De mars à juillet 2026, dans mon rôle de Software Engineer senior chez
-        CGM, j’ai conçu et implémenté de bout en bout l’intégration d’un
-        fournisseur d’identité d’entreprise à une plateforme SaaS de santé
-        multi-tenant utilisée en France et en Italie.
+        L’**authentification unique** à l’échelle du groupe représentait l’étape
+        suivante pour une plateforme SaaS de santé multi-tenant utilisée en France
+        et en Italie. Dans mon rôle de Software Engineer senior chez CGM, j’ai
+        conçu et implémenté de bout en bout l’intégration d’un fournisseur
+        d’identité d’entreprise.
 
-        L’objectif était de proposer une **authentification unique** à l’échelle
-        du groupe, tout en conservant la gestion des rôles, des autorisations et
-        des périmètres organisationnels au sein de la plateforme, ainsi que le
-        mode de connexion existant par identifiant et mot de passe.
+        La frontière architecturale essentielle consistait à déléguer
+        l’authentification tout en conservant la gestion des rôles, des
+        autorisations et des périmètres organisationnels au sein de la plateforme,
+        sans supprimer le mode de connexion existant par identifiant et mot de
+        passe.
 
         J’ai pris en charge l’architecture, la coordination avec les parties
         prenantes, l’implémentation Java/Quarkus, le modèle de sécurité et la
@@ -159,18 +162,17 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From January to March 2026, as a Software Engineer with Senior Developer
-        seniority at CGM, I designed and implemented a centralized
-        configuration-resolution system for third-party integrations in a
-        multi-tenant healthcare SaaS platform.
+        Third-party integrations did not all use the same connection settings:
+        endpoints varied by deployment environment and user profile, while the
+        relevant configuration was scattered across files and application code.
+        As a Software Engineer with Senior Developer seniority at CGM, I took
+        ownership of replacing that fragmented model with a centralized
+        configuration-resolution system.
 
-        Each integration could expose different connection settings depending on
-        the deployment environment and the type of user. Before this system, those
-        settings were scattered across configuration files and application code.
-        Routing a test or pilot user to a non-production endpoint while real
-        healthcare professionals continued using the production endpoint often
-        required a code change and redeployment, with no simple way to create an
-        isolated exception for one user.
+        Routing a test or pilot user to a non-production endpoint while healthcare
+        professionals continued using the production endpoint often required a
+        code change and redeployment, with no simple way to create an isolated
+        exception for one user.
 
         I replaced this with a **three-tier resolution model** evaluated for each
         user and integration: an explicit user override takes priority, an
@@ -186,19 +188,19 @@ export const experiences: Experience[] = [
         production.
       `,
       fr: md`
-        De janvier à mars 2026, dans mon rôle de Software Engineer senior chez
-        CGM, j’ai conçu et implémenté un système centralisé de résolution des
-        configurations pour les intégrations tierces d’une plateforme SaaS de
-        santé multi-tenant.
+        Les intégrations tierces n’utilisaient pas toutes les mêmes paramètres de
+        connexion : les points d’accès variaient selon l’environnement de
+        déploiement et le profil de l’utilisateur, tandis que la configuration
+        correspondante était dispersée entre plusieurs fichiers et le code
+        applicatif. Dans mon rôle de Software Engineer senior chez CGM, j’ai pris
+        en charge le remplacement de ce modèle fragmenté par un système centralisé
+        de résolution des configurations.
 
-        Chaque intégration pouvait nécessiter des paramètres de connexion
-        différents selon l’environnement de déploiement et le profil de
-        l’utilisateur. Avant ce système, ces paramètres étaient dispersés entre les
-        fichiers de configuration et le code applicatif. Orienter un utilisateur de
-        test ou pilote vers un point d’accès hors production, tout en maintenant
-        les professionnels de santé sur le point d’accès de production, nécessitait
-        souvent une modification du code et un redéploiement, sans moyen simple de
-        définir une exception pour un seul utilisateur.
+        Orienter un utilisateur de test ou pilote vers un point d’accès hors
+        production, tout en maintenant les professionnels de santé sur le point
+        d’accès de production, nécessitait souvent une modification du code et un
+        redéploiement, sans moyen simple de définir une exception pour un seul
+        utilisateur.
 
         J’ai remplacé ce fonctionnement par un **modèle de résolution à trois
         niveaux**, évalué pour chaque utilisateur et chaque intégration : une
@@ -229,14 +231,14 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From September 2024 to February 2025, as a Software Engineer with Senior
-        Developer seniority at CGM, I designed and implemented an OAuth 2.0 Token
-        Exchange capability for a multi-tenant healthcare SaaS platform.
-
         CGM products in multiple countries needed to reuse selected platform
         services on behalf of already authenticated users without requiring
         another sign-in or introducing multiple external token formats into the
         platform.
+
+        To create that secure bridge, I designed and implemented an OAuth 2.0
+        Token Exchange capability end to end as a Software Engineer with Senior
+        Developer seniority at CGM.
 
         I chose \`RFC 8693\` and owned the full lifecycle, from protocol
         architecture and security design to the Java/Quarkus implementation,
@@ -252,14 +254,14 @@ export const experiences: Experience[] = [
         boundary for cross-product service access.
       `,
       fr: md`
-        De septembre 2024 à février 2025, dans mon rôle de Software Engineer
-        senior chez CGM, j’ai conçu et implémenté un mécanisme d’échange de jetons
-        OAuth 2.0 pour une plateforme SaaS de santé multi-tenant.
-
         Des produits CGM utilisés dans plusieurs pays devaient réutiliser certains
         services de la plateforme au nom d’utilisateurs déjà authentifiés, sans
         leur imposer une nouvelle connexion ni introduire plusieurs formats de
         jetons externes dans la plateforme.
+
+        Pour créer ce pont sécurisé, j’ai conçu et implémenté de bout en bout un
+        mécanisme d’échange de jetons OAuth 2.0 dans mon rôle de Software Engineer
+        senior chez CGM.
 
         J’ai retenu la \`RFC 8693\` et pris en charge l’ensemble du cycle de
         réalisation, de l’architecture du protocole et du modèle de sécurité à
@@ -290,15 +292,14 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From October 2023 to March 2024, as an Intermediate Software Engineer at
-        CGM, I led the initial technical investigation and working **proof of
-        concept** for integrating CPS and Carte Vitale smart-card readers with
-        France’s DMP shared medical record system.
+        French healthcare smart cards and the DMP introduced an entirely new
+        integration surface for the platform: physical readers, workstation-local
+        software, real-time card events, regulated transactions, and unfamiliar
+        healthcare protocols all had to work together.
 
-        The healthcare platform previously had no way to interact with physical
-        card readers or national health-record services, and the integration
-        combined workstation-local software, real-time card events, regulated
-        transactions, and unfamiliar healthcare protocols.
+        As an Intermediate Software Engineer at CGM, I led the initial technical
+        investigation and built a working **proof of concept** for CPS and Carte
+        Vitale readers and France’s DMP shared medical record system.
 
         I mapped and tested the end-to-end ecosystem, including reader sessions,
         practitioner and patient card access, asynchronous insertion and removal
@@ -315,16 +316,16 @@ export const experiences: Experience[] = [
         by doctors.
       `,
       fr: md`
-        D’octobre 2023 à mars 2024, alors Software Engineer de niveau intermédiaire
-        chez CGM, j’ai mené l’investigation technique initiale et réalisé une
-        **preuve de concept** fonctionnelle pour intégrer des lecteurs de cartes
-        CPS et Carte Vitale au DMP, le dossier médical partagé français.
+        Les cartes de santé françaises et le DMP ouvraient un champ d’intégration
+        entièrement nouveau pour la plateforme : lecteurs physiques, logiciel
+        exécuté sur le poste de travail, événements de cartes en temps réel,
+        transactions réglementées et protocoles de santé encore inconnus de
+        l’équipe devaient fonctionner ensemble.
 
-        La plateforme de santé ne disposait auparavant d’aucun moyen d’interagir
-        avec des lecteurs de cartes physiques ou les services nationaux associés.
-        Cette intégration combinait un logiciel exécuté sur le poste de travail,
-        des événements de cartes en temps réel, des transactions réglementées et
-        des protocoles de santé encore inconnus de l’équipe.
+        Alors Software Engineer de niveau intermédiaire chez CGM, j’ai mené
+        l’investigation technique initiale et réalisé une **preuve de concept**
+        fonctionnelle autour des lecteurs CPS et Carte Vitale et du DMP, le
+        dossier médical partagé français.
 
         J’ai cartographié et testé l’écosystème de bout en bout : sessions des
         lecteurs, accès aux cartes des professionnels et des patients, détection
@@ -356,12 +357,11 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From June to September 2023, as an Intermediate Software Engineer at CGM,
-        I helped investigate and implement a **classification system** for a
-        multi-country healthcare platform. The platform needed to vary services,
-        interface components, and business behavior according to dimensions such
-        as country, region, practitioner type, and specialization without
-        spreading conditional branches throughout the codebase.
+        A single healthcare codebase had to vary services, interface components,
+        and business behavior by country, region, practitioner type, and
+        specialization without becoming a maze of conditional branches. As an
+        Intermediate Software Engineer at CGM, I helped investigate and implement
+        the **classification system** designed to solve that problem.
 
         A colleague and I led the initial technology spike. I evaluated \`Apache
         AGE\` against the previously proposed \`Neo4j\` solution, reproducing the
@@ -381,13 +381,12 @@ export const experiences: Experience[] = [
         while keeping variation logic isolated and maintainable.
       `,
       fr: md`
-        De juin à septembre 2023, alors Software Engineer de niveau intermédiaire
-        chez CGM, j’ai contribué à l’étude et à la mise en œuvre d’un **système de
-        classification** pour une plateforme de santé déployée dans plusieurs pays.
-        La plateforme devait adapter ses services, ses composants d’interface et
-        ses règles métier selon des dimensions telles que le pays, la région, le
-        type de praticien et la spécialité, sans multiplier les conditions dans le
-        code.
+        Un même code source devait adapter les services, les composants
+        d’interface et les règles métier de la plateforme selon le pays, la
+        région, le type de praticien et la spécialité, sans devenir un
+        enchevêtrement de conditions. Alors Software Engineer de niveau
+        intermédiaire chez CGM, j’ai contribué à l’étude et à la mise en œuvre du
+        **système de classification** conçu pour répondre à ce besoin.
 
         Avec un collègue, j’ai mené l’étude technique initiale. J’ai évalué \`Apache
         AGE\` face à la solution \`Neo4j\` précédemment envisagée, en reproduisant
@@ -424,12 +423,11 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From March to July 2021, during my final-year engineering internship at
-        KimiaPay, I served as the Software Engineer Intern and sole technical
-        owner within a small startup team. The company wanted to validate a
-        digital salary-advance product for employees who had limited access to
-        traditional credit, with partner employers participating in request
-        approval and repayment assurance.
+        KimiaPay wanted to validate a digital salary-advance product for employees
+        with limited access to traditional credit, with partner employers
+        participating in request approval and repayment assurance. During my
+        final-year engineering internship, I served as the Software Engineer
+        Intern and sole technical owner within the small startup team.
 
         The central challenge was architectural: translating a financial product
         with several actors, approval stages, security requirements, and future
@@ -451,13 +449,12 @@ export const experiences: Experience[] = [
         and ready for a pilot phase.
       `,
       fr: md`
-        De mars à juillet 2021, dans le cadre de mon stage de fin d’études chez
-        KimiaPay, j’ai occupé le poste de stagiaire Software Engineer et assuré
-        seul la responsabilité technique au sein d’une petite équipe de startup.
-        L’entreprise souhaitait valider un produit numérique d’avance sur salaire
-        destiné à des employés ayant un accès limité au crédit traditionnel, avec
-        la participation d’employeurs partenaires dans l’approbation des demandes
-        et la garantie du remboursement.
+        KimiaPay souhaitait valider un produit numérique d’avance sur salaire pour
+        des employés ayant un accès limité au crédit traditionnel, avec la
+        participation d’employeurs partenaires dans l’approbation des demandes et
+        la garantie du remboursement. Pendant mon stage de fin d’études, j’ai
+        occupé le poste de stagiaire Software Engineer et assuré seul la
+        responsabilité technique au sein de la petite équipe de startup.
 
         Le principal défi était architectural : transformer un produit financier
         comportant plusieurs acteurs, niveaux de validation, exigences de sécurité
@@ -495,12 +492,12 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From May to August 2020, during my second-year engineering internship at
-        Amadeus, I evaluated the feasibility and business value of migrating a
-        flight-search application server from Spring/JBoss to Quarkus. The goal was
-        *not* to change its business behavior, but to determine how the existing
-        application could run on Quarkus and document the implications for future
-        migrations.
+        Amadeus wanted to understand whether migrating a flight-search application
+        server from Spring/JBoss to Quarkus was technically feasible and worth the
+        investment. My second-year engineering internship focused on that
+        evaluation. The goal was *not* to change the application’s business
+        behavior, but to determine how it could run on Quarkus and document the
+        implications for future migrations.
 
         Embedded in an agile engineering team, I created the Quarkus-based
         application and investigated compatibility issues involving external
@@ -523,12 +520,13 @@ export const experiences: Experience[] = [
         meetings, technical discussions, and documentation.
       `,
       fr: md`
-        De mai à août 2020, lors de mon stage de deuxième année chez Amadeus, j’ai
-        évalué la faisabilité et l’intérêt métier de la migration d’un serveur
-        d’application de recherche de vols de Spring/JBoss vers Quarkus. L’objectif
-        n’était *pas* de modifier son comportement fonctionnel, mais de déterminer
-        comment exécuter la même application avec Quarkus et de documenter les
-        implications pour de futures migrations.
+        Amadeus souhaitait déterminer si la migration d’un serveur d’application
+        de recherche de vols de Spring/JBoss vers Quarkus était techniquement
+        réalisable et justifiée par sa valeur métier. Mon stage de deuxième année
+        était consacré à cette évaluation. L’objectif n’était *pas* de modifier le
+        comportement fonctionnel de l’application, mais de déterminer comment
+        l’exécuter avec Quarkus et de documenter les implications pour de futures
+        migrations.
 
         Intégré à une équipe d’ingénierie agile, j’ai créé la version Quarkus de
         l’application et étudié des problèmes de compatibilité liés aux dépendances
@@ -566,12 +564,10 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From September 2019 to April 2020, I worked as the Computer Lab Monitor
-        Coordinator at École Centrale de Lyon. The school opened its computer
-        rooms to students at night for study and coursework, when regular staff
-        were no longer present. A team of paid student monitors supervised these
-        rooms, and I served as their coordinator and the administration’s primary
-        contact.
+        École Centrale de Lyon kept its computer rooms open at night so students
+        could study after regular staff had left. A team of paid student monitors
+        supervised the rooms; as their coordinator, I organized the group and
+        served as the administration’s primary contact.
 
         I collected monitor availability, prepared schedules, handled last-minute
         absences, and balanced monthly hours so the workload and compensation
@@ -584,12 +580,11 @@ export const experiences: Experience[] = [
         and institutional stakeholders.
       `,
       fr: md`
-        De septembre 2019 à avril 2020, j’ai été responsable des moniteurs des
-        salles informatiques à l’École Centrale de Lyon. L’établissement ouvrait
-        ces salles aux étudiants le soir afin qu’ils puissent étudier et travailler
-        après le départ du personnel habituel. Une équipe de moniteurs étudiants
-        rémunérés assurait leur supervision, et j’en étais le coordinateur ainsi
-        que l’interlocuteur principal de l’administration.
+        L’École Centrale de Lyon maintenait ses salles informatiques ouvertes le
+        soir afin que les étudiants puissent travailler après le départ du
+        personnel habituel. Une équipe de moniteurs étudiants rémunérés en
+        assurait la supervision ; en tant que coordinateur, j’organisais le groupe
+        et servais d’interlocuteur principal à l’administration.
 
         Je recueillais les disponibilités, établissais les plannings, gérais les
         absences de dernière minute et équilibrais les heures mensuelles afin de
@@ -618,11 +613,10 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From October 2019 to January 2020, École Centrale de Lyon selected and
-        paid me to lead **computer-science reinforcement sessions** for
-        engineering students who needed additional support with the school’s
-        intensive curriculum. I was chosen based on my computer-science background
-        and was responsible for this subject area during that period.
+        École Centrale de Lyon’s intensive curriculum sometimes left students
+        needing more time and another way into difficult concepts. Based on my
+        computer-science background, the school selected and paid me to lead the
+        **computer-science reinforcement sessions** for that subject area.
 
         I prepared lessons and exercises, re-explained difficult concepts,
         reviewed assignments, ran practical workshops, and provided one-to-one
@@ -635,11 +629,11 @@ export const experiences: Experience[] = [
         translate technical ideas into clear, practical steps.
       `,
       fr: md`
-        D’octobre 2019 à janvier 2020, l’École Centrale de Lyon m’a sélectionné et
-        rémunéré pour animer des **séances de renforcement en informatique** auprès
-        d’élèves ingénieurs ayant besoin d’un accompagnement supplémentaire face au
-        rythme soutenu du cursus. J’ai été choisi en raison de mon parcours en
-        informatique et chargé de cette discipline pendant cette période.
+        Le rythme soutenu du cursus de l’École Centrale de Lyon laissait parfois
+        certains élèves avec le besoin de plus de temps et d’une autre manière
+        d’aborder les notions difficiles. En raison de mon parcours en
+        informatique, l’établissement m’a sélectionné et rémunéré pour animer les
+        **séances de renforcement en informatique** dans cette discipline.
 
         Je préparais les cours et les exercices, reprenais les notions mal
         comprises, corrigeais les travaux, animais des ateliers pratiques et
@@ -667,12 +661,11 @@ export const experiences: Experience[] = [
     },
     description: {
       en: md`
-        From June to July 2017, during my DUT internship at SUITE, I worked as a
-        Software Developer Intern and sole developer of a collaborative mobile
-        application for sharing and learning practical skills and hobbies. The
-        product aimed to make niche and local know-how easier to discover through
-        training content, help requests, service offers, and online or in-person
-        events.
+        SUITE was exploring a collaborative mobile application that could make
+        niche and local know-how easier to share and discover through training
+        content, help requests, service offers, and online or in-person events.
+        During my DUT internship, I worked as the Software Developer Intern and
+        sole developer of the mobile client.
 
         I owned the mobile work from requirements analysis through architecture
         and implementation. I modeled the user roles and domain with \`UML\`, then
@@ -689,13 +682,12 @@ export const experiences: Experience[] = [
         to API integration and product demonstration.
       `,
       fr: md`
-        De juin à juillet 2017, lors de mon stage de DUT chez SUITE, j’ai occupé
-        le poste de stagiaire développeur logiciel et développé seul une
-        application mobile collaborative consacrée au partage et à l’apprentissage
-        de compétences pratiques et de loisirs. Le produit visait à faciliter la
-        découverte de savoir-faire spécialisés ou locaux grâce à des contenus de
-        formation, des demandes d’aide, des offres de service et des événements en
-        ligne ou en présentiel.
+        SUITE explorait une application mobile collaborative capable de faciliter
+        le partage et la découverte de savoir-faire spécialisés ou locaux grâce à
+        des contenus de formation, des demandes d’aide, des offres de service et
+        des événements en ligne ou en présentiel. Pendant mon stage de DUT, j’ai
+        occupé le poste de stagiaire développeur logiciel et développé seul le
+        client mobile.
 
         J’ai pris en charge le volet mobile, de l’analyse des besoins à
         l’architecture et à l’implémentation. J’ai modélisé les rôles et le domaine

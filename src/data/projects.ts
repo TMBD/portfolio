@@ -86,10 +86,10 @@ export const projects: Project[] = [
     },
     description: {
       en: md`
-        From September 2019 to April 2020, I served as technical lead on an ECL
-        academic project sponsored by GSF. We designed a **connected system** to
-        measure waste-container fill levels and provide collection teams with
-        periodic data that could support more efficient collection routes.
+        GSF wanted collection teams to know how full waste containers were before
+        planning their routes. For an ECL academic project carried out from
+        September 2019 to April 2020, I served as technical lead as we designed a
+        **connected system** to measure fill levels and transmit periodic data.
 
         I led the electronics design and implementation, defining the
         communication path from an ultrasonic sensor and Arduino board to a \`LoRa\`
@@ -108,11 +108,11 @@ export const projects: Project[] = [
         leadership.
       `,
       fr: md`
-        De septembre 2019 à avril 2020, j’ai assuré la direction technique d’un
-        projet académique de l’ECL proposé par GSF. Nous avons conçu un **système
-        connecté** capable de mesurer le niveau de remplissage de conteneurs à
-        déchets et de transmettre périodiquement ces données aux équipes de collecte
-        afin de les aider à optimiser leurs tournées.
+        GSF souhaitait permettre à ses équipes de connaître le niveau de
+        remplissage des conteneurs avant de planifier leurs tournées. Dans le cadre
+        d’un projet académique de l’ECL mené de septembre 2019 à avril 2020, j’ai
+        assuré la direction technique de la conception d’un **système connecté**
+        capable de mesurer ce niveau et de transmettre périodiquement les données.
 
         J’ai piloté la conception et la réalisation du système électronique, en
         définissant la chaîne de communication reliant un capteur à ultrasons et
@@ -144,12 +144,11 @@ export const projects: Project[] = [
     },
     description: {
       en: md`
-        From September 2018 to June 2019, I represented École Centrale de Lyon in
-        the French Robotics Cup, a national competition where teams design and
-        build **autonomous robots** to complete a new themed challenge. For the
-        2019 Atom Factory edition, each robot had 100 seconds to choose among
-        several scoring actions with no prescribed order, making strategy as
-        important as reliable execution.
+        The 2019 French Robotics Cup challenged teams to design and build
+        **autonomous robots** for Atom Factory, a 100-second match with several
+        possible scoring actions and no prescribed order. Representing École
+        Centrale de Lyon, I worked on our entry from September 2018 to June 2019,
+        where strategy mattered as much as reliable execution.
 
         As technical lead of the electronics team, I contributed extensively to
         the \`Python\` embedded software running on \`LEGO EV3\` controllers. I
@@ -164,13 +163,12 @@ export const projects: Project[] = [
         integration, and technical coordination.
       `,
       fr: md`
-        De septembre 2018 à juin 2019, j’ai représenté l’École Centrale de Lyon à
-        la Coupe de France de Robotique, une compétition nationale où des équipes
-        conçoivent et construisent des **robots autonomes** capables de relever
-        chaque année un nouveau défi thématique. Pour l’édition 2019, Atom Factory,
-        chaque robot disposait de 100 secondes pour choisir parmi plusieurs
-        actions rapportant des points, sans ordre imposé : la stratégie comptait
-        autant que la fiabilité d’exécution.
+        L’édition 2019 de la Coupe de France de Robotique demandait aux équipes de
+        concevoir et construire des **robots autonomes** pour Atom Factory, un
+        match de 100 secondes proposant plusieurs actions rapportant des points,
+        sans ordre imposé. J’y ai représenté l’École Centrale de Lyon de septembre
+        2018 à juin 2019, dans un défi où la stratégie comptait autant que la
+        fiabilité d’exécution.
 
         En tant que responsable technique de l’équipe électronique, j’ai contribué
         activement au logiciel embarqué en \`Python\` exécuté sur des contrôleurs
@@ -202,12 +200,12 @@ export const projects: Project[] = [
     },
     description: {
       en: md`
-        In 2018, the Robotech Club at École Supérieure Polytechnique de Dakar
-        built a 60 Hz **persistence-of-vision** LED display that showed text sent
-        from a smartphone over Bluetooth. The LED assembly was mounted on a coil
-        rotating 60 times per second. As it turned, the controller lit the
-        appropriate LEDs at each angular position, allowing the eye to perceive
-        stable text through persistence of vision.
+        For Polytechnique Day in 2018, the Robotech Club at École Supérieure
+        Polytechnique de Dakar created a 60 Hz **persistence-of-vision** LED
+        display that showed text sent from a smartphone over Bluetooth. Its LED
+        assembly was mounted on a coil rotating 60 times per second; as it turned,
+        the controller lit the appropriate LEDs at each angular position so the
+        eye perceived stable text.
 
         The completed system was successfully demonstrated at Polytechnique Day.
         As head of the club’s IT department, I developed the native Android
@@ -221,13 +219,13 @@ export const projects: Project[] = [
         around a shared interface and integration schedule.
       `,
       fr: md`
-        En 2018, le club Robotech de l’École Supérieure Polytechnique de Dakar a
-        réalisé un afficheur LED à **persistance rétinienne** fonctionnant à 60 Hz
-        et capable d’afficher du texte envoyé depuis un smartphone par Bluetooth.
-        Le dispositif à LED était monté sur une bobine effectuant 60 rotations par
-        seconde. Pendant la rotation, le contrôleur allumait les LED appropriées à
-        chaque position angulaire, permettant à l’œil de percevoir un texte stable
-        grâce à la persistance rétinienne.
+        Pour la Journée Polytechnique de 2018, le club Robotech de l’École
+        Supérieure Polytechnique de Dakar a réalisé un afficheur LED à
+        **persistance rétinienne** fonctionnant à 60 Hz et capable d’afficher du
+        texte envoyé depuis un smartphone par Bluetooth. Le dispositif à LED était
+        monté sur une bobine effectuant 60 rotations par seconde ; pendant la
+        rotation, le contrôleur allumait les LED appropriées à chaque position
+        angulaire afin que l’œil perçoive un texte stable.
 
         Le système finalisé a été présenté avec succès lors de la Journée
         Polytechnique. En tant que responsable du département informatique du club,
@@ -252,15 +250,15 @@ export const projects: Project[] = [
     },
     description: {
       en: md`
-        Built as a volunteer project for a school in Senegal during my DUT, this
-        \`Java\` desktop application helped staff and teachers view
-        **classroom schedules**, identify available rooms, and reserve them for
-        upcoming courses.
+        A school in Senegal needed a clearer way for staff and teachers to view
+        **classroom schedules**, find available rooms, and reserve them for
+        upcoming courses. During my DUT, a friend and I volunteered to build a
+        \`Java\` desktop application for that purpose.
 
-        I collaborated with a friend who developed the \`Swing\` interface, while I
-        designed the MySQL database and implemented the Java backend using
-        \`JDBC\`. The backend checked room availability before saving a booking to
-        reject schedule conflicts.
+        I designed the MySQL database and implemented the Java backend using
+        \`JDBC\`, while my friend developed the \`Swing\` interface. The backend
+        checked room availability before saving a booking to reject schedule
+        conflicts.
 
         As my first substantial collaborative software project, it also challenged
         me to define the boundary between frontend and backend work, coordinate
@@ -270,16 +268,16 @@ export const projects: Project[] = [
         with its source code.
       `,
       fr: md`
-        Réalisée bénévolement pour une école au Sénégal pendant mon DUT, cette
-        application de bureau en \`Java\` permettait au personnel et aux enseignants
-        de consulter l’**occupation des salles**, de repérer celles disponibles et
-        de les réserver pour leurs prochains cours.
+        Une école au Sénégal avait besoin d’un moyen plus clair pour permettre au
+        personnel et aux enseignants de consulter l’**occupation des salles**, de
+        repérer celles disponibles et de les réserver pour leurs prochains cours.
+        Pendant mon DUT, un ami et moi nous sommes portés volontaires pour
+        développer une application de bureau en \`Java\` répondant à ce besoin.
 
-        J’ai collaboré avec un ami qui a développé l’interface graphique en
-        \`Swing\`, tandis que j’ai conçu la base de données MySQL et implémenté le
-        backend Java avec \`JDBC\`. Avant d’enregistrer une réservation, le backend
-        vérifiait la disponibilité de la salle afin de refuser les conflits de
-        planning.
+        J’ai conçu la base de données MySQL et implémenté le backend Java avec
+        \`JDBC\`, tandis que mon ami développait l’interface graphique en \`Swing\`.
+        Avant d’enregistrer une réservation, le backend vérifiait la disponibilité
+        de la salle afin de refuser les conflits de planning.
 
         Premier projet logiciel conséquent réalisé en collaboration, il m’a aussi
         appris à délimiter les responsabilités entre frontend et backend, à
