@@ -3,7 +3,7 @@
  * Layout — the shared page shell used by every page:
  *  - <head> metadata (title, description, canonical, Open Graph, fonts)
  *  - a no-flash script that applies the saved/system theme before paint
- *  - a first-visit language auto-detect redirect (French browsers → /fr)
+ *  - saved-language restoration, with browser detection on the first visit
  *  - the Header, a <slot> for page content, and the Footer.
  */
 import "../styles/global.css";
@@ -33,6 +33,8 @@ const hreflangs = (Object.keys(languages) as Lang[]).map((l) => ({
   lang: l,
   href: localeAlternates?.[l] ?? getAlternatePath(Astro.url.pathname, l),
 }));
+const localePaths = Object.fromEntries(hreflangs.map(({ lang, href }) => [lang, href]));
+const currentLang = lang;
 const rssHref = lang === "fr" ? "/fr/rss.xml" : "/rss.xml";
 ---
 
@@ -97,19 +99,30 @@ const rssHref = lang === "fr" ? "/fr/rss.xml" : "/rss.xml";
       })();
     </script>
 
-    <!-- First-visit language auto-detect: redirect French browsers to /fr,
-         unless the visitor has already chosen a language. -->
-    <script is:inline>
+    <!-- Restore an explicit language choice before paint. On the first visit,
+         French browser preferences still default unprefixed pages to /fr. -->
+    <script is:inline define:vars={{ currentLang, localePaths }}>
       (function () {
         try {
-          if (localStorage.getItem("lang")) return;
-          var path = location.pathname;
-          var isFr = path === "/fr" || path.indexOf("/fr/") === 0;
+          var redirectTo = function (path) {
+            var target = new URL(path, location.origin);
+            target.search = location.search;
+            target.hash = location.hash;
+            location.replace(target.pathname + target.search + target.hash);
+          };
+          var stored = localStorage.getItem("lang");
+          var hasStoredLocale =
+            stored && Object.prototype.hasOwnProperty.call(localePaths, stored);
+
+          if (hasStoredLocale) {
+            if (stored !== currentLang) redirectTo(localePaths[stored]);
+            return;
+          }
+
+          if (stored) localStorage.removeItem("lang");
           var prefersFr =
             (navigator.language || "").toLowerCase().indexOf("fr") === 0;
-          if (prefersFr && !isFr) {
-            location.replace("/fr" + (path === "/" ? "" : path));
-          }
+          if (prefersFr && currentLang !== "fr") redirectTo(localePaths.fr);
         } catch (e) {}
       })();
     </script>

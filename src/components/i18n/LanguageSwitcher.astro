@@ -1,8 +1,7 @@
 ---
 /**
  * LanguageSwitcher — links to the equivalent page in each locale and records
- * the user's explicit choice so the auto-detect redirect (in the Layout) won't
- * override it on later visits.
+ * the user's explicit choice so the Layout can restore it on later visits.
  */
 import { languages, type Lang } from "../../i18n/ui";
 import { getLangFromUrl, getAlternatePath } from "../../i18n/utils";
@@ -45,7 +44,7 @@ const entries = (Object.keys(languages) as Lang[]).map((lang) => ({
 </div>
 
 <script>
-  // Persist the explicit language choice (stops auto-detect from overriding it).
+  // Persist the explicit language choice so Layout restores it on later visits.
   document.querySelectorAll(".js-lang").forEach((el) => {
     el.addEventListener("click", () => {
       const lang = (el as HTMLElement).dataset.lang;
