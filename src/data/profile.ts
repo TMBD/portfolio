@@ -14,8 +14,8 @@ export const profile: Profile = {
   photo: "/profile.svg",
 
   intro: {
-    en: "Hi, I’m Thierno, a Senior Software Engineer based in Montpellier. I enjoy taking backend systems from the first architecture sketch to reliable production code, then writing the documentation that saves the next person from having to read my mind. I’m drawn to problems where reliability, security, performance, and maintainability all want the front seat. Finding the right balance between those competing concerns is the part I enjoy most. Feel free to look around; I’ve left the interesting trade-offs in plain sight.",
-    fr: "Bonjour, moi c’est Thierno, ingénieur logiciel senior basé à Montpellier. J’aime concevoir et construire des systèmes backend, depuis la première esquisse d’architecture jusqu’au code fiable en production, puis rédiger la documentation qui évite à la personne suivante de devoir lire dans mes pensées. Je suis attiré par les problèmes où fiabilité, sécurité, performance et maintenabilité veulent toutes passer devant. Trouver le juste équilibre entre ces exigences parfois contradictoires, c’est justement ce que je préfère. Je vous laisse explorer la suite : j’ai laissé les compromis les plus intéressants bien en vue.",
+    en: "Hi, I’m Thierno. I’m based in Montpellier, where I work on the backend systems behind healthcare software that doctors use every day — from the first architecture sketch to reliable production code, and then the documentation that saves the next person from having to read my mind. I’m most drawn to problems where reliability, security, performance, and maintainability all want the front seat at once.",
+    fr: "Bonjour, moi c’est Thierno. Je vis à Montpellier, où je travaille sur les systèmes backend de logiciels de santé utilisés chaque jour par des médecins : depuis la première esquisse d’architecture jusqu’au code fiable en production, puis la documentation qui évite à la personne suivante de devoir lire dans mes pensées. Les problèmes qui m’attirent le plus sont ceux où fiabilité, sécurité, performance et maintenabilité veulent toutes passer devant en même temps.",
   },
 
   about: {
