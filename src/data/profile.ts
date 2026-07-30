@@ -20,85 +20,89 @@ export const profile: Profile = {
 
   about: {
     en: md`
-      My route into software was not a childhood master plan. I initially
-      imagined studying mechanical or electrical engineering. A teacher at my
-      high school encouraged me to pursue computer engineering because of the
-      opportunities it offered and the promise it held around 2014, while a
-      couple of technology-heavy TV shows had already made the field look
-      intriguing. That practical choice became a genuine fit once I discovered
-      that I enjoyed designing systems as much as coding them.
+      My route into software was not a childhood master plan. I first imagined
+      myself studying mechanical or electrical engineering. A high-school teacher
+      steered me toward computer engineering instead, arguing that in 2014 it was
+      where the opportunities were — and a couple of technology-heavy TV shows
+      had already made the field look intriguing. The practical choice turned
+      into a genuine one once I discovered that I enjoyed designing systems as
+      much as coding them.
 
-      Today, as a Senior Software Engineer, I work mainly on Java and Quarkus
-      backend systems for healthcare software. I am happiest when I can take a
-      problem end to end: understand an ambiguous context, compare technologies,
-      make the trade-offs explicit, shape the architecture, implement a reliable
-      solution, and document it so others can use, maintain, and extend it. That
+      Today I work mainly on Java and Quarkus backend systems for healthcare
+      software. I like taking a problem end to end: understand an ambiguous
+      context, compare technologies, shape the architecture, implement something
+      reliable, and document it so others can maintain and extend it. That
       approach has taken me through identity and security integrations,
       multi-country platform capabilities, unfamiliar healthcare technologies,
-      and AI-agent workflows for developers. The technologies change; the part I
-      enjoy is turning complexity into something coherent and useful.
+      and AI-agent workflows for developers. The technology is different every
+      time. What stays the same is the part I find interesting: turning
+      complexity into something coherent and useful.
 
-      I care most about finding the right balance for each context. Reliability
-      comes first, followed by security, performance, maintainability,
-      simplicity, and extensibility. No design can maximize all of these
-      qualities at once. That is why I see the ability to find the right
-      trade-off as one of the essential qualities of a good software engineer.
-      Colleagues can expect me to think carefully, care about consistency, and
-      treat their blockers as problems worth helping solve.
+      Most of that work comes down to balance. Left to me, reliability comes
+      first, then security, performance, maintainability, simplicity, and
+      extensibility — but the context regularly reshuffles that order, and no
+      design maximizes all of them at once. The real question is how much weight
+      each one deserves in the situation at hand. Getting that judgment right,
+      and being able to explain it afterwards, is for me one of the skills that
+      defines a good software engineer. The same is true of how I work with
+      people: colleagues can expect me to think things through, care about
+      consistency, and treat their blockers as problems worth stopping for.
 
-      Looking ahead in my career, I want to grow into hands-on technical
-      leadership and, over time, deepen my expertise in software architecture. I
-      want to support that growth with strong cloud and platform engineering
-      knowledge while continuing to code.
+      Looking ahead, I want to grow into hands-on technical leadership and, over
+      time, deepen my expertise in software architecture. I’d like to build that
+      on stronger cloud and platform engineering foundations, without leaving the
+      code behind.
 
-      Away from the keyboard, I enjoy playing and watching football, as well as
-      running outdoors to clear my head and stay fit. Want to know which club I
-      support? Take a look around, then send me a message. I have a few solid
-      arguments ready for that choice too. 😉
+      Away from the keyboard, I play and watch football, and I run outdoors to
+      clear my head and stay fit. Want to know which club I support? Send me a
+      message — I have a few solid arguments ready for that one too, though I’ll
+      admit they’re far less objective than the technical ones. 😉
     `,
     fr: md`
       Mon parcours vers l’informatique n’était pas un plan établi depuis
-      l’enfance. Je m’imaginais d’abord étudier le génie mécanique ou électrique.
-      Vers 2014, un professeur de mon lycée m’a encouragé à choisir le génie
-      informatique pour les débouchés et les perspectives qu’offrait ce domaine,
-      tandis que quelques séries télévisées très orientées technologie avaient
-      déjà éveillé ma curiosité. Ce choix pragmatique est devenu une véritable
-      évidence lorsque j’ai découvert que j’aimais autant concevoir des systèmes
-      que les programmer.
+      l’enfance. Je m’imaginais plutôt étudier le génie mécanique ou électrique.
+      Un professeur de mon lycée m’a orienté vers le génie informatique, en
+      m’expliquant qu’en 2014 c’était là que se trouvaient les débouchés — et
+      quelques séries télévisées très orientées technologie avaient déjà éveillé
+      ma curiosité. Ce choix pragmatique est devenu une véritable évidence le
+      jour où j’ai découvert que j’aimais autant concevoir des systèmes que les
+      programmer.
 
-      Aujourd’hui, en tant qu’ingénieur logiciel senior, je travaille
-      principalement sur des systèmes backend Java et Quarkus pour des logiciels
-      de santé. Je suis particulièrement à l’aise lorsque je peux prendre un
-      problème de bout en bout : comprendre un contexte ambigu, comparer des
-      technologies, expliciter les compromis, définir l’architecture, implémenter
-      une solution fiable et la documenter afin que d’autres puissent l’utiliser,
-      la maintenir et la faire évoluer. Cette approche m’a conduit à travailler
-      sur des intégrations d’identité et de sécurité, des capacités de plateforme
-      multi-pays, des technologies de santé que je devais d’abord apprivoiser et
-      des workflows d’agents IA destinés aux développeurs. Les technologies
-      changent ; ce qui me plaît reste de transformer la complexité en quelque
-      chose de cohérent et d’utile.
+      Aujourd’hui, je travaille principalement sur des systèmes backend Java et
+      Quarkus pour des logiciels de santé. J’aime prendre un problème de bout en
+      bout : comprendre un contexte ambigu, comparer les technologies, définir
+      l’architecture, implémenter une solution fiable et la documenter pour que
+      d’autres puissent la maintenir et la faire évoluer. Cette approche m’a
+      conduit à travailler sur des intégrations d’identité et de sécurité, des
+      fonctionnalités de plateforme multi-pays, des technologies de santé que je
+      devais d’abord maîtriser et des workflows d’agents IA destinés aux
+      développeurs.
+      La technologie change à chaque fois. Ce qui ne change pas, c’est la partie
+      qui m’intéresse : transformer la complexité en quelque chose de cohérent et
+      d’utile.
 
-      Je cherche avant tout le bon équilibre pour chaque contexte. La fiabilité
-      vient en premier, suivie de la sécurité, de la performance, de la
-      maintenabilité, de la simplicité et de l’extensibilité. Aucune conception ne
-      peut maximiser tous ces aspects à la fois. C’est pourquoi je considère la
-      capacité à trouver le juste compromis comme l’une des qualités essentielles
-      d’un bon ingénieur logiciel. Mes collègues peuvent compter sur moi pour
-      réfléchir avec attention, veiller à la cohérence et considérer leurs
-      blocages comme des problèmes qui méritent mon aide.
+      L’essentiel de ce travail est une question d’équilibre. À mon sens, la
+      fiabilité passe en premier, puis la sécurité, la performance, la
+      maintenabilité, la simplicité et l’extensibilité — mais le contexte rebat
+      souvent les cartes, et aucune conception ne peut maximiser toutes ces
+      qualités à la fois. La vraie question est celle du poids à accorder à
+      chacune dans un contexte donné. Bien juger cet équilibre, et savoir l’expliquer ensuite,
+      est pour moi l’une des compétences qui font un bon ingénieur logiciel. Il
+      en va de même dans ma façon de travailler avec les autres : mes collègues
+      peuvent compter sur moi pour réfléchir avant de trancher, veiller à la
+      cohérence et considérer leurs blocages comme des problèmes qui méritent
+      qu’on s’y arrête.
 
-      Pour la suite de ma carrière, je souhaite évoluer vers un leadership
-      technique qui reste proche du code, puis approfondir mon expertise en
-      architecture logicielle. Je veux appuyer cette évolution sur de solides
-      connaissances en cloud et en ingénierie des plateformes, tout en continuant
-      à coder.
+      Pour la suite, je souhaite évoluer vers un leadership technique et, avec le
+      temps, approfondir mon expertise en architecture logicielle.
+      J’aimerais m’appuyer pour cela sur des bases plus solides en cloud et en
+      ingénierie des plateformes, sans m’éloigner du code.
 
-      En dehors du clavier, j’aime jouer au football et suivre les matchs, ainsi
-      que courir à l’extérieur pour me vider la tête et rester en forme. Vous
-      voulez savoir quel club de foot je supporte ? Parcourez la suite, puis
-      envoyez-moi un message : j’ai quelques bons arguments pour défendre mon
-      choix. 😉
+      En dehors du clavier, je joue au football et je suis les matchs, et je
+      cours en extérieur pour me vider la tête et rester en forme. Vous voulez
+      savoir quel club je supporte ? Envoyez-moi un message : j’ai quelques bons
+      arguments à faire valoir là aussi, même si je reconnais qu’ils sont bien
+      moins objectifs que les arguments techniques. 😉
     `,
   },
 
