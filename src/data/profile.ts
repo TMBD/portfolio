@@ -43,20 +43,27 @@ export const profile: Profile = {
       extensibility — but the context regularly reshuffles that order, and no
       design maximizes all of them at once. The real question is how much weight
       each one deserves in the situation at hand. Getting that judgment right,
-      and being able to explain it afterwards, is for me one of the skills that
-      defines a good software engineer. The same is true of how I work with
-      people: colleagues can expect me to think things through, care about
-      consistency, and treat their blockers as problems worth stopping for.
+      and being able to explain it afterwards, is one of the skills that defines
+      a good software engineer.
+
+      Ownership, for me, does not stop at designing and implementing. I keep an
+      eye on where the work is going, try to spot the next blockers before they
+      become urgent, and pull in the people who should be involved, product side
+      included, while the plan can still change — so what we agree on works for
+      everyone, not only for the developers. Colleagues can expect me to think
+      things through, keep the work moving, care about consistency, and treat
+      their blockers as problems worth stopping for.
 
       Looking ahead, I want to grow into hands-on technical leadership and, over
       time, deepen my expertise in software architecture. I’d like to build that
       on stronger cloud and platform engineering foundations, without leaving the
       code behind.
 
-      Away from the keyboard, I play and watch football, and I run outdoors to
-      clear my head and stay fit. Want to know which club I support? Send me a
-      message — I have a few solid arguments ready for that one too, though I’ll
-      admit they’re far less objective than the technical ones. 😉
+      Away from the keyboard, I love playing football, watching the matches, and
+      running outdoors to clear my head and stay fit. Want to know which football club I
+      support? Send me a message — I have a few solid arguments ready for that
+      one too, though I’ll admit they’re far less objective than the technical
+      ones. 😉
     `,
     fr: md`
       Mon parcours vers l’informatique n’était pas un plan établi depuis
@@ -86,21 +93,28 @@ export const profile: Profile = {
       maintenabilité, la simplicité et l’extensibilité — mais le contexte rebat
       souvent les cartes, et aucune conception ne peut maximiser toutes ces
       qualités à la fois. La vraie question est celle du poids à accorder à
-      chacune dans un contexte donné. Bien juger cet équilibre, et savoir l’expliquer ensuite,
-      est pour moi l’une des compétences qui font un bon ingénieur logiciel. Il
-      en va de même dans ma façon de travailler avec les autres : mes collègues
-      peuvent compter sur moi pour réfléchir avant de trancher, veiller à la
+      chacune dans un contexte donné. Bien juger cet équilibre, et savoir
+      l’expliquer ensuite, est l’une des compétences qui font un bon ingénieur
+      logiciel.
+
+      Pour moi, la responsabilité ne s’arrête pas à concevoir et implémenter. Je
+      garde un œil sur la direction que prend le travail, j’essaie de repérer les
+      prochains blocages avant qu’ils ne deviennent urgents et j’implique les
+      bonnes personnes, côté produit y compris, tant que le plan peut encore
+      évoluer — pour que la solution retenue convienne à tout le monde, et pas
+      seulement aux développeurs. Mes collègues peuvent compter sur moi pour
+      réfléchir avant de trancher, faire avancer les sujets, veiller à la
       cohérence et considérer leurs blocages comme des problèmes qui méritent
       qu’on s’y arrête.
 
       Pour la suite, je souhaite évoluer vers un leadership technique et, avec le
-      temps, approfondir mon expertise en architecture logicielle.
-      J’aimerais m’appuyer pour cela sur des bases plus solides en cloud et en
-      ingénierie des plateformes, sans m’éloigner du code.
+      temps, approfondir mon expertise en architecture logicielle. J’aimerais
+      m’appuyer pour cela sur des bases plus solides en cloud et en ingénierie
+      des plateformes, sans m’éloigner du code.
 
-      En dehors du clavier, je joue au football et je suis les matchs, et je
-      cours en extérieur pour me vider la tête et rester en forme. Vous voulez
-      savoir quel club je supporte ? Envoyez-moi un message : j’ai quelques bons
+      En dehors du clavier, j’aime jouer au football, suivre les matchs et courir
+      en extérieur pour me vider la tête et rester en forme. Vous voulez savoir
+      quel club de foot je supporte ? Envoyez-moi un message : j’ai quelques bons
       arguments à faire valoir là aussi, même si je reconnais qu’ils sont bien
       moins objectifs que les arguments techniques. 😉
     `,
