@@ -28,51 +28,48 @@ export const projects: Project[] = [
     },
     description: {
       en: md`
-        Laajal Sa Diine is a live short-form audio Q&A platform I designed and
-        built independently to make practical Islamic guidance easier to find. The
-        product combines a React and TypeScript client with a Node.js and Express
-        REST API, MongoDB, and Amazon S3.
+        Laajal Sa Diine is a platform of short audio answers to everyday
+        questions about Islam. I designed and built it on my own to make that
+        kind of guidance easier to find: a React and TypeScript client on top of
+        a Node.js REST API, with MongoDB holding the library and Amazon S3 the
+        audio files.
 
-        A central application challenge was **content discovery**: a
-        French-language weighted full-text index ranks matches across multiple
-        fields, while combinable filters and infinite scrolling make the library
-        easier to explore. I also implemented JWT-protected administration with
-        separate permissions for content, administrator management, and backups.
+        The hardest part was **content discovery**: a weighted full-text index
+        tuned for French ranks matches across several fields, while combinable
+        filters and infinite scrolling make the library easier to explore. I also
+        implemented JWT-protected administration, with separate permissions for
+        content, administrator management, and backups.
 
-        Taking the product live became another major challenge. Rather than use a
-        fully managed hosting service, I deliberately provisioned and configured a
-        Hetzner Cloud server, deployed the services with Docker, routed them
-        through Traefik, and configured DNS through Cloudflare.
+        Putting it into production was the other half of the work, and I wanted
+        to own that path rather than hand it to a managed platform. I provisioned
+        a Hetzner Cloud server myself, deployed the services with Docker, routed
+        them through Traefik, and pointed DNS at it through Cloudflare.
 
-        This gave me hands-on experience with deployment and operations across the
-        application’s full path to production. The platform remains live, used by
-        listeners, and maintained as an evolving side project.
+        The site is online today, used by listeners, and I still maintain it
+        myself — the infrastructure as much as the code.
       `,
       fr: md`
-        Laajal Sa Diine est une plateforme en ligne de questions-réponses audio
-        courtes, que j’ai conçue et développée seul pour faciliter l’accès à des
-        réponses pratiques sur l’islam. Le produit associe une application cliente
-        en React et TypeScript à une API REST Node.js et Express, MongoDB et
-        Amazon S3.
+        Laajal Sa Diine est une plateforme de réponses audio courtes aux
+        questions du quotidien sur l’islam. Je l’ai conçue et développée seul
+        pour rendre ces réponses plus faciles à trouver : une application cliente
+        en React et TypeScript, une API REST Node.js, MongoDB pour la
+        bibliothèque et Amazon S3 pour les fichiers audio.
 
-        L’un des principaux défis applicatifs a été la **recherche de contenus** :
-        un index de recherche plein texte pondéré, configuré pour le français,
-        classe les correspondances sur plusieurs champs, tandis que des filtres
-        combinables et le défilement infini facilitent l’exploration de la
-        bibliothèque. J’ai également mis en place une administration protégée par
-        JWT, avec des droits distincts pour la gestion des contenus, des
-        administrateurs et des sauvegardes.
+        Le plus difficile a été la **recherche de contenus** : un index plein
+        texte pondéré et configuré pour le français classe les correspondances
+        sur plusieurs champs, tandis que des filtres combinables et le défilement
+        infini facilitent l’exploration de la bibliothèque. J’ai également mis en
+        place une administration protégée par JWT, avec des droits distincts pour
+        la gestion des contenus, des administrateurs et des sauvegardes.
 
-        La mise en ligne du produit a constitué un autre défi important. Plutôt que
-        d’utiliser un hébergement entièrement managé, j’ai volontairement
-        provisionné et configuré un serveur Hetzner Cloud, déployé les services
-        avec Docker, assuré leur routage avec Traefik et configuré les
-        enregistrements DNS via Cloudflare.
+        La mise en production a représenté l’autre moitié du travail, et je
+        voulais maîtriser ce chemin plutôt que de le confier à un hébergement
+        entièrement managé. J’ai provisionné moi-même un serveur Hetzner Cloud,
+        déployé les services avec Docker, assuré leur routage avec Traefik et
+        fait pointer les enregistrements DNS via Cloudflare.
 
-        Cette approche m’a permis de pratiquer concrètement le déploiement et
-        l’exploitation d’une application de bout en bout, jusqu’à sa mise en
-        production. La plateforme reste en ligne, utilisée par des auditeurs et
-        maintenue comme un projet personnel en évolution.
+        Le site est en ligne aujourd’hui, utilisé par des auditeurs, et je
+        continue de le maintenir moi-même — l’infrastructure autant que le code.
       `,
     },
     technologies: [
@@ -99,10 +96,11 @@ export const projects: Project[] = [
     },
     description: {
       en: md`
-        GSF wanted collection teams to know how full waste containers were before
-        planning their routes. For an ECL academic project carried out from
-        September 2019 to April 2020, I served as technical lead as we designed a
-        **connected system** to measure fill levels and transmit periodic data.
+        GSF wanted its collection teams to know how full waste containers were
+        before planning their routes. That became an academic project at École
+        Centrale de Lyon between September 2019 and April 2020, where I was
+        technical lead of the team building a **connected system** to measure
+        fill levels and report them at regular intervals.
 
         I led the electronics design and implementation, defining the
         communication path from an ultrasonic sensor and Arduino board to a \`LoRa\`
@@ -110,22 +108,23 @@ export const projects: Project[] = [
         configured measurements and transmissions at 30-minute intervals to limit
         device activity and conserve battery power.
 
-        I coordinated with the mechanical team, which used ECL’s FabLab to
-        manufacture a protective enclosure suitable for dirty and demanding
-        conditions. We delivered a working, field-tested system and validated it
-        in several waste containers. Without an intermediate relay, the LoRa
-        communication reached approximately 100 metres.
+        I coordinated with the mechanical team, which used the school’s FabLab to
+        build an enclosure that could survive a dirty and demanding environment.
+        We field-tested the system in several containers, and it held up. Without
+        an intermediate relay, the LoRa link reached about 100 metres, which set
+        the practical limit on how far a gateway could sit from a container.
 
         The project strengthened my experience in embedded systems, low-power
         design, long-range communication, and multidisciplinary technical
         leadership.
       `,
       fr: md`
-        GSF souhaitait permettre à ses équipes de connaître le niveau de
-        remplissage des conteneurs avant de planifier leurs tournées. Dans le cadre
-        d’un projet académique de l’ECL mené de septembre 2019 à avril 2020, j’ai
-        assuré la direction technique de la conception d’un **système connecté**
-        capable de mesurer ce niveau et de transmettre périodiquement les données.
+        GSF souhaitait que ses équipes de collecte connaissent le niveau de
+        remplissage des conteneurs avant de planifier leurs tournées. Ce besoin
+        est devenu un projet académique à l’École Centrale de Lyon, de septembre
+        2019 à avril 2020, où j’ai assuré la direction technique de l’équipe
+        chargée de concevoir un **système connecté** capable de mesurer ce niveau
+        et de le transmettre à intervalles réguliers.
 
         J’ai piloté la conception et la réalisation du système électronique, en
         définissant la chaîne de communication reliant un capteur à ultrasons et
@@ -134,12 +133,12 @@ export const projects: Project[] = [
         transmission toutes les 30 minutes afin de limiter l’activité du dispositif
         et de préserver la batterie.
 
-        J’ai également coordonné le travail avec l’équipe mécanique, qui a utilisé
-        le FabLab de l’ECL pour fabriquer un boîtier de protection adapté à un
-        environnement sale et contraignant. Nous avons livré un système fonctionnel
-        et l’avons testé sur le terrain dans plusieurs conteneurs. Sans relais
-        intermédiaire, la communication LoRa a atteint une portée d’environ 100
-        mètres.
+        J’ai coordonné le travail avec l’équipe mécanique, qui a utilisé le
+        FabLab de l’école pour fabriquer un boîtier capable de résister à un
+        environnement sale et contraignant. Nous avons testé le système sur le
+        terrain dans plusieurs conteneurs, et il a tenu. Sans relais
+        intermédiaire, la liaison LoRa portait à environ 100 mètres, ce qui
+        fixait la distance maximale entre une passerelle et un conteneur.
 
         Ce projet a renforcé mon expérience des systèmes embarqués, de la conception
         basse consommation, des communications longue portée et du pilotage
@@ -157,44 +156,50 @@ export const projects: Project[] = [
     },
     description: {
       en: md`
-        The 2019 French Robotics Cup challenged teams to design and build
-        **autonomous robots** for Atom Factory, a 100-second match with several
-        possible scoring actions and no prescribed order. Representing École
-        Centrale de Lyon, I worked on our entry from September 2018 to June 2019,
-        where strategy mattered as much as reliable execution.
+        The 2019 French Robotics Cup asked teams to build **autonomous robots**
+        for Atom Factory: a 100-second match with several scoring actions
+        available and no prescribed order to perform them in. Strategy counted as
+        much as reliable execution. I worked on École Centrale de Lyon’s entry
+        from September 2018 to June 2019.
 
         As technical lead of the electronics team, I contributed extensively to
-        the \`Python\` embedded software running on \`LEGO EV3\` controllers. I
-        worked closely with the mechanical team to align match strategy, physical
-        capabilities, and software behavior, while coordinating the electronics
-        work through implementation and integration.
+        the \`Python\` embedded software running on \`LEGO EV3\` controllers, and
+        coordinated the electronics work from implementation through to
+        integration. Deciding what the robot would attempt in its 100 seconds
+        meant working closely with the mechanical team, so that match strategy,
+        physical capability, and software behavior all agreed.
 
-        We also applied closed-loop control concepts from our ECL coursework to
-        regulate robot movement and position. Our robots passed official
-        homologation and competed in the event. The project strengthened my
-        experience in embedded programming, control systems, cross-disciplinary
-        integration, and technical coordination.
+        We applied closed-loop control concepts from our ECL coursework to
+        regulate the robots’ movement and positioning. Our robots passed official
+        homologation and competed in the event.
+
+        Very little of the result depended on the code alone: a strategy the
+        mechanics could not execute cost exactly as many points as a mechanism the
+        software could not drive.
       `,
       fr: md`
         L’édition 2019 de la Coupe de France de Robotique demandait aux équipes de
-        concevoir et construire des **robots autonomes** pour Atom Factory, un
-        match de 100 secondes proposant plusieurs actions rapportant des points,
-        sans ordre imposé. J’y ai représenté l’École Centrale de Lyon de septembre
-        2018 à juin 2019, dans un défi où la stratégie comptait autant que la
-        fiabilité d’exécution.
+        construire des **robots autonomes** pour Atom Factory : un match de 100
+        secondes offrant plusieurs actions rapportant des points, sans ordre
+        imposé. La stratégie comptait autant que la fiabilité d’exécution. J’ai
+        travaillé sur la participation de l’École Centrale de Lyon de septembre
+        2018 à juin 2019.
 
         En tant que responsable technique de l’équipe électronique, j’ai contribué
         activement au logiciel embarqué en \`Python\` exécuté sur des contrôleurs
-        \`LEGO EV3\`. J’ai travaillé étroitement avec l’équipe mécanique pour aligner
-        la stratégie de match, les capacités physiques et le comportement logiciel,
-        tout en coordonnant le travail électronique jusqu’à l’intégration.
+        \`LEGO EV3\`, et coordonné le travail électronique de l’implémentation
+        jusqu’à l’intégration. Décider de ce que le robot tenterait en 100 secondes
+        supposait un travail étroit avec l’équipe mécanique, afin que la stratégie
+        de match, les capacités physiques et le comportement logiciel s’accordent.
 
-        Nous avons également appliqué des notions de commande en boucle fermée
-        étudiées à l’ECL afin de réguler le déplacement et le positionnement des
-        robots. Nos robots ont obtenu leur homologation officielle et participé à
-        la compétition. Ce projet a renforcé mon expérience en programmation
-        embarquée, automatique, intégration multidisciplinaire et coordination
-        technique.
+        Nous avons appliqué des notions de commande en boucle fermée étudiées à
+        l’ECL afin de réguler le déplacement et le positionnement des robots. Nos
+        robots ont obtenu leur homologation officielle et participé à la
+        compétition.
+
+        Le résultat dépendait très peu du code seul : une stratégie que la
+        mécanique ne pouvait pas exécuter coûtait exactement autant de points qu’un
+        mécanisme que le logiciel ne pouvait pas piloter.
       `,
     },
     technologies: [
@@ -214,43 +219,45 @@ export const projects: Project[] = [
     description: {
       en: md`
         For Polytechnique Day in 2018, the Robotech Club at École Supérieure
-        Polytechnique de Dakar created a 60 Hz **persistence-of-vision** LED
-        display that showed text sent from a smartphone over Bluetooth. Its LED
-        assembly was mounted on a coil rotating 60 times per second; as it turned,
-        the controller lit the appropriate LEDs at each angular position so the
-        eye perceived stable text.
+        Polytechnique de Dakar built a **persistence-of-vision** LED display that
+        showed text sent from a smartphone over Bluetooth. The LED assembly was
+        mounted on a motor that spun it 60 times per second, and the controller
+        lit the right LEDs at each angular position so the eye read stable text
+        rather than a blur.
 
-        The completed system was successfully demonstrated at Polytechnique Day.
         As head of the club’s IT department, I developed the native Android
-        application in \`Java\`, defined the communication format with the
+        application in \`Java\`, agreed the communication format with the
         electronics team, and handled \`Bluetooth\` connection failures and
-        retries.
+        retries. I also split the software work into tasks, set deadlines, and
+        tracked delivery so the software side stayed in step with the other
+        teams.
 
-        I also divided the software work into tasks, set deadlines, and followed
-        delivery to keep the IT stream aligned with the other teams. The project
-        gave me practical experience coordinating software and electronics work
-        around a shared interface and integration schedule.
+        The finished display was demonstrated at the event. My part of it was the
+        smartphone side — the app and its Bluetooth link — and the coordination
+        with the electronics team: the message format had to be settled early,
+        because neither side could test on its own until it existed.
       `,
       fr: md`
         Pour la Journée Polytechnique de 2018, le club Robotech de l’École
         Supérieure Polytechnique de Dakar a réalisé un afficheur LED à
-        **persistance rétinienne** fonctionnant à 60 Hz et capable d’afficher du
-        texte envoyé depuis un smartphone par Bluetooth. Le dispositif à LED était
-        monté sur une bobine effectuant 60 rotations par seconde ; pendant la
-        rotation, le contrôleur allumait les LED appropriées à chaque position
-        angulaire afin que l’œil perçoive un texte stable.
+        **persistance rétinienne** capable d’afficher du texte envoyé depuis un
+        smartphone par Bluetooth. Le dispositif à LED était monté sur un moteur
+        qui le faisait tourner 60 fois par seconde, et le contrôleur allumait les
+        LED appropriées à chaque position angulaire, afin que l’œil perçoive un
+        texte stable plutôt qu’une traînée lumineuse.
 
-        Le système finalisé a été présenté avec succès lors de la Journée
-        Polytechnique. En tant que responsable du département informatique du club,
-        j’ai développé l’application Android native en \`Java\`, défini le format de
-        communication avec l’équipe électronique et géré les échecs de connexion
-        \`Bluetooth\` ainsi que les nouvelles tentatives.
+        En tant que responsable du département informatique du club, j’ai
+        développé l’application Android native en \`Java\`, défini avec l’équipe
+        électronique le format de communication et géré les échecs de connexion
+        \`Bluetooth\` ainsi que les nouvelles tentatives. J’ai également réparti le
+        travail logiciel en tâches, fixé les échéances et suivi les livraisons
+        afin que le volet logiciel reste aligné avec les autres équipes.
 
-        J’ai également réparti le travail logiciel, fixé les échéances et suivi
-        leur respect afin que le volet informatique reste aligné avec les autres
-        équipes. Ce projet m’a apporté une expérience concrète de la coordination
-        entre logiciel et électronique autour d’une interface commune et d’un
-        calendrier d’intégration partagé.
+        L’afficheur finalisé a été présenté lors de l’événement. Ma part portait
+        sur le smartphone — l’application et sa liaison Bluetooth — et sur la
+        coordination avec l’équipe électronique : le format de message devait être
+        arrêté tôt, car aucun des deux côtés ne pouvait tester seul tant qu’il
+        n’existait pas.
       `,
     },
     technologies: ["Java", "Android SDK", "Bluetooth"],
@@ -263,43 +270,45 @@ export const projects: Project[] = [
     },
     description: {
       en: md`
-        A school in Senegal needed a clearer way for staff and teachers to view
-        **classroom schedules**, find available rooms, and reserve them for
-        upcoming courses. During my DUT, a friend and I volunteered to build a
-        \`Java\` desktop application for that purpose.
+        A school in Senegal needed a clearer way for staff and teachers to see
+        **classroom schedules**, find free rooms, and book them for upcoming
+        courses. During my DUT, a friend and I volunteered to build the school a
+        \`Java\` desktop application.
 
-        I designed the MySQL database and implemented the Java backend using
-        \`JDBC\`, while my friend developed the \`Swing\` interface. The backend
-        checked room availability before saving a booking to reject schedule
-        conflicts.
+        I designed the MySQL database and implemented the Java backend with
+        \`JDBC\`, while my friend built the \`Swing\` interface. The backend checked
+        availability before saving a booking, so two courses could not claim the
+        same room at the same time.
 
-        As my first substantial collaborative software project, it also challenged
-        me to define the boundary between frontend and backend work, coordinate
-        development, and integrate separately built components. The experience gave
-        me a practical understanding of the problems \`Git\` solves in team
-        development. We completed the application and handed it over to the school
-        with its source code.
+        It was my first substantial collaborative software project, and most of
+        the difficulty was not the code: we had to agree where the frontend
+        stopped and the backend began, keep our work in step, and integrate two
+        halves built separately. We did all of that without version control,
+        which is exactly how I learned what \`Git\` is for. We finished the
+        application and handed it over to the school with its source code.
       `,
       fr: md`
         Une école au Sénégal avait besoin d’un moyen plus clair pour permettre au
         personnel et aux enseignants de consulter l’**occupation des salles**, de
-        repérer celles disponibles et de les réserver pour leurs prochains cours.
-        Pendant mon DUT, un ami et moi nous sommes portés volontaires pour
-        développer une application de bureau en \`Java\` répondant à ce besoin.
+        repérer celles qui étaient libres et de les réserver pour leurs prochains
+        cours. Pendant mon DUT, un ami et moi sommes portés volontaires pour lui
+        développer une application de bureau en \`Java\`.
 
         J’ai conçu la base de données MySQL et implémenté le backend Java avec
         \`JDBC\`, tandis que mon ami développait l’interface graphique en \`Swing\`.
         Avant d’enregistrer une réservation, le backend vérifiait la disponibilité
-        de la salle afin de refuser les conflits de planning.
+        de la salle, afin que deux cours ne puissent pas occuper la même salle au
+        même moment.
 
-        Premier projet logiciel conséquent réalisé en collaboration, il m’a aussi
-        appris à délimiter les responsabilités entre frontend et backend, à
-        coordonner le développement et à intégrer des composants développés
-        séparément. Cette expérience m’a permis de comprendre concrètement les
-        problèmes que \`Git\` résout dans un travail d’équipe. Nous avons finalisé
-        l’application et l’avons remise à l’école avec son code source.
+        C’était mon premier projet logiciel conséquent réalisé à deux, et
+        l’essentiel de la difficulté n’était pas le code : il fallait délimiter où
+        s’arrêtait le frontend et où commençait le backend, avancer au même
+        rythme, puis intégrer deux moitiés développées séparément. Nous avons fait
+        tout cela sans gestion de versions, et c’est précisément ainsi que j’ai
+        compris à quoi sert \`Git\`. Nous avons finalisé l’application et l’avons
+        remise à l’école avec son code source.
       `,
     },
-    technologies: ["Java", "Swing", "JDBC", "MySQL", "Git"],
+    technologies: ["Java", "Swing", "JDBC", "MySQL"],
   },
 ];
