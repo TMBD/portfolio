@@ -109,10 +109,10 @@ export const projects: Project[] = [
         device activity and conserve battery power.
 
         I coordinated with the mechanical team, which used the school’s FabLab to
-        build an enclosure that could survive a dirty and demanding environment.
-        We field-tested the system in several containers, and it held up. Without
-        an intermediate relay, the LoRa link reached about 100 metres, which set
-        the practical limit on how far a gateway could sit from a container.
+        build an enclosure suited to a dirty and demanding environment. We
+        field-tested the prototype in several containers. Without an intermediate
+        relay, the LoRa link reached about 100 metres, which set the practical
+        limit on how far a gateway could sit from a container.
 
         The project strengthened my experience in embedded systems, low-power
         design, long-range communication, and multidisciplinary technical
@@ -134,11 +134,11 @@ export const projects: Project[] = [
         et de préserver la batterie.
 
         J’ai coordonné le travail avec l’équipe mécanique, qui a utilisé le
-        FabLab de l’école pour fabriquer un boîtier capable de résister à un
-        environnement sale et contraignant. Nous avons testé le système sur le
-        terrain dans plusieurs conteneurs, et il a tenu. Sans relais
-        intermédiaire, la liaison LoRa portait à environ 100 mètres, ce qui
-        fixait la distance maximale entre une passerelle et un conteneur.
+        FabLab de l’école pour fabriquer un boîtier adapté à un environnement
+        sale et contraignant. Nous avons testé le prototype sur le terrain dans
+        plusieurs conteneurs. Sans relais intermédiaire, la liaison LoRa portait
+        à environ 100 mètres, ce qui fixait la distance maximale entre une
+        passerelle et un conteneur.
 
         Ce projet a renforcé mon expérience des systèmes embarqués, de la conception
         basse consommation, des communications longue portée et du pilotage
