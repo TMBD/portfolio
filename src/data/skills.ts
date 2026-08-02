@@ -86,11 +86,7 @@ export const skillCategories: SkillCategory[] = [
       fr: "Développement assisté par IA",
     },
     skills: [
-      {
-        name: "GitHub Copilot",
-        icon: "simple-icons:githubcopilot",
-        main: true,
-      },
+      { name: "GitHub Copilot", icon: "simple-icons:githubcopilot" },
       { name: "Windsurf", icon: "simple-icons:windsurf" },
       { name: "Claude Code", icon: "simple-icons:claude" },
     ],
