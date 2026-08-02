@@ -7,8 +7,8 @@ import type { SkillCategory } from "./types";
  */
 export const skillCategories: SkillCategory[] = [
   {
-    id: "backend-jvm",
-    title: { en: "Backend & JVM", fr: "Backend & JVM" },
+    id: "backend",
+    title: { en: "Backend", fr: "Backend" },
     skills: [
       { name: "Java", icon: "logos:java", main: true },
       { name: "Quarkus", icon: "logos:quarkus-icon", main: true },
@@ -35,6 +35,7 @@ export const skillCategories: SkillCategory[] = [
     title: { en: "Data & Messaging", fr: "Données & messagerie" },
     skills: [
       { name: "PostgreSQL", icon: "logos:postgresql", main: true },
+      { name: "Apache AGE", icon: "logos:apache" },
       { name: "MongoDB", icon: "logos:mongodb-icon" },
       { name: "Redis", icon: "logos:redis" },
       { name: "Liquibase", icon: "simple-icons:liquibase" },
@@ -49,7 +50,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Docker", icon: "logos:docker-icon", main: true },
       { name: "Kubernetes", icon: "logos:kubernetes", main: true },
       { name: "Helm", icon: "logos:helm" },
-      { name: "Microsoft Azure", icon: "logos:microsoft-azure" },
+      { name: "Microsoft Azure", icon: "logos:microsoft-azure", main: true },
       { name: "AWS", icon: "logos:aws" },
     ],
   },
@@ -64,10 +65,10 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    id: "testing-tooling-ai",
+    id: "testing-tooling",
     title: {
-      en: "Testing, Tooling & AI",
-      fr: "Tests, outillage & IA",
+      en: "Testing & Tooling",
+      fr: "Tests & outillage",
     },
     skills: [
       { name: "JUnit 5", icon: "simple-icons:junit5" },
@@ -76,6 +77,15 @@ export const skillCategories: SkillCategory[] = [
       { name: "Git", icon: "logos:git-icon" },
       { name: "GitLab", icon: "logos:gitlab" },
       { name: "UML", icon: "simple-icons:uml" },
+    ],
+  },
+  {
+    id: "ai-assisted-engineering",
+    title: {
+      en: "AI-Assisted Engineering",
+      fr: "Développement assisté par IA",
+    },
+    skills: [
       {
         name: "GitHub Copilot",
         icon: "simple-icons:githubcopilot",
