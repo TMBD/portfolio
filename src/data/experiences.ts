@@ -167,7 +167,6 @@ export const experiences: Experience[] = [
   },
   {
     id: "dynamic-integration-configuration",
-    featured: true,
     role: {
       en: "Dynamic Integration Configuration",
       fr: "Configuration dynamique des intégrations",
@@ -239,6 +238,7 @@ export const experiences: Experience[] = [
   },
   {
     id: "zero-downtime-storage-migration-to-azure",
+    featured: true,
     role: {
       en: "Zero-Downtime Storage Migration to Azure",
       fr: "Migration du stockage vers Azure sans interruption de service",
@@ -277,9 +277,7 @@ export const experiences: Experience[] = [
         The workstream ran for about nine months, from design through to the final
         cutover, with no downtime and no data loss. Once production had been
         stable on Azure, I owned the cleanup that removed the old implementation,
-        its toggle, provisioning scripts, and dependencies — the temporary
-        scaffolding had been marked for deletion when it was written, and it was
-        actually deleted.
+        its toggle, provisioning scripts, and dependencies.
       `,
       fr: md`
         Tous les documents cliniques de la plateforme passent par un unique
@@ -315,9 +313,7 @@ export const experiences: Experience[] = [
         bascule finale, sans interruption de service ni perte de données. Une fois
         la production stabilisée sur Azure, j’ai pris en charge le nettoyage :
         suppression de l’ancienne implémentation, du feature toggle, des scripts
-        de provisionnement et des dépendances. Le code temporaire avait été
-        explicitement marqué pour suppression au moment de son écriture, et il a
-        bien été supprimé.
+        de provisionnement et des dépendances.
       `,
     },
   },
