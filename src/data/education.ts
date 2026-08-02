@@ -5,8 +5,8 @@ export const education: Education[] = [
   {
     id: "ecole-centrale-de-lyon",
     degree: {
-      en: "Engineering Degree (Diplôme d’ingénieur de l’École Centrale de Lyon)",
-      fr: "Diplôme d’ingénieur de l’École Centrale de Lyon",
+      en: "Engineering Degree (Diplôme d’ingénieur)",
+      fr: "Diplôme d’ingénieur",
     },
     institution: "École Centrale de Lyon",
     period: {
@@ -15,8 +15,8 @@ export const education: Education[] = [
     },
     location: { en: "Lyon, France", fr: "Lyon, France" },
     description: {
-      en: "Selected for the double-degree program with École Supérieure Polytechnique de Dakar through a competitive process. The multidisciplinary general engineering curriculum broadened my computer engineering background with a cross-disciplinary approach to engineering problems.",
-      fr: "Sélectionné pour intégrer le programme de double diplôme avec l’École Supérieure Polytechnique de Dakar au terme d’un processus sélectif. Ce cursus pluridisciplinaire d’ingénierie générale a élargi mon socle en ingénierie informatique grâce à une approche transversale des problématiques d’ingénierie.",
+      en: "Selected through a competitive process for the double-degree program with École Supérieure Polytechnique de Dakar. This general engineering curriculum complemented a background that had until then been focused mainly on computing, giving me a broader view of engineering problems and the habit of working alongside engineers from other disciplines.",
+      fr: "Retenu à l’issue d’un processus sélectif pour intégrer le programme de double diplôme avec l’École Supérieure Polytechnique de Dakar. Ce cursus généraliste est venu compléter une formation jusque-là essentiellement centrée sur l’informatique, en m’apportant une vision plus transversale de l’ingénierie et l’habitude de collaborer avec des ingénieurs d’autres disciplines.",
     },
   },
   {
@@ -32,8 +32,8 @@ export const education: Education[] = [
     },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
     description: {
-      en: "I completed ESP’s Engineering Degree program in Computer Engineering, where I built a strong foundation in computer science and engineering. This academic path later led to my selection to join École Centrale de Lyon through a double-degree program and laid the groundwork for my career as a software engineer.",
-      fr: "J’ai suivi la formation d’ingénieur de conception en Génie informatique à l’ESP, où j’ai acquis de solides bases en informatique et en sciences de l’ingénieur. Ce cursus m’a ensuite conduit à être sélectionné pour intégrer l’École Centrale de Lyon en double diplôme et a constitué le socle de mon parcours d’ingénieur logiciel.",
+      en: "A selective engineering cycle, entered after my DUT, where I learned to design systems rather than only program them. It covered software engineering as a whole rather than one specialization, and that breadth is still what my work rests on.",
+      fr: "Un cycle ingénieur sélectif, intégré après mon DUT, où j’ai appris à concevoir des systèmes et plus seulement à les programmer. Il couvrait l’ingénierie logicielle dans son ensemble plutôt qu’une spécialisation, et c’est sur cette base large que repose encore mon travail.",
     },
   },
   {
@@ -49,8 +49,8 @@ export const education: Education[] = [
     },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
     description: {
-      en: "Selected through an entrance examination and an academic-record review, I completed this two-year post-secondary program in Computer Science. It gave me my first technical foundation before I was selected to continue into ESP’s Engineering Degree program in Computer Engineering.",
-      fr: "Admis à l’issue d’un concours et d’une sélection sur dossier scolaire, j’ai suivi cette formation de deux ans en informatique après le baccalauréat. Elle m’a donné un premier socle technique, avant ma sélection pour poursuivre en cycle ingénieur de conception en Génie informatique à l’ESP.",
+      en: "Admitted through a competitive entrance examination and a review of academic records. Two years of computer science that gave me my first technical foundation, and my first projects built for real users.",
+      fr: "Admis à l’issue d’un concours d’entrée et d’une sélection sur dossier. Deux années d’informatique qui m’ont donné mon premier socle technique et mes premiers projets destinés à de vrais utilisateurs.",
     },
   },
 ];
