@@ -238,6 +238,90 @@ export const experiences: Experience[] = [
     },
   },
   {
+    id: "zero-downtime-storage-migration-to-azure",
+    role: {
+      en: "Zero-Downtime Storage Migration to Azure",
+      fr: "Migration du stockage vers Azure sans interruption de service",
+    },
+    organization: "CompuGroup Medical (CGM)",
+    period: {
+      en: "February 2025 – November 2025",
+      fr: "Février 2025 – Novembre 2025",
+    },
+    description: {
+      en: md`
+        Every clinical document on the platform passes through a single storage
+        service, originally backed by self-hosted MinIO and one of the services I
+        had helped build. When the company moved the platform to Azure, a
+        colleague and I took on the storage workstream. Doctors use the product
+        during their consultation hours, so there was no maintenance window long
+        enough to move every document at once. The migration had to run with the
+        platform live, and without losing a single file.
+
+        Rather than a single cutover, we made the service talk to both backends at
+        once and moved the routing decision into the database: each MinIO tenant
+        record pointed to the Azure tenant replacing it, and each clinic’s bucket
+        pointed to whichever tenant physically held it. Migrating a bucket became
+        a database update instead of a deployment, and a **feature toggle** could
+        send all traffic back to MinIO instantly, since nothing had been deleted
+        there — precisely to preserve backward compatibility.
+
+        I wrote the Python migration tooling, run as a Kubernetes job: parallel
+        copying, a bookkeeping table that made every run resumable, and object
+        counts compared on both sides before any routing record was repointed —
+        copy, verify, then switch. We ran it outside consultation hours, migrating
+        a set of buckets, stopping, and later picking up where we had left off. I
+        also wrote the backward-compatible read and write paths that let the two
+        backends coexist while buckets moved across one by one.
+
+        The workstream ran for about nine months, from design through to the final
+        cutover, with no downtime and no data loss. Once production had been
+        stable on Azure, I owned the cleanup that removed the old implementation,
+        its toggle, provisioning scripts, and dependencies — the temporary
+        scaffolding had been marked for deletion when it was written, and it was
+        actually deleted.
+      `,
+      fr: md`
+        Tous les documents cliniques de la plateforme passent par un unique
+        service de stockage, initialement adossé à une instance MinIO
+        auto-hébergée que j’avais contribué à développer. Lorsque l’entreprise a
+        migré la plateforme vers Azure, un collègue et moi avons pris en charge le
+        volet stockage. Les médecins utilisent le produit pendant leurs journées
+        de consultation : il n’y avait donc pas de fenêtre de maintenance
+        suffisante pour migrer tous les documents en une fois. La migration devait
+        se faire plateforme en fonctionnement, sans perdre un seul fichier.
+
+        Plutôt qu’une bascule unique, nous avons rendu le service capable de
+        dialoguer avec les deux systèmes de stockage en même temps, et déplacé la
+        décision de routage dans la base de données : chaque tenant MinIO pointait
+        vers le tenant Azure qui le remplaçait, et le bucket de chaque cabinet
+        pointait vers celui qui le détenait physiquement. Migrer un bucket
+        devenait une mise à jour en base plutôt qu’un déploiement, et un **feature
+        toggle** permettait de renvoyer instantanément tout le trafic vers MinIO,
+        puisque rien n’y avait été supprimé, précisément pour assurer la
+        rétrocompatibilité.
+
+        J’ai développé l’outillage de migration en Python, exécuté comme job
+        Kubernetes : copie parallélisée, table de suivi rendant chaque exécution
+        reprenable, et comparaison du nombre d’objets des deux côtés avant tout
+        basculement du routage : copier, vérifier, puis basculer. Nous le lancions
+        en dehors des heures de consultation, migrant un ensemble de buckets, puis
+        nous arrêtions et reprenions plus tard là où nous nous étions arrêtés.
+        J’ai également écrit les chemins de lecture et d’écriture rétrocompatibles
+        permettant aux deux systèmes de coexister pendant que les buckets
+        basculaient un à un.
+
+        Le chantier s’est étendu sur environ neuf mois, de la conception à la
+        bascule finale, sans interruption de service ni perte de données. Une fois
+        la production stabilisée sur Azure, j’ai pris en charge le nettoyage :
+        suppression de l’ancienne implémentation, du feature toggle, des scripts
+        de provisionnement et des dépendances. Le code temporaire avait été
+        explicitement marqué pour suppression au moment de son écriture, et il a
+        bien été supprimé.
+      `,
+    },
+  },
+  {
     id: "oauth-2-token-exchange",
     role: {
       en: "OAuth 2.0 Token Exchange",
