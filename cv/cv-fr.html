@@ -13,7 +13,7 @@
       /* Rendered to public/cv-fr.pdf with headless Edge --print-to-pdf. */
       @page {
         size: A4;
-        margin: 7mm 10mm;
+        margin: 8mm 11mm;
       }
 
       * {
@@ -33,7 +33,7 @@
       body {
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
         font-size: 9.2pt;
-        line-height: 1.34;
+        line-height: 1.36;
         color: var(--text);
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
@@ -48,7 +48,7 @@
           width: 210mm;
           min-height: 297mm;
           margin: 16px auto;
-          padding: 7mm 10mm;
+          padding: 8mm 11mm;
           background: #fff;
           box-shadow: 0 2px 12px rgba(15, 23, 42, 0.15);
         }
@@ -189,7 +189,7 @@
 
       li {
         position: relative;
-        margin-bottom: 1px;
+        margin-bottom: 2px;
         padding-left: 11px;
         text-align: justify;
       }
@@ -253,7 +253,7 @@
       }
 
       .footer {
-        margin-top: 9px;
+        margin-top: 7px;
         padding-top: 5px;
         border-top: 1px solid var(--rule);
         font-size: 8.8pt;
@@ -333,9 +333,9 @@
 
     <ul>
       <li>
-        <b>Migration du stockage vers Azure Blob Storage</b> — migration du
-        service par lequel transitent tous les documents cliniques, de MinIO
-        auto-hébergé vers Azure, sans interruption de service ni perte de
+        <b>Migration du stockage vers Azure Blob Storage</b> — le
+        service par lequel passent tous les documents cliniques, de MinIO
+        auto-hébergé vers Azure, sans interruption ni perte de
         données : routage décidé en base, feature toggle de repli, et outillage
         Python exécuté comme job Kubernetes (copie parallélisée, reprise,
         vérification avant bascule).
@@ -366,12 +366,6 @@
         <b>Gouvernance des agents IA</b> — création du cadre utilisé par
         l’équipe : modèle de gouvernance, grille de notation et outil Python
         d’évaluation, skills réutilisables et workflows d’orchestration.
-      </li>
-      <li>
-        <b>Cartes de santé et DMP</b> — investigation technique et preuve de
-        concept (CPS, Carte Vitale, DMP), documentation et transfert de
-        connaissances ayant permis aux équipes de livrer la fonctionnalité
-        aujourd’hui utilisée par les médecins.
       </li>
       <li>
         <b>En continu</b> — revues de code, support des incidents de production,
