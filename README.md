@@ -104,7 +104,7 @@ export const profile: Profile = {
   role: { en: "Software Engineer", fr: "Ingénieur logiciel" },
   location: { en: "Paris, France", fr: "Paris, France" },
   email: "you@example.com",
-  cvUrl: "/cv.pdf",          // file in /public
+  cvUrl: { en: "/cv-en.pdf", fr: "/cv-fr.pdf" }, // files in /public
   photo: "/profile.svg",     // file in /public
   intro: { en: "Short hero intro…", fr: "Courte intro…" },
   about: { en: "Longer about-me…", fr: "À propos plus long…" },
@@ -266,9 +266,60 @@ Replace these files with your own (keep the same names, or update the paths in
 | File | Used for |
 | --- | --- |
 | `profile.svg` | Hero profile photo (swap for a `.jpg`/`.png` and update `profile.photo`) |
-| `cv.pdf` | Downloadable CV (the "Download CV" button) |
+| `cv-fr.pdf` / `cv-en.pdf` | Downloadable CV — the "Download CV" button serves the one matching the page language |
 | `favicon.svg` | Browser tab icon |
 | `og.svg` | Social-share / Open Graph preview image |
+
+## CV / résumé — [cv/](cv/)
+
+The PDFs in `public/` are **generated**, never edited by hand. The source of
+truth is one HTML file per language:
+
+| Source | Output |
+| --- | --- |
+| [cv/cv-fr.html](cv/cv-fr.html) | `public/cv-fr.pdf` |
+| [cv/cv-en.html](cv/cv-en.html) | `public/cv-en.pdf` |
+
+Each file is self-contained (content + styles) and includes a `@media screen`
+block, so opening it in a browser shows it as an A4 sheet for proofreading.
+
+### Regenerating a PDF
+
+Edit the HTML, then render it with headless Edge (or Chrome) from the project
+root:
+
+```powershell
+$edge = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+$src  = (Resolve-Path ".\cv\cv-fr.html").Path
+$out  = Join-Path (Get-Location) "public\cv-fr.pdf"
+
+& $edge --headless --disable-gpu --no-pdf-header-footer `
+  --virtual-time-budget=15000 --print-to-pdf="$out" `
+  ("file:///" + $src.Replace('\','/'))
+```
+
+Swap `cv-fr` for `cv-en` to rebuild the English one.
+
+> **Keep `--virtual-time-budget`.** The CVs load Inter, Space Grotesk and
+> JetBrains Mono from Google Fonts. Without it, Edge prints before the fonts
+> arrive and silently falls back to system fonts — the PDF still looks fine on
+> its own, but the typography no longer matches the site. A correct render is
+> ~220 KB; a fallback render is ~90 KB.
+
+### Checking the result
+
+The layout is tuned so each CV fills exactly one page. After editing, confirm
+the page count before committing:
+
+```powershell
+$txt = [System.Text.Encoding]::GetEncoding(28591).GetString(
+  [System.IO.File]::ReadAllBytes((Resolve-Path "public\cv-fr.pdf")))
+"Pages : " + [regex]::Match($txt, "/Count\s+(\d+)").Groups[1].Value
+"Fonts : " + $txt.Contains("Grotesk")
+```
+
+If it spills onto a second page, recover space from the `@page` margins, the
+body `line-height`, or by tightening the wording — in that order.
 
 ## Site URL & SEO
 

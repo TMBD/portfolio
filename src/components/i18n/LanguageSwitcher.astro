@@ -4,7 +4,11 @@
  * the user's explicit choice so the Layout can restore it on later visits.
  */
 import { languages, type Lang } from "../../i18n/ui";
-import { getLangFromUrl, getAlternatePath } from "../../i18n/utils";
+import {
+  getLangFromUrl,
+  getAlternatePath,
+  useTranslations,
+} from "../../i18n/utils";
 
 interface Props {
   /** Optional per-locale override URLs (e.g. blog posts with different slugs). */
@@ -13,6 +17,7 @@ interface Props {
 const { alternates } = Astro.props;
 
 const current = getLangFromUrl(Astro.url);
+const t = useTranslations(current);
 const entries = (Object.keys(languages) as Lang[]).map((lang) => ({
   lang,
   label: lang.toUpperCase(),
@@ -24,7 +29,7 @@ const entries = (Object.keys(languages) as Lang[]).map((lang) => ({
 <div
   class="inline-flex items-center rounded-lg border border-border p-0.5 text-sm"
   role="group"
-  aria-label="Language"
+  aria-label={t("lang.label")}
 >
   {
     entries.map(({ lang, label, href, active }) => (
