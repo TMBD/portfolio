@@ -10,7 +10,7 @@ import { profile } from "../data/profile";
 /** Brand name shown in the header/footer and page titles (from the profile). */
 export const siteName = profile.name;
 
-/** Path to the downloadable CV in /public (placeholder until the real file). */
+/** Downloadable CV in /public, one entry per language. */
 export const cvUrl = profile.cvUrl;
 
 /** A primary navigation entry. */

@@ -24,7 +24,8 @@ export interface Profile {
   role: Localized;
   location: Localized;
   email: string;
-  cvUrl: string;
+  /** One PDF per language, e.g. `{ en: "/cv-en.pdf", fr: "/cv-fr.pdf" }`. */
+  cvUrl: Localized;
   /** Path to the profile photo in /public. */
   photo: string;
   /** Short 4–6 line intro for the hero. */

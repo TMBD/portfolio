@@ -1,10 +1,10 @@
 ---
 /**
  * CvButton — compact "Download CV" action for the header utility cluster and a
- * full-label version for the footer. Points at the CV PDF in /public.
+ * full-label version for the footer. Serves the PDF matching the active locale.
  */
 import { cvUrl } from "../../config/site";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, useTranslations, pick } from "../../i18n/utils";
 
 interface Props {
   /** "compact" = icon + short label (header); "full" = icon + full label. */
@@ -13,13 +13,17 @@ interface Props {
 }
 
 const { variant = "compact", class: className = "" } = Astro.props;
-const t = useTranslations(getLangFromUrl(Astro.url));
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const label = t("action.downloadCv");
+// Saved filename, so recruiters get a named file rather than "cv-fr.pdf".
+const fileName =
+  lang === "fr" ? "Thierno-DIALLO-CV.pdf" : "Thierno-DIALLO-Resume.pdf";
 ---
 
 <a
-  href={cvUrl}
-  download
+  href={pick(cvUrl, lang)}
+  download={fileName}
   aria-label={label}
   title={label}
   class:list={[

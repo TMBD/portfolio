@@ -10,7 +10,7 @@ export const profile: Profile = {
   role: { en: "Senior Software Engineer", fr: "Ingénieur logiciel senior" },
   location: { en: "Montpellier, France", fr: "Montpellier, France" },
   email: "thierno.dev@gmail.com",
-  cvUrl: "/cv.pdf",
+  cvUrl: { en: "/cv-en.pdf", fr: "/cv-fr.pdf" },
   photo: "/profile.svg",
 
   intro: {
