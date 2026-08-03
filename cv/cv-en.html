@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Thierno DIALLO — Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Rendered to public/cv-fr.pdf with headless Edge --print-to-pdf. */
+      @page {
+        size: A4;
+        margin: 9mm 12mm;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --text: #334155;
+        --heading: #0f172a;
+        --muted: #64748b;
+        --accent: #ea580c;
+        --rule: #e2e8f0;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        font-size: 9.2pt;
+        line-height: 1.42;
+        color: var(--text);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* On screen only, mimic the printed A4 sheet so the file can be proofed in a browser. */
+      @media screen {
+        html {
+          background: #f1f5f9;
+        }
+        body {
+          width: 210mm;
+          min-height: 297mm;
+          margin: 16px auto;
+          padding: 9mm 12mm;
+          background: #fff;
+          box-shadow: 0 2px 12px rgba(15, 23, 42, 0.15);
+        }
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ---------- Header ---------- */
+
+      header {
+        padding-bottom: 6px;
+        border-bottom: 2px solid var(--heading);
+      }
+
+      .name {
+        font-family: "Space Grotesk", "Segoe UI", sans-serif;
+        font-size: 21pt;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+        color: var(--heading);
+        line-height: 1.05;
+      }
+
+      .role {
+        margin-top: 1px;
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: var(--accent);
+      }
+
+      .contact {
+        margin-top: 6px;
+        font-size: 8.8pt;
+        color: var(--muted);
+      }
+
+      .contact + .contact {
+        margin-top: 2px;
+      }
+
+      .contact b {
+        font-weight: 600;
+        color: var(--heading);
+      }
+
+      .sep {
+        padding: 0 6px;
+        color: #cbd5e1;
+      }
+
+      /* ---------- Sections ---------- */
+
+      h2 {
+        position: relative;
+        margin-top: 8px;
+        margin-bottom: 4px;
+        padding-bottom: 3px;
+        padding-left: 11px;
+        border-bottom: 1px solid var(--rule);
+        font-family: "Space Grotesk", "Segoe UI", sans-serif;
+        font-size: 8.6pt;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--heading);
+      }
+
+      h2::before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 3px;
+        height: 10px;
+        background: var(--accent);
+      }
+
+      p {
+        text-align: justify;
+      }
+
+      /* ---------- Skills ---------- */
+
+      .skills div {
+        margin-bottom: 2.5px;
+      }
+
+      .skills b {
+        display: inline-block;
+        min-width: 136px;
+        padding-right: 8px;
+        font-weight: 600;
+        color: var(--heading);
+      }
+
+      /* ---------- Experience ---------- */
+
+      .job {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .job-title {
+        font-size: 10pt;
+        font-weight: 700;
+        color: var(--heading);
+      }
+
+      .job-title .org {
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      .dates {
+        flex-shrink: 0;
+        font-family: "JetBrains Mono", "Consolas", monospace;
+        font-size: 8pt;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .context {
+        margin-top: 1px;
+        font-size: 8.8pt;
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      ul {
+        margin-top: 5px;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        margin-bottom: 2px;
+        padding-left: 11px;
+        text-align: justify;
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        top: 5.5px;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      li b,
+      .project b {
+        font-weight: 600;
+        color: var(--heading);
+      }
+
+      .short {
+        margin-top: 6px;
+      }
+
+      .short p {
+        margin-top: 1px;
+      }
+
+      /* ---------- Rows with a leading mono key (education) ---------- */
+
+      .row {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 2px;
+      }
+
+      .row .key {
+        flex-shrink: 0;
+        width: 40px;
+        padding-top: 1.5px;
+        font-family: "JetBrains Mono", "Consolas", monospace;
+        font-size: 8.4pt;
+        font-weight: 500;
+        color: var(--accent);
+      }
+
+      .row .school {
+        color: var(--muted);
+      }
+
+      .row i {
+        color: var(--muted);
+      }
+
+      /* ---------- Languages & footer ---------- */
+
+      .languages b {
+        font-weight: 600;
+        color: var(--heading);
+      }
+
+      .footer {
+        margin-top: 7px;
+        padding-top: 5px;
+        border-top: 1px solid var(--rule);
+        font-size: 8.8pt;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .footer b {
+        font-weight: 600;
+        color: var(--heading);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="name">Thierno DIALLO</div>
+      <div class="role">Senior Software Engineer</div>
+      <div class="contact">
+        Montpellier, France <span class="sep">·</span>
+        <a href="mailto:thierno.dev@gmail.com">thierno.dev@gmail.com</a>
+      </div>
+      <div class="contact">
+        <b>Portfolio</b>
+        <a href="https://thierno.dev">https://thierno.dev</a>
+        <span class="sep">·</span>
+        <b>LinkedIn</b>
+        <a href="https://www.linkedin.com/in/thiernodev"
+          >linkedin.com/in/thiernodev</a
+        >
+        <span class="sep">·</span>
+        <b>GitHub</b>
+        <a href="https://github.com/tmbd">github.com/tmbd</a>
+      </div>
+    </header>
+
+    <h2>Profile</h2>
+    <p>
+      Senior software engineer with five years’ experience on Java/Quarkus
+      backend systems for healthcare software used every day by doctors. I work
+      from architecture through to production: identity and API security, cloud
+      migrations, technology choices and documentation. Looking for a technical
+      leadership role that stays close to the code.
+    </p>
+
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><b>Backend</b> Java, Quarkus, REST, JPA/Hibernate, Maven, Python</div>
+      <div>
+        <b>Identity &amp; security</b> OAuth 2.0, OpenID Connect, JWT, token
+        exchange, OpenAPI
+      </div>
+      <div><b>Data</b> PostgreSQL, Apache AGE, Redis, MongoDB, Liquibase</div>
+      <div>
+        <b>Cloud &amp; operations</b> Azure, Docker, Kubernetes, Helm, GitLab CI
+      </div>
+      <div>
+        <b>Testing &amp; tooling</b> JUnit 5, Postman, JMeter, Git/GitLab, UML,
+        AI agents
+      </div>
+    </div>
+
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-title">
+        Senior Software Engineer
+        <span class="org">— CompuGroup Medical, Montpellier</span>
+      </div>
+      <div class="dates">Sept. 2021 – present</div>
+    </div>
+    <div class="context">
+      Multi-tenant healthcare SaaS platform (patient records, prescriptions,
+      invoicing) used in several countries.
+    </div>
+
+    <ul>
+      <li>
+        <b>Storage migration to Azure Blob Storage</b> — the service every
+        clinical document passes through, moved from self-hosted MinIO to Azure
+        with no downtime and no data loss: routing decided in the database, a
+        feature toggle as an instant fallback, and Python tooling run as a
+        Kubernetes job (parallel copying, resumable, verified before each
+        switch).
+      </li>
+      <li>
+        <b>Federated single sign-on (OIDC)</b> — designed and implemented end to
+        end: authentication delegated to the enterprise identity provider, roles
+        and permissions kept under the platform’s control. In production.
+      </li>
+      <li>
+        <b>OAuth 2.0 token exchange (RFC 8693)</b> — lets partner products reach
+        platform services through scoped tokens, without a second sign-in. In
+        production.
+      </li>
+      <li>
+        <b>Dynamic configuration service</b> — designed and implemented a service
+        resolving, per user and per integration, settings that had been scattered
+        through the code: changes and exceptions are now configuration rather
+        than deployments.
+      </li>
+      <li>
+        <b>Graph-based classification</b> — evaluated Apache AGE against Neo4j:
+        graph capabilities without adding a second database to operate; major
+        contributor to the Java/Quarkus implementation.
+      </li>
+      <li>
+        <b>AI agent governance</b> — created the framework the team uses:
+        governance model, weighted scoring rubric and Python evaluation tool,
+        reusable skills and orchestration workflows.
+      </li>
+      <li>
+        <b>Ongoing</b> — code reviews, production incident support, architecture
+        documentation and knowledge transfer.
+      </li>
+    </ul>
+
+    <div class="short">
+      <div class="job">
+        <div class="job-title">
+          Final-year internship
+          <span class="org">— KimiaPay, France (remote)</span>
+        </div>
+        <div class="dates">2021</div>
+      </div>
+      <p>
+        Sole technical owner of a salary-advance product: service-oriented
+        architecture (mobile application, back office, business services, REST
+        APIs), deployed and ready for a pilot phase.
+      </p>
+    </div>
+
+    <div class="short">
+      <div class="job">
+        <div class="job-title">
+          Engineering internship <span class="org">— Amadeus, Nice</span>
+        </div>
+        <div class="dates">2020</div>
+      </div>
+      <p>
+        Feasibility study for migrating a flight-search application server from
+        Spring/JBoss to Quarkus; decision-ready reference documenting blockers,
+        solutions, trade-offs and migration costs.
+      </p>
+    </div>
+
+    <h2>Personal project</h2>
+    <p class="project">
+      <b>Laajal Sa Diine</b> — a platform of short audio answers, designed and
+      built on my own: React/TypeScript client, Node.js API, MongoDB, Amazon S3,
+      weighted full-text search tuned for French. Provisioned and operated on a
+      Hetzner Cloud server (Docker, Traefik, Cloudflare). Online, used and
+      maintained —
+      <a href="https://www.laajalsadiine.com">laajalsadiine.com</a>.
+    </p>
+
+    <h2>Education</h2>
+    <div class="row">
+      <div class="key">2021</div>
+      <div>
+        Engineering Degree —
+        <span class="school">École Centrale de Lyon</span>
+        <i>(double degree)</i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="key">2021</div>
+      <div>
+        Engineering Degree in Computer Engineering —
+        <span class="school">École Supérieure Polytechnique de Dakar</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="key">2017</div>
+      <div>
+        University Diploma of Technology (DUT) in Computer Science —
+        <span class="school">École Supérieure Polytechnique de Dakar</span>
+      </div>
+    </div>
+
+    <h2>Languages</h2>
+    <div class="languages">
+      <b>French</b> and <b>English</b> — advanced professional proficiency in
+      both; English used daily at work.
+    </div>
+
+    <div class="footer">
+      Detailed case studies, projects and articles:
+      <b><a href="https://thierno.dev">https://thierno.dev</a></b>
+    </div>
+  </body>
+</html>
