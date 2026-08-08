@@ -50,7 +50,7 @@ export const projects: Project[] = [
       `,
       fr: md`
         Laajal Sa Diine est une plateforme de réponses audio courtes aux
-        questions du quotidien sur l’islam. Je l’ai conçue et développée seul
+        questions du quotidien sur l'islam. Je l'ai conçue et développée seul
         pour rendre ces réponses plus faciles à trouver : une application cliente
         en React et TypeScript, une API REST Node.js, MongoDB pour la
         bibliothèque et Amazon S3 pour les fichiers audio.
@@ -58,18 +58,18 @@ export const projects: Project[] = [
         Le plus difficile a été la **recherche de contenus** : un index plein
         texte pondéré et configuré pour le français classe les correspondances
         sur plusieurs champs, tandis que des filtres combinables et le défilement
-        infini facilitent l’exploration de la bibliothèque. J’ai également mis en
+        infini facilitent l'exploration de la bibliothèque. J'ai également mis en
         place une administration protégée par JWT, avec des droits distincts pour
         la gestion des contenus, des administrateurs et des sauvegardes.
 
-        La mise en production a représenté l’autre moitié du travail, et je
+        La mise en production a représenté l'autre moitié du travail, et je
         voulais maîtriser ce chemin plutôt que de le confier à un hébergement
-        entièrement managé. J’ai provisionné moi-même un serveur Hetzner Cloud,
+        entièrement managé. J'ai provisionné moi-même un serveur Hetzner Cloud,
         déployé les services avec Docker, assuré leur routage avec Traefik et
         fait pointer les enregistrements DNS via Cloudflare.
 
-        Le site est en ligne aujourd’hui, utilisé par des auditeurs, et je
-        continue de le maintenir moi-même — l’infrastructure autant que le code.
+        Le site est en ligne aujourd'hui, utilisé par des auditeurs, et je
+        continue de le maintenir moi-même — l'infrastructure autant que le code.
       `,
     },
     technologies: [
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     id: "waste-container-fill-level-alert-system",
     name: {
       en: "Waste-Container Fill-Level Alert System",
-      fr: "Système d’alerte du niveau de remplissage des conteneurs à déchets",
+      fr: "Système d'alerte du niveau de remplissage des conteneurs à déchets",
     },
     description: {
       en: md`
@@ -104,11 +104,11 @@ export const projects: Project[] = [
 
         I led the electronics design and implementation, defining the
         communication path from an ultrasonic sensor and Arduino board to a \`LoRa\`
-        gateway connected to GSF’s servers. I wrote the Arduino/C++ firmware and
+        gateway connected to GSF's servers. I wrote the Arduino/C++ firmware and
         configured measurements and transmissions at 30-minute intervals to limit
         device activity and conserve battery power.
 
-        I coordinated with the mechanical team, which used the school’s FabLab to
+        I coordinated with the mechanical team, which used the school's FabLab to
         build an enclosure suited to a dirty and demanding environment. We
         field-tested the prototype in several containers. Without an intermediate
         relay, the LoRa link reached about 100 metres, which set the practical
@@ -121,20 +121,20 @@ export const projects: Project[] = [
       fr: md`
         GSF souhaitait que ses équipes de collecte connaissent le niveau de
         remplissage des conteneurs avant de planifier leurs tournées. Ce besoin
-        est devenu un projet académique à l’École Centrale de Lyon, de septembre
-        2019 à avril 2020, où j’ai assuré la direction technique de l’équipe
+        est devenu un projet académique à l'École Centrale de Lyon, de septembre
+        2019 à avril 2020, où j'ai assuré la direction technique de l'équipe
         chargée de concevoir un **système connecté** capable de mesurer ce niveau
         et de le transmettre à intervalles réguliers.
 
-        J’ai piloté la conception et la réalisation du système électronique, en
+        J'ai piloté la conception et la réalisation du système électronique, en
         définissant la chaîne de communication reliant un capteur à ultrasons et
         une carte Arduino à une passerelle \`LoRa\` connectée aux serveurs de GSF.
-        J’ai développé le firmware Arduino en C++ et configuré une mesure et une
-        transmission toutes les 30 minutes afin de limiter l’activité du dispositif
+        J'ai développé le firmware Arduino en C++ et configuré une mesure et une
+        transmission toutes les 30 minutes afin de limiter l'activité du dispositif
         et de préserver la batterie.
 
-        J’ai coordonné le travail avec l’équipe mécanique, qui a utilisé le
-        FabLab de l’école pour fabriquer un boîtier adapté à un environnement
+        J'ai coordonné le travail avec l'équipe mécanique, qui a utilisé le
+        FabLab de l'école pour fabriquer un boîtier adapté à un environnement
         sale et contraignant. Nous avons testé le prototype sur le terrain dans
         plusieurs conteneurs. Sans relais intermédiaire, la liaison LoRa portait
         à environ 100 mètres, ce qui fixait la distance maximale entre une
@@ -159,7 +159,7 @@ export const projects: Project[] = [
         The 2019 French Robotics Cup asked teams to build **autonomous robots**
         for Atom Factory: a 100-second match with several scoring actions
         available and no prescribed order to perform them in. Strategy counted as
-        much as reliable execution. I worked on École Centrale de Lyon’s entry
+        much as reliable execution. I worked on École Centrale de Lyon's entry
         from September 2018 to June 2019.
 
         As technical lead of the electronics team, I contributed extensively to
@@ -170,7 +170,7 @@ export const projects: Project[] = [
         physical capability, and software behavior all agreed.
 
         We applied closed-loop control concepts from our ECL coursework to
-        regulate the robots’ movement and positioning. Our robots passed official
+        regulate the robots' movement and positioning. Our robots passed official
         homologation and competed in the event.
 
         Very little of the result depended on the code alone: a strategy the
@@ -178,27 +178,27 @@ export const projects: Project[] = [
         software could not drive.
       `,
       fr: md`
-        L’édition 2019 de la Coupe de France de Robotique demandait aux équipes de
+        L'édition 2019 de la Coupe de France de Robotique demandait aux équipes de
         construire des **robots autonomes** pour Atom Factory : un match de 100
         secondes offrant plusieurs actions rapportant des points, sans ordre
-        imposé. La stratégie comptait autant que la fiabilité d’exécution. J’ai
-        travaillé sur la participation de l’École Centrale de Lyon de septembre
+        imposé. La stratégie comptait autant que la fiabilité d'exécution. J'ai
+        travaillé sur la participation de l'École Centrale de Lyon de septembre
         2018 à juin 2019.
 
-        En tant que responsable technique de l’équipe électronique, j’ai contribué
+        En tant que responsable technique de l'équipe électronique, j'ai contribué
         activement au logiciel embarqué en \`Python\` exécuté sur des contrôleurs
-        \`LEGO EV3\`, et coordonné le travail électronique de l’implémentation
-        jusqu’à l’intégration. Décider de ce que le robot tenterait en 100 secondes
-        supposait un travail étroit avec l’équipe mécanique, afin que la stratégie
-        de match, les capacités physiques et le comportement logiciel s’accordent.
+        \`LEGO EV3\`, et coordonné le travail électronique de l'implémentation
+        jusqu'à l'intégration. Décider de ce que le robot tenterait en 100 secondes
+        supposait un travail étroit avec l'équipe mécanique, afin que la stratégie
+        de match, les capacités physiques et le comportement logiciel s'accordent.
 
         Nous avons appliqué des notions de commande en boucle fermée étudiées à
-        l’ECL afin de réguler le déplacement et le positionnement des robots. Nos
+        l'ECL afin de réguler le déplacement et le positionnement des robots. Nos
         robots ont obtenu leur homologation officielle et participé à la
         compétition.
 
         Le résultat dépendait très peu du code seul : une stratégie que la
-        mécanique ne pouvait pas exécuter coûtait exactement autant de points qu’un
+        mécanique ne pouvait pas exécuter coûtait exactement autant de points qu'un
         mécanisme que le logiciel ne pouvait pas piloter.
       `,
     },
@@ -225,7 +225,7 @@ export const projects: Project[] = [
         lit the right LEDs at each angular position so the eye read stable text
         rather than a blur.
 
-        As head of the club’s IT department, I developed the native Android
+        As head of the club's IT department, I developed the native Android
         application in \`Java\`, agreed the communication format with the
         electronics team, and handled \`Bluetooth\` connection failures and
         retries. I also split the software work into tasks, set deadlines, and
@@ -238,26 +238,26 @@ export const projects: Project[] = [
         because neither side could test on its own until it existed.
       `,
       fr: md`
-        Pour la Journée Polytechnique de 2018, le club Robotech de l’École
+        Pour la Journée Polytechnique de 2018, le club Robotech de l'École
         Supérieure Polytechnique de Dakar a réalisé un afficheur LED à
-        **persistance rétinienne** capable d’afficher du texte envoyé depuis un
+        **persistance rétinienne** capable d'afficher du texte envoyé depuis un
         smartphone par Bluetooth. Le dispositif à LED était monté sur un moteur
         qui le faisait tourner 60 fois par seconde, et le contrôleur allumait les
-        LED appropriées à chaque position angulaire, afin que l’œil perçoive un
-        texte stable plutôt qu’une traînée lumineuse.
+        LED appropriées à chaque position angulaire, afin que l'œil perçoive un
+        texte stable plutôt qu'une traînée lumineuse.
 
-        En tant que responsable du département informatique du club, j’ai
-        développé l’application Android native en \`Java\`, défini avec l’équipe
+        En tant que responsable du département informatique du club, j'ai
+        développé l'application Android native en \`Java\`, défini avec l'équipe
         électronique le format de communication et géré les échecs de connexion
-        \`Bluetooth\` ainsi que les nouvelles tentatives. J’ai également réparti le
+        \`Bluetooth\` ainsi que les nouvelles tentatives. J'ai également réparti le
         travail logiciel en tâches, fixé les échéances et suivi les livraisons
         afin que le volet logiciel reste aligné avec les autres équipes.
 
-        L’afficheur finalisé a été présenté lors de l’événement. Ma part portait
-        sur le smartphone — l’application et sa liaison Bluetooth — et sur la
-        coordination avec l’équipe électronique : le format de message devait être
-        arrêté tôt, car aucun des deux côtés ne pouvait tester seul tant qu’il
-        n’existait pas.
+        L'afficheur finalisé a été présenté lors de l'événement. Ma part portait
+        sur le smartphone — l'application et sa liaison Bluetooth — et sur la
+        coordination avec l'équipe électronique : le format de message devait être
+        arrêté tôt, car aucun des deux côtés ne pouvait tester seul tant qu'il
+        n'existait pas.
       `,
     },
     technologies: ["Java", "Android SDK", "Bluetooth"],
@@ -288,25 +288,25 @@ export const projects: Project[] = [
         application and handed it over to the school with its source code.
       `,
       fr: md`
-        Une école au Sénégal avait besoin d’un moyen plus clair pour permettre au
-        personnel et aux enseignants de consulter l’**occupation des salles**, de
+        Une école au Sénégal avait besoin d'un moyen plus clair pour permettre au
+        personnel et aux enseignants de consulter l'**occupation des salles**, de
         repérer celles qui étaient libres et de les réserver pour leurs prochains
         cours. Pendant mon DUT, un ami et moi sommes portés volontaires pour lui
         développer une application de bureau en \`Java\`.
 
-        J’ai conçu la base de données MySQL et implémenté le backend Java avec
-        \`JDBC\`, tandis que mon ami développait l’interface graphique en \`Swing\`.
-        Avant d’enregistrer une réservation, le backend vérifiait la disponibilité
+        J'ai conçu la base de données MySQL et implémenté le backend Java avec
+        \`JDBC\`, tandis que mon ami développait l'interface graphique en \`Swing\`.
+        Avant d'enregistrer une réservation, le backend vérifiait la disponibilité
         de la salle, afin que deux cours ne puissent pas occuper la même salle au
         même moment.
 
-        C’était mon premier projet logiciel conséquent réalisé à deux, et
-        l’essentiel de la difficulté n’était pas le code : il fallait délimiter où
-        s’arrêtait le frontend et où commençait le backend, avancer au même
+        C'était mon premier projet logiciel conséquent réalisé à deux, et
+        l'essentiel de la difficulté n'était pas le code : il fallait délimiter où
+        s'arrêtait le frontend et où commençait le backend, avancer au même
         rythme, puis intégrer deux moitiés développées séparément. Nous avons fait
-        tout cela sans gestion de versions, et c’est précisément ainsi que j’ai
-        compris à quoi sert \`Git\`. Nous avons finalisé l’application et l’avons
-        remise à l’école avec son code source.
+        tout cela sans gestion de versions, et c'est précisément ainsi que j'ai
+        compris à quoi sert \`Git\`. Nous avons finalisé l'application et l'avons
+        remise à l'école avec son code source.
       `,
     },
     technologies: ["Java", "Swing", "JDBC", "MySQL"],
