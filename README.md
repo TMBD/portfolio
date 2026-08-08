@@ -26,9 +26,9 @@ your portfolio up to date is quick and safe.
 
 ## Quick start
 
-**Prerequisites:** Node 20+ (see [.nvmrc](.nvmrc)) and [pnpm](https://pnpm.io/).
-The exact version is pinned in `packageManager`; `corepack enable pnpm` installs it
-for you.
+**Prerequisites:** Node 22+ (see [.nvmrc](.nvmrc)) and [pnpm](https://pnpm.io/) 11+.
+The exact pnpm version is pinned in the `packageManager` field of
+[package.json](package.json); install it with `npm i -g pnpm` or `corepack enable pnpm`.
 
 ```bash
 pnpm install   # install dependencies
@@ -36,6 +36,9 @@ pnpm dev       # start the dev server → http://localhost:4321
 pnpm build     # build the static site to ./dist
 pnpm preview   # preview the production build locally
 ```
+
+pnpm settings live in [pnpm-workspace.yaml](pnpm-workspace.yaml); [.npmrc](.npmrc)
+carries registry configuration only.
 
 ---
 
