@@ -32,8 +32,8 @@ export const education: Education[] = [
     },
     location: { en: "Dakar, Senegal", fr: "Dakar, Sénégal" },
     description: {
-      en: "A selective engineering cycle, entered after my DUT, where I learned to design systems rather than only program them. It covered software engineering as a whole rather than one specialization, and that breadth is still what my work rests on.",
-      fr: "Un cycle ingénieur sélectif, intégré après mon DUT, où j’ai appris à concevoir des systèmes et plus seulement à les programmer. Il couvrait l’ingénierie logicielle dans son ensemble plutôt qu’une spécialisation, et c’est sur cette base large que repose encore mon travail.",
+      en: "A selective engineering cycle, entered after my DUT, where I learned to design systems rather than only program them. It covered software engineering as a whole, and that breadth is still what my work rests on.",
+      fr: "Un cycle ingénieur sélectif, intégré après mon DUT, où j’ai appris à concevoir des systèmes et plus seulement à les programmer. Il couvrait l’ingénierie logicielle dans son ensemble, et c’est sur cette base large que repose encore mon travail.",
     },
   },
   {
