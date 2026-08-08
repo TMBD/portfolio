@@ -26,13 +26,15 @@ your portfolio up to date is quick and safe.
 
 ## Quick start
 
-**Prerequisites:** Node 20+ (see [.nvmrc](.nvmrc)) and npm.
+**Prerequisites:** Node 20+ (see [.nvmrc](.nvmrc)) and [pnpm](https://pnpm.io/).
+The exact version is pinned in `packageManager`; `corepack enable pnpm` installs it
+for you.
 
 ```bash
-npm install      # install dependencies
-npm run dev      # start the dev server → http://localhost:4321
-npm run build    # build the static site to ./dist
-npm run preview  # preview the production build locally
+pnpm install   # install dependencies
+pnpm dev       # start the dev server → http://localhost:4321
+pnpm build     # build the static site to ./dist
+pnpm preview   # preview the production build locally
 ```
 
 ---
@@ -366,7 +368,7 @@ implementation.
 ## Deployment
 
 The site builds to fully static files in `./dist` (no server needed). Run
-`npm run build` and deploy the output to any static host (Cloudflare Pages,
+`pnpm build` and deploy the output to any static host (Cloudflare Pages,
 Netlify, Vercel, GitHub Pages, …). Remember to set `site` in
 [astro.config.mjs](astro.config.mjs) to your final URL.
 
