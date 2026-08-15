@@ -44,7 +44,14 @@ for (const l of Object.keys(languages) as Lang[]) {
 }
 ---
 
-<Layout title={`${title} — ${siteName}`} description={description} image={heroImage} localeAlternates={localeAlternates}>
+<Layout
+  title={`${title} — ${siteName}`}
+  description={description}
+  image={heroImage}
+  publishedTime={pubDate}
+  modifiedTime={updatedDate}
+  localeAlternates={localeAlternates}
+>
   <Section>
     <div class="mx-auto max-w-3xl">
       <a
