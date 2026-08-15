@@ -273,7 +273,7 @@ Replace these files with your own (keep the same names, or update the paths in
 | `profile.svg` | Hero profile photo (swap for a `.jpg`/`.png` and update `profile.photo`) |
 | `cv-fr.pdf` / `cv-en.pdf` | Downloadable CV — the "Download CV" button serves the one matching the page language |
 | `favicon.svg` | Browser tab icon |
-| `og.svg` | Social-share / Open Graph preview image |
+| `og-en.png` / `og-fr.png` | Social-share / Open Graph card — the layout serves the one matching the page language |
 
 ## CV / résumé — [cv/](cv/)
 
@@ -325,6 +325,58 @@ $txt = [System.Text.Encoding]::GetEncoding(28591).GetString(
 
 If it spills onto a second page, recover space from the `@page` margins, the
 body `line-height`, or by tightening the wording — in that order.
+
+## Social cards — [og/](og/)
+
+The preview image platforms show when a link to the site is pasted into
+LinkedIn, WhatsApp, Slack, Teams, Discord or X. Same principle as the CVs: the
+PNGs are generated, the HTML is the source of truth.
+
+| Source | Output |
+| --- | --- |
+| [og/og-en.html](og/og-en.html) | `public/og-en.png` |
+| [og/og-fr.html](og/og-fr.html) | `public/og-fr.png` |
+
+[Layout.astro](src/layouts/Layout.astro) picks the card by page language. Pass
+`image="/something.png"` to a page to override it.
+
+### Regenerating the cards
+
+Edit the HTML, then screenshot it at exactly 1200×630 from the project root:
+
+```powershell
+$edge = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+$root = (Get-Location).Path
+$u    = $root.Replace('\','/')
+
+foreach ($l in @('en','fr')) {
+  & $edge --headless --disable-gpu --hide-scrollbars `
+    --force-device-scale-factor=1 --window-size=1200,630 `
+    --virtual-time-budget=15000 `
+    --screenshot="$root\public\og-$l.png" "file:///$u/og/og-$l.html"
+}
+```
+
+> **Must be PNG or JPEG, never SVG.** LinkedIn, WhatsApp and most other
+> platforms silently refuse SVG and render the card with an empty grey box.
+> `--virtual-time-budget` matters here for the same reason it does for the CVs.
+
+> **Keep the text large.** Some clients scale the card down to roughly 300 px
+> wide, so anything under ~30 px in the 1200 px canvas becomes unreadable.
+
+### Checking the result
+
+```powershell
+Add-Type -AssemblyName System.Drawing
+$img = [System.Drawing.Image]::FromFile((Resolve-Path "public\og-en.png"))
+"{0}x{1}" -f $img.Width, $img.Height   # expect 1200x630
+$img.Dispose()
+```
+
+After deploying, re-scrape the URL in the
+[LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) — platforms
+cache preview images for a long time and will keep serving the old one
+otherwise.
 
 ## Site URL & SEO
 

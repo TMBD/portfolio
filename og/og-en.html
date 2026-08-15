@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Open Graph card — Thierno DIALLO (EN)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400..700&family=Inter:opsz,wght@14..32,100..900&family=Space+Grotesk:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Tokens mirror the dark theme in src/styles/global.css. */
+      :root {
+        --heading: #f8fafc;
+        --text: #cbd5e1;
+        --muted: #94a3b8;
+        --accent: #f97316;
+        --font-sans: "Inter", system-ui, sans-serif;
+        --font-display: "Space Grotesk", system-ui, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+      }
+
+      body {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(900px 540px at 88% -14%, rgba(249, 115, 22, 0.24), transparent 62%),
+          linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Same brand rule the site header uses, faded out to the right. */
+      .rule-top {
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 10px;
+        background: linear-gradient(
+          90deg,
+          var(--accent) 0%,
+          #fb923c 55%,
+          rgba(251, 146, 60, 0) 100%
+        );
+      }
+
+      .card {
+        position: absolute;
+        inset: 0;
+        padding: 86px 90px 74px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .name {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 92px;
+        line-height: 1.05;
+        letter-spacing: -0.025em;
+        color: var(--heading);
+        white-space: nowrap;
+      }
+
+      .bracket {
+        font-family: var(--font-mono);
+        font-weight: 500;
+        color: var(--accent);
+      }
+
+      .role {
+        margin-top: 20px;
+        font-size: 42px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--muted);
+      }
+
+      .rule {
+        margin: 34px 0 28px;
+        width: 96px;
+        height: 5px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .tagline {
+        font-size: 31px;
+        line-height: 1.45;
+        color: var(--text);
+      }
+
+      .foot {
+        margin-top: auto;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      .url {
+        font-family: var(--font-mono);
+        font-weight: 600;
+        font-size: 34px;
+        color: var(--accent);
+      }
+
+      .place {
+        font-family: var(--font-mono);
+        font-size: 26px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="rule-top"></div>
+
+    <div class="card">
+      <div class="name">
+        <span class="bracket">&lt;</span> Thierno DIALLO
+        <span class="bracket">/&gt;</span>
+      </div>
+
+      <div class="role">Senior Software Engineer</div>
+
+      <div class="rule"></div>
+
+      <div class="tagline">
+        Java &amp; Quarkus backend for healthcare software &mdash;<br />identity,
+        cloud migrations, Kubernetes.
+      </div>
+
+      <div class="foot">
+        <div class="url">thierno.dev</div>
+        <div class="place">Montpellier, France</div>
+      </div>
+    </div>
+  </body>
+</html>
